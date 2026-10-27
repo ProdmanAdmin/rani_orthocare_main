@@ -1,0 +1,9 @@
+keyword,category,intent,target_page,priority,notes
+REPLACE main service in area,service,local,/services/example-service/,P1,main keyword for this page
+REPLACE business type in area,brand-local,local,/,P1,home page main keyword
+REPLACE business name,brand,navigational,/,P1,
+REPLACE lead person name credentials,people,navigational,/team/,P2,
+REPLACE business type near landmark,location,local,/areas-we-serve/,P2,
+REPLACE service cost in city,behaviour,commercial,/services/example-service/,P2,answer in FAQ if prices are confirmed
+REPLACE how long does service take,question (AEO),informational,/services/example-service/,P2,FAQ question
+REPLACE business type open on sunday near area,behaviour,local,/contact/,P3,FAQ question

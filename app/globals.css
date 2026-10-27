@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens. Replace with the design system's values; keep text contrast at 4.5:1 or more
+   (check every pair, e.g. white on --color-brand). Values are space-separated RGB for Tailwind opacity. */
+:root {
+  --color-brand: 29 78 216; /* #1d4ed8: white text on it = 6.7:1 */
+  --color-ink: 17 24 39; /* headings #111827 */
+  --color-body: 55 65 81; /* text #374151: 10.3:1 on white */
+  --color-muted: 75 85 99; /* secondary text #4b5563: 7.6:1 on white */
+  --color-surface: 248 250 252; /* page background #f8fafc */
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  :focus-visible {
+    outline: 3px solid rgb(var(--color-brand));
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex min-h-[44px] items-center justify-center rounded-xl bg-brand px-6 py-3 font-semibold text-white transition hover:opacity-90 disabled:opacity-60;
+  }
+  .field {
+    @apply w-full rounded-xl border border-gray-300 bg-white px-4 py-3;
+  }
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2;
+  }
+}
