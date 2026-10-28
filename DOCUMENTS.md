@@ -11,6 +11,10 @@ Update this list whenever a document is added or re-versioned.
 | `README.md` | Setup, first-day checklist, deploy |
 | `DESIGN.md` | Design system and decisions |
 | `HANDOFF.md` | Current status, session log, owner action items |
+| `docs/business-model.md` | **Business model and core principles, English and Tamil** (with the original Tamil voice note). Drives all design, copy and SEO |
+| `docs/business-context.md` | Business facts, hours (from Google), brand colours, assets, open questions |
+| `docs/design-references.md` | Findings from the 7 reference websites |
+| `brand-assets/` | Logo (Tamil and English), visiting cards, prescription pad, covers, map QR |
 
 ## Templates (`docs/templates/`)
 

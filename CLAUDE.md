@@ -1,7 +1,32 @@
 # Project Instructions (Next.js SEO Starter)
 
-> **Fill in this box first** (then delete this line):
-> Business: **REPLACE** · Official domain: **https://REPLACE** · Hosting: Netlify · Owner of the hosting account: **REPLACE** · Git account linked in Netlify: **REPLACE** · Industry advertising rules: **REPLACE** (e.g. none / medical / legal / financial)
+> Business: **Rani Ortho Care**, an orthopaedic clinic in Karaikudi, Tamil Nadu, led by Dr. N. Manikandan, M.B.B.S., M.S. (Ortho) · Official domain: **https://www.raniorthocare.com** (owned by the clinic; www or apex to be decided at go-live) · Hosting: Netlify · Owner of the hosting account: **REPLACE** · Git account linked in Netlify: **ProdmanAdmin** (confirm when Netlify is connected) · Industry advertising rules: **medical (India)**: no cure claims, no guaranteed results, no testimonials or before/after photos without approval, no comparison with other doctors. See "Business core" below.
+
+## Business core (read before any design, copy or SEO work)
+
+The full business model, in English and Tamil, is in **`docs/business-model.md`**. Every design decision, page, keyword and line of copy must serve it. If a design idea doesn't fit it, the business model wins.
+
+- **Mission:** Your Mobility, Our Mission (உங்கள் இயக்கம், எங்கள் நோக்கம்). Philosophy: "Life is movement, movement is life."
+- **Order of care:** relieve the pain first → find and treat the root cause → restore movement (patients who arrive on a stretcher or in a wheelchair should walk out) → keep them safe.
+- **Eight pillars:**
+  1. pain management and root-cause treatment
+  2. mobility and function
+  3. preventive orthopaedics: posture and workplace care for IT workers, drivers and manual workers, including corporate coaching
+  4. routine and advanced orthopaedics: fractures, arthritis, TKR and THR, spine, children's orthopaedics, trauma
+  5. physiotherapy and rehabilitation: after surgery, stroke (CVA), cerebral palsy
+  6. regenerative therapies: PRP, GFC, BMAC, cartilage regeneration
+  7. non-surgical management, for people avoiding or postponing surgery
+  8. patient safety first
+- **Positioning:** options before surgery, prevention for working people, and free medical camps as the community story. The site leads with relief and movement, not with surgery.
+- **Claims:** the business model records the doctor's own words. Public copy uses the safe wording in `docs/business-model.md` section 6. Never write "permanent", "cure" or "near-curative", or give fixed timeframes such as "delay surgery for 5 years". Final medical wording is approved by the doctor.
+- **Brand facts and assets:** `docs/business-context.md` (facts, hours, open questions) and `brand-assets/` (logo, print materials). Opening hours always follow the Google Business Profile. Justdial is not used as a source.
+
+## Languages: English and Tamil
+
+- The website is **bilingual (English and Tamil)**, and so is the SEO: titles, descriptions, headings, FAQs, structured data and `llms.txt`. The approach (for example `/ta/` pages with `hreflang`) is decided in the SEO plan before building.
+- **Keep records of both languages.** Approved Tamil text lives in `docs/` next to the English text, and nothing is translated on the fly in components. Tamil copy needs a native-speaker review and the doctor's approval before launch.
+- Keywords are researched in English, in Tamil script, and in Tamil typed in English letters. The starting glossary is in `docs/business-model.md` section 7.
+- Fonts and layouts must render Tamil well and allow for longer Tamil text.
 
 This website was started from the **Next.js SEO Starter**: the complete SEO and AEO (AI answer-engine) structure from a finished client project, with the design left open. The design system and page templates come from the design team; the SEO structure below must stay intact while they are applied.
 
@@ -11,6 +36,9 @@ Stack: Next.js 15 (App Router, JavaScript), React 19, Tailwind CSS 3. No databas
 
 | Document | Use it for |
 |---|---|
+| `docs/business-model.md` | **The business model and core principles (English and Tamil).** Read first. |
+| `docs/business-context.md` | Confirmed business facts, brand colours, assets, open questions |
+| `docs/design-references.md` | What we took from the 7 reference websites |
 | `SEO-PLAYBOOK.md` | **The complete SEO/AEO process**: audit method and scoring, keyword library, growth plan, the 10 implementation tasks, testing, go-live, monthly routine, lessons learned. Do not re-plan SEO from scratch: follow the playbook. |
 | `README.md` | Setup, where every setting lives, first-day checklist, deploy steps |
 | `DESIGN.md` | Design tokens, components, accessibility rules (fill it in when the design system arrives) |
