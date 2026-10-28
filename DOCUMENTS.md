@@ -15,6 +15,7 @@ Update this list whenever a document is added or re-versioned.
 | `docs/business-context.md` | Business facts, hours (from Google), brand colours, assets, open questions |
 | `docs/design-references.md` | Findings from the 7 reference websites |
 | `brand-assets/` | Logo (Tamil and English), visiting cards, prescription pad, covers, map QR |
+| `prototype/` | **Project prototype** for the client (About, Business core, Assets; English and Tamil). Temporary colours, not the website design. Content in `prototype/content.js` |
 
 ## Templates (`docs/templates/`)
 
