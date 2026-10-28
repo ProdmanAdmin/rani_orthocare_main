@@ -23,8 +23,16 @@ python3 -m http.server 4173 --bind 127.0.0.1
 
 Then open http://localhost:4173/prototype/. In Claude Code, the `prototype` entry in `.claude/launch.json` starts the same server.
 
+## Private link (for the doctor)
+Published privately at https://claude.ai/artifact/3Z3pqhqPBAs97eMZKTuXyx. Only the owner can open it until it is shared from the page's **Share** menu. Each section has its own link, ending in `#about`, `#business` or `#assets`.
+
+To update the link after changing the prototype:
+1. Run `python3 -I prototype/build-artifact.py`. It writes `prototype/dist/index.html` (not committed) and lists the files to publish.
+2. Republish `prototype/dist/index.html` to the same link with those files.
+
 ## Files
 - `index.html`: layout, styles and interface labels
 - `content.js`: all content (English and Tamil)
 - `img/`: logo copies cropped to their artwork for display (the originals are in `brand-assets/logo/`)
 - `previews/`: JPEG previews of the print PDFs
+- `build-artifact.py`: builds the private-link version in `dist/`

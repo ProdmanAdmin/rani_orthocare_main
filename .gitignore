@@ -6,3 +6,6 @@ out/
 !.env.example
 .DS_Store
 *.log
+
+# Built copy of the prototype for the private link
+prototype/dist/
