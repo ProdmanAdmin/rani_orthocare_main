@@ -16,10 +16,10 @@ Nothing here goes into `lib/site.js` until it is confirmed.
 |---|---|---|---|
 | Business name | **Rani Ortho Care** (Tamil: ராணி ஆர்த்தோ கேர்) | Logo, cards, Google, Instagram | Consistent |
 | Tagline | **Your Mobility, Our Mission** (Tamil: உங்கள் இயக்கம், எங்கள் நோக்கம்) | Logo, visiting card | Consistent |
-| Doctor | **Dr. N. Manikandan** (Tamil: Dr. நா. மணிகண்டன்) | Cards, prescription, covers | Consistent |
+| Doctor | **Dr. N. Manikandan** (Tamil: Dr. நா. மணிகண்டன்) | Cards, prescription, covers | Consistent. **He runs the clinic and is our client:** the main person on the site, and the approver for all content and medical wording |
 | Qualifications | **M.B.B.S., M.S. (Ortho)** | Cards, covers | Consistent |
 | Role | **Government Doctor, Consultant Orthopaedic Surgeon** (Tamil: அரசு மருத்துவர், எலும்புமுறிவு மற்றும் முடநீக்கியல் அறுவைசிகிச்சை நிபுணர்) | Visiting card | Confirm the wording for the website |
-| Mobile / WhatsApp | **+91 94445 53070** | Cards, prescription, covers, Google | Consistent. Confirm it is also the WhatsApp number |
+| Mobile / WhatsApp | **+91 94445 53070** | Cards, prescription, covers, Google | **Confirmed for both calls and WhatsApp.** Google shows it as 094445 53070; the website shows +91 94445 53070, and the WhatsApp link uses 919444553070 |
 | Landline | **04565 233070** | Cards, prescription, covers | Consistent |
 | Address | **No. 2, M.M. Complex, 1st Beat, Koviloor Road, near Indian Bank, Karaikudi, Tamil Nadu 630001** | Google, cards, prescription | Consistent. Combined from these sources, so confirm the exact form |
 | Opening hours | **Mon–Sat 9 AM–10 PM; Sun 10 AM–12 PM** | Google Business Profile | **Use these.** The website must match Google exactly. The printed hours (evenings plus Sunday 4–10 PM) are out of date and not used |
@@ -101,7 +101,6 @@ The website will need a Tamil-capable font. Noto Sans Tamil or Mukta Malar both 
 
 ## 5. Still to collect
 
-- [ ] Is the mobile also the WhatsApp number?
 - [ ] Dr. Kalaivanan, and any other team members
 - [ ] Free camp details (photos: later)
 - [ ] Photos: to be discussed later

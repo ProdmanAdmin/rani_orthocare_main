@@ -1,6 +1,6 @@
 # Project Instructions (Next.js SEO Starter)
 
-> Business: **Rani Ortho Care**, an orthopaedic clinic in Karaikudi, Tamil Nadu, led by Dr. N. Manikandan, M.B.B.S., M.S. (Ortho) · Official domain: **https://www.raniorthocare.com** (owned by the clinic; www or apex to be decided at go-live) · Hosting: Netlify · Owner of the hosting account: **REPLACE** · Git account linked in Netlify: **ProdmanAdmin** (confirm when Netlify is connected) · Industry advertising rules: **medical (India)**: no cure claims, no guaranteed results, no testimonials or before/after photos without approval, no comparison with other doctors. See "Business core" below.
+> Business: **Rani Ortho Care**, an orthopaedic clinic in Karaikudi, Tamil Nadu, led by Dr. N. Manikandan, M.B.B.S., M.S. (Ortho), who runs the clinic and is **our client** (he approves all content and medical wording) · Phone and WhatsApp: **+91 94445 53070** · Official domain: **https://www.raniorthocare.com** (owned by the clinic; www or apex to be decided at go-live) · Hosting: Netlify · Owner of the hosting account: **REPLACE** · Git account linked in Netlify: **ProdmanAdmin** (confirm when Netlify is connected) · Industry advertising rules: **medical (India)**: no cure claims, no guaranteed results, no testimonials or before/after photos without approval, no comparison with other doctors. See "Business core" below.
 
 ## Business core (read before any design, copy or SEO work)
 
