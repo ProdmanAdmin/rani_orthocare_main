@@ -145,6 +145,7 @@ Headings are kept **moderate**: big enough to scan, but not so big that a phone 
 - Tamil words are longer. Layouts must let headings wrap to 2 or 3 lines without breaking, and **buttons must allow 2 lines** of Tamil.
 - **No all-caps, no letter-spacing and no italics** in Tamil (they don't exist in the script or damage it). The English eyebrow labels in uppercase become normal Tamil text at the same size.
 - Never set Tamil in a Latin-only font. Every element that can show Tamil uses the Tamil stack.
+- **Tamil wording uses Style A: simple written Tamil.** Everyday sentences, with the English words people actually say written in Tamil letters (அப்பாயின்ட்மென்ட், டாக்டர், ஆபரேஷன்). No textbook Tamil and no spoken slang on the website. Rules and word list: `docs/tamil-style-guide.md`.
 
 ### General text rules
 - Line length: 45 to 70 characters (max width `68ch` for paragraphs).

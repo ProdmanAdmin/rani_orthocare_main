@@ -1,11 +1,13 @@
 # Rani Ortho Care: StoryBrand Message Framework
 # ராணி ஆர்த்தோ கேர்: StoryBrand செய்திக் கட்டமைப்பு
 
-Version 0.2, 2026-10-29. **Draft for Dr. N. Manikandan's approval.** v0.2 records the answers to the first questions (section 12) and adds the Google rating section. The Tamil text also needs a native-speaker review before it goes live.
+Version 0.3, 2026-10-29. **Draft for Dr. N. Manikandan's approval.** v0.3 rewrites all the Tamil in simple written Tamil (Style A, see the Tamil style guide), following the approved home page review. The Tamil will also go through a native-speaker check (UAT) before it goes live.
 
 Built from the clinic's business model (the doctor's own words) and the confirmed business facts. Medical wording follows the safe-wording rules agreed for the site: no cure or permanent-result claims, no promises, no "best", no invented facts.
 
 **How to use this document.** It is the source for the words on the website. The patient is the hero of the story; Rani Ortho Care and Dr. Manikandan are the guide who helps. Every page should answer three questions within a few seconds: *What is my problem? How can you help? What do I do next?* When a page is written, its copy is taken from here. Change the wording here first, then on the site.
+
+**Tamil style.** All Tamil here is Style A: everyday written Tamil, with the English words people actually say written in Tamil letters (அப்பாயின்ட்மென்ட், டாக்டர், ஆபரேஷன், எக்ஸ்ரே). The rules and word list are in the Tamil style guide.
 
 ## Index
 1. [The story in one page](#one-page)
@@ -27,20 +29,20 @@ Built from the clinic's business model (the doctor's own words) and the confirme
 
 | StoryBrand part | English | Tamil |
 |---|---|---|
-| **Hero** (the patient) | Someone in pain who wants to walk, work and live their day without it | வலியில்லாமல் நடக்கவும், வேலை செய்யவும், அன்றாட வாழ்க்கையை வாழவும் விரும்பும் ஒருவர் |
-| **What they want** | Relief from pain, and to move freely again | வலியிலிருந்து நிவாரணம், மீண்டும் சுதந்திரமாக இயங்குதல் |
-| **Villain** | Pain that keeps you from moving | உங்களை இயங்கவிடாமல் தடுக்கும் வலி |
-| **External problem** | Pain, stiffness or an injury that makes walking, working and sleeping hard | நடப்பதையும், வேலை செய்வதையும், தூங்குவதையும் கடினமாக்கும் வலி, இறுக்கம் அல்லது காயம் |
-| **Internal problem** | Worry, feeling dependent on others, and the fear that surgery is the only answer | கவலை, மற்றவர்களைச் சார்ந்திருக்கும் உணர்வு, அறுவை சிகிச்சை மட்டுமே வழி என்ற பயம் |
-| **Philosophical problem** | Everyone deserves to move without pain, at every age | எந்த வயதிலும் வலியின்றி இயங்குவது ஒவ்வொருவரின் உரிமை |
-| **Guide** | Dr. N. Manikandan, M.B.B.S., M.S. (Ortho), Consultant Orthopaedic Surgeon | Dr. நா. மணிகண்டன், M.B.B.S., M.S. (Ortho), எலும்புமுறிவு மற்றும் முடநீக்கியல் அறுவைசிகிச்சை நிபுணர் |
-| **Empathy** | We know pain makes every step heavy. We start by easing it. | வலி ஒவ்வொரு அடியையும் கனமாக்கும் என்பது எங்களுக்குத் தெரியும். அதனால் முதலில் வலியைக் குறைக்கிறோம். |
-| **Plan** | 1. Call or WhatsApp to book. 2. Meet the doctor: pain relief first, then the cause. 3. Move again with a clear plan. | 1. அழைத்தோ வாட்ஸ்அப்பிலோ முன்பதிவு செய்யுங்கள். 2. மருத்துவரைச் சந்தியுங்கள்: முதலில் வலி நிவாரணம், பிறகு காரணம். 3. தெளிவான திட்டத்துடன் மீண்டும் இயங்குங்கள். |
-| **Direct call to action** | Book an appointment · Call · WhatsApp | முன்பதிவு செய்ய · அழைக்கவும் · வாட்ஸ்அப் |
-| **Transitional call to action** | Find your problem · Get directions · Ask a question on WhatsApp | உங்கள் பிரச்சனையைக் கண்டறியுங்கள் · வழி காட்டு · வாட்ஸ்அப்பில் கேளுங்கள் |
-| **Stakes** (said gently) | Pain left alone can make daily life harder, and many problems are simpler to treat early | கவனிக்காமல் விடும் வலி அன்றாட வாழ்க்கையைக் கடினமாக்கலாம். பல பிரச்சனைகளை ஆரம்பத்திலேயே சிகிச்சை செய்வது எளிது |
-| **Success** | Walking, working and doing things for yourself again, with a plan you understand | தெளிவான திட்டத்துடன், மீண்டும் நடந்து, வேலை செய்து, உங்கள் வேலைகளை நீங்களே செய்தல் |
-| **Transformation** | From worried and held back by pain, to confident and moving again | வலியால் கவலையும் தடையும், அதிலிருந்து நம்பிக்கையுடன் மீண்டும் இயக்கம் |
+| **Hero** (the patient) | Someone in pain who wants to walk, work and live their day without it | வலி இல்லாமல் நடக்கவும், வேலை செய்யவும், அன்றாட வேலைகளைச் செய்யவும் விரும்பும் ஒருவர் |
+| **What they want** | Less pain, and to move freely again | வலி குறைய வேண்டும், மீண்டும் நன்றாக நடக்க வேண்டும் |
+| **Villain** | Pain that keeps you from moving | உங்களை நடக்கவிடாமல், வேலை செய்யவிடாமல் தடுக்கும் வலி |
+| **External problem** | Pain, stiffness or an injury that makes walking, working and sleeping hard | நடப்பது, வேலை செய்வது, தூங்குவது எல்லாவற்றையும் கஷ்டமாக்கும் வலி, மூட்டு இறுக்கம் அல்லது காயம் |
+| **Internal problem** | Worry, feeling dependent on others, and the fear that surgery is the only answer | கவலை, மற்றவர்களை நம்பியிருக்க வேண்டுமோ என்ற பயம், ஆபரேஷன் மட்டும்தான் வழியோ என்ற பயம் |
+| **Philosophical problem** | Everyone deserves to move without pain, at every age | எந்த வயதிலும், வலி இல்லாமல் நடமாடுவது ஒவ்வொருவருக்கும் உரிமை |
+| **Guide** | Dr. N. Manikandan, M.B.B.S., M.S. (Ortho), Consultant Orthopaedic Surgeon | டாக்டர் நா. மணிகண்டன், M.B.B.S., M.S. (Ortho), எலும்பு, மூட்டு சிறப்பு டாக்டர் |
+| **Empathy** | We know pain makes every step heavy. We start by easing it. | வலி இருக்கும்போது ஒவ்வொரு அடியும் கஷ்டம் என்று எங்களுக்குத் தெரியும். அதனால் முதலில் வலியைக் குறைக்கிறோம். |
+| **Plan** | 1. Call or WhatsApp to book an appointment. 2. See the doctor: pain first, then the cause. 3. Move again with a clear plan. | 1. போன் அல்லது வாட்ஸ்அப் செய்து அப்பாயின்ட்மென்ட் வாங்குங்கள். 2. டாக்டரைப் பாருங்கள்: முதலில் வலி குறைப்பு, பிறகு காரணம். 3. தெளிவான திட்டத்துடன் மீண்டும் நன்றாக நடங்கள். |
+| **Direct call to action** | Book an appointment · Call · WhatsApp | அப்பாயின்ட்மென்ட் புக் செய்ய · போன் செய்ய · வாட்ஸ்அப் செய்ய |
+| **Transitional call to action** | Find your problem · Get directions · Ask a question on WhatsApp | உங்கள் பிரச்சனையைப் பாருங்கள் · வழி (மேப்) · வாட்ஸ்அப்பில் கேளுங்கள் |
+| **Stakes** (said gently) | Pain left alone can make daily life harder, and many problems are simpler to treat early | வலியை அப்படியே விட்டுவிட்டால் அன்றாட வேலைகள் கஷ்டமாகலாம். பல பிரச்சனைகளை ஆரம்பத்திலேயே கவனித்தால் சிகிச்சை எளிது |
+| **Success** | Walking, working and doing things for yourself again, with a plan you understand | உங்களுக்குப் புரியும் திட்டத்துடன், மீண்டும் நடந்து, வேலை செய்து, உங்கள் வேலைகளை நீங்களே செய்வது |
+| **Transformation** | From worried and held back by pain, to confident and moving again | வலியால் கவலையும் கஷ்டமும், அதிலிருந்து நம்பிக்கையுடன் மீண்டும் நடமாட்டம் |
 
 ---
 
@@ -50,17 +52,17 @@ The website talks to these people in their own words. Each line is how the visit
 
 | Who | In their words (English) | In their words (Tamil) | Where they go on the site |
 |---|---|---|---|
-| Older adult with knee pain | "My knees hurt on the stairs. I just want to walk without stopping." | "படி ஏறும்போது முழங்கால் வலிக்கிறது. நிற்காமல் நடக்க வேண்டும், அவ்வளவுதான்." | Knee and joint pain, arthritis |
-| Someone told they need surgery | "I was told I need a knee replacement. Is there anything I can try first?" | "மூட்டு மாற்று அறுவை சிகிச்சை தேவை என்று சொன்னார்கள். அதற்கு முன் வேறு வழி இருக்கிறதா?" | Options before surgery, regenerative therapies |
-| Desk and IT worker | "I sit at a computer all day, and my neck aches by evening." | "நாள் முழுக்கக் கணினி முன் உட்கார்ந்திருக்கிறேன். மாலைக்குள் கழுத்து வலிக்கிறது." | Back and neck pain, prevention at work |
-| Driver, rider or manual worker | "I ride for hours for work. If my back gives way, I can't work." | "வேலைக்காகப் பல மணி நேரம் வண்டி ஓட்டுகிறேன். முதுகு வலி வந்தால் வேலைக்குப் போக முடியாது." | Back pain, prevention at work |
-| Family after a fall or accident | "My father fell and his wrist is swollen. Is it broken?" | "அப்பா கீழே விழுந்துவிட்டார், மணிக்கட்டு வீங்கியிருக்கிறது. எலும்பு முறிந்திருக்குமா?" | Fractures and injuries, digital X-ray |
-| Young or active person with a sports injury | "I twisted my knee playing, and it still feels unstable." | "விளையாடும்போது முழங்கால் சுளுக்கியது. இன்னும் நிலையில்லாமல் இருக்கிறது." | Ligament, meniscus and sports injuries |
-| Parent | "My baby's foot turns inward. What should we do?" | "என் குழந்தையின் பாதம் உள்நோக்கி வளைந்திருக்கிறது. என்ன செய்ய வேண்டும்?" | Children's bone care, clubfoot |
-| Family after a stroke or surgery | "After the stroke, Amma can't use her right hand. How do we help her move again?" | "பக்கவாதத்துக்குப் பிறகு அம்மாவால் வலது கையை அசைக்க முடியவில்லை. மீண்டும் இயங்க எப்படி உதவுவது?" | Physiotherapy and rehabilitation |
+| Older adult with knee pain | "My knees hurt on the stairs. I just want to walk without stopping." | "படி ஏறும்போது முட்டி வலிக்கிறது. இடையில் நிற்காமல் நடக்க வேண்டும், அவ்வளவுதான்." | Knee and joint pain, arthritis |
+| Someone told they need surgery | "I was told I need a knee replacement. Is there anything I can try first?" | "முட்டி மாற்று ஆபரேஷன் செய்ய வேண்டும் என்று சொன்னார்கள். அதற்கு முன் வேறு ஏதாவது வழி இருக்கிறதா?" | Options before surgery, injection treatments |
+| Desk and IT worker | "I sit at a computer all day, and my neck aches by evening." | "நாள் முழுக்க கம்ப்யூட்டர் முன் உட்கார்ந்து வேலை. சாயங்காலம் ஆனால் கழுத்து வலிக்கிறது." | Back and neck pain, prevention at work |
+| Driver, rider or manual worker | "I ride for hours for work. If my back gives way, I can't work." | "வேலைக்காக மணிக்கணக்கில் பைக் ஓட்டுகிறேன். முதுகு வலி வந்தால் வேலைக்கே போக முடியாது." | Back pain, prevention at work |
+| Family after a fall or accident | "My father fell and his wrist is swollen. Is it broken?" | "அப்பா கீழே விழுந்துவிட்டார். மணிக்கட்டு வீங்கியிருக்கிறது. எலும்பு உடைந்திருக்குமோ?" | Fractures and injuries, digital X-ray |
+| Young or active person with a sports injury | "I twisted my knee playing, and it still feels unstable." | "விளையாடும்போது முட்டி சுளுக்கிவிட்டது. இன்னும் ஆடுகிற மாதிரி இருக்கிறது." | Ligament, meniscus and sports injuries |
+| Parent | "My baby's foot turns inward. What should we do?" | "என் குழந்தையின் பாதம் உள்பக்கமாக வளைந்திருக்கிறது. என்ன செய்வது?" | Children's bone care, clubfoot |
+| Family after a stroke or surgery | "After the stroke, Amma can't use her right hand. How do we help her move again?" | "பக்கவாதம் வந்த பிறகு அம்மாவால் வலது கையை அசைக்க முடியவில்லை. மீண்டும் கை கால் அசைய என்ன செய்வது?" | Physiotherapy and rehabilitation |
 
 **What every hero wants (one sentence):** to be free of pain and to move through the day on their own again.
-**தமிழில்:** வலியிலிருந்து விடுபட்டு, மீண்டும் தாங்களாகவே அன்றாட வேலைகளைச் செய்ய வேண்டும்.
+**தமிழில்:** வலி இல்லாமல், மீண்டும் தங்கள் வேலைகளைத் தாங்களே செய்ய வேண்டும்.
 
 ---
 
@@ -68,14 +70,14 @@ The website talks to these people in their own words. Each line is how the visit
 
 ### The villain
 **Pain that keeps you from moving.** Not the patient, not other doctors. We never compare ourselves with other doctors or clinics.
-**உங்களை இயங்கவிடாமல் தடுக்கும் வலி.**
+**உங்களை நடக்கவிடாமல், வேலை செய்யவிடாமல் தடுக்கும் வலி.**
 
 ### Three levels of the problem
 
 | Level | English | Tamil |
 |---|---|---|
-| External: what they can see | Knee, back, neck or shoulder pain. A broken bone or a sprain. Stiff joints. Weakness after a stroke or surgery. | முழங்கால், முதுகு, கழுத்து அல்லது தோள்பட்டை வலி. எலும்பு முறிவு அல்லது சுளுக்கு. இறுகிய மூட்டுகள். பக்கவாதம் அல்லது அறுவை சிகிச்சைக்குப் பின் பலவீனம். |
-| Internal: how it makes them feel | "Will I have to depend on my children?" "Is surgery my only option?" "If I take time off, who will earn?" Worry, and confusion from mixed advice. | "என் பிள்ளைகளைச் சார்ந்திருக்க வேண்டி வருமோ?" "அறுவை சிகிச்சை மட்டும்தான் வழியா?" "வேலைக்குப் போகாவிட்டால் யார் சம்பாதிப்பது?" கவலையும், பலவிதமான அறிவுரைகளால் குழப்பமும். |
+| External: what they can see | Knee, back, neck or shoulder pain. A broken bone or a sprain. Stiff joints. Weakness after a stroke or surgery. | முட்டி, முதுகு, கழுத்து அல்லது தோள்பட்டை வலி. எலும்பு முறிவு அல்லது சுளுக்கு. மூட்டு இறுக்கம். பக்கவாதம் அல்லது ஆபரேஷனுக்குப் பிறகு உடம்பில் பலம் இல்லாமை. |
+| Internal: how it makes them feel | "Will I have to depend on my children?" "Is surgery my only option?" "If I take time off, who will earn?" Worry, and confusion from mixed advice. | "பிள்ளைகளை நம்பியிருக்க வேண்டி வருமோ?" "ஆபரேஷன் மட்டும்தான் வழியா?" "வேலைக்குப் போகாவிட்டால் யார் சம்பாதிப்பது?" கவலையும், ஆளுக்கு ஒரு அட்வைஸ் கேட்டு குழப்பமும். |
 | Philosophical: why it matters | Life is movement, movement is life. Nobody should have to give up their daily life to pain. | வாழ்க்கையே இயக்கம், இயக்கமே வாழ்க்கை. வலிக்காக யாரும் தங்கள் அன்றாட வாழ்க்கையை விட்டுக்கொடுக்க வேண்டியதில்லை. |
 
 **Copy rule:** name the internal problem gently and once. The site's tone is calm reassurance, never fear.
@@ -90,25 +92,25 @@ A guide needs two things: **empathy** (we understand) and **authority** (we can 
 
 | English | Tamil |
 |---|---|
-| We know pain makes every step feel heavy. That is why we ease your pain first, before anything else. | வலி ஒவ்வொரு அடியையும் கனமாக்கும் என்பது எங்களுக்குத் தெரியும். அதனால்தான், எதற்கும் முன் உங்கள் வலியைக் குறைக்கிறோம். |
-| Being told "you need surgery" can be frightening. We explain every option in plain words, so you can decide calmly. | "அறுவை சிகிச்சை தேவை" என்று கேட்பது பயமாக இருக்கலாம். ஒவ்வொரு வழியையும் எளிய வார்த்தைகளில் விளக்குகிறோம், நீங்கள் நிதானமாக முடிவெடுக்கலாம். |
-| Your work and your family depend on you. Our care is planned around getting you back to them. | உங்கள் வேலையும் குடும்பமும் உங்களை நம்பியிருக்கின்றன. அவர்களிடம் நீங்கள் மீண்டும் திரும்புவதை மையமாகக் கொண்டே எங்கள் சிகிச்சை திட்டமிடப்படுகிறது. |
-| Ask us anything, in Tamil or English. No question is too small. | தமிழிலோ ஆங்கிலத்திலோ எதையும் கேளுங்கள். எந்தக் கேள்வியும் சிறியதல்ல. |
+| We know pain makes every step feel heavy. That is why we ease your pain first, before anything else. | வலி இருக்கும்போது ஒவ்வொரு அடியும் கஷ்டம் என்று எங்களுக்குத் தெரியும். அதனால்தான், எதற்கும் முன் உங்கள் வலியைக் குறைக்கிறோம். |
+| Being told "you need surgery" can be frightening. We explain every option in plain words, so you can decide calmly. | "ஆபரேஷன் செய்ய வேண்டும்" என்று கேட்டாலே பயமாக இருக்கும். என்னென்ன வழிகள் இருக்கின்றன என்று புரியும்படி சொல்கிறோம், நீங்கள் நிதானமாக முடிவு எடுக்கலாம். |
+| Your work and your family depend on you. Our care is planned around getting you back to them. | உங்கள் வேலையும் குடும்பமும் உங்களை நம்பியிருக்கின்றன. நீங்கள் மீண்டும் அவர்களிடம் திரும்புவதை மனதில் வைத்தே சிகிச்சையைத் திட்டமிடுகிறோம். |
+| Ask us anything, in Tamil or English. No question is too small. | எந்த சந்தேகம் இருந்தாலும், தமிழிலோ ஆங்கிலத்திலோ தயங்காமல் கேளுங்கள். |
 
 ### Credibility: what we can show now (confirmed facts only)
 
 | Proof | English (display text) | Tamil (display text) | Where it appears |
 |---|---|---|---|
-| Qualified specialist | Dr. N. Manikandan, M.B.B.S., M.S. (Ortho) | Dr. நா. மணிகண்டன், M.B.B.S., M.S. (Ortho) | Hero, doctor section, every service page ("Reviewed by") |
-| Role | Government Doctor and Consultant Orthopaedic Surgeon | அரசு மருத்துவர், எலும்புமுறிவு மற்றும் முடநீக்கியல் அறுவைசிகிச்சை நிபுணர் | Doctor section, About page |
-| Care under one roof | Consultation, digital X-ray, physiotherapy, and plaster and dressing, all at the clinic | ஆலோசனை, டிஜிட்டல் எக்ஸ்ரே, பிசியோதெரபி, பிளாஸ்டர் மற்றும் கட்டு, அனைத்தும் கிளினிக்கிலேயே | Hero fact chips, plan step 2 |
-| Range of care | 13 services for bones, joints and spine, from fractures to joint replacement and children's bone care | எலும்பு முறிவு முதல் மூட்டு மாற்று, குழந்தைகள் எலும்பு சிகிச்சை வரை, எலும்பு, மூட்டு, முதுகுத் தண்டுக்கான 13 சேவைகள் | What we treat |
-| A clear approach | Relief first, then the root cause, then movement. Safety first in every treatment. | முதலில் நிவாரணம், பிறகு மூல காரணம், பிறகு இயக்கம். ஒவ்வொரு சிகிச்சையிலும் பாதுகாப்பே முதன்மை. | Plan section, About page |
-| Explained in your language | Dr. Manikandan explains your condition and options in Tamil or English | உங்கள் நிலையையும் வழிகளையும் Dr. மணிகண்டன் தமிழிலோ ஆங்கிலத்திலோ விளக்குகிறார் | Doctor section, plan step 2 |
-| Evidence-based care | Treatment based on medical evidence, chosen for your condition | மருத்துவ ஆதாரங்களின் அடிப்படையில், உங்கள் நிலைக்கு ஏற்ற சிகிச்சை | About page, safety section |
-| Community care | Free medical camps for the community | மக்களுக்கான இலவச மருத்துவ முகாம்கள் | Free camps section |
-| Patients' rating on Google | Rated 4.9 out of 5 on Google, from 59 reviews (as of 28 October 2026) | Google-இல் 59 மதிப்பீடுகளில் 5-க்கு 4.9 (28 அக்டோபர் 2026 நிலவரப்படி) | Google rating section, hero fact chip. Approved for display; rules in section 10, part 9 (home page) |
-| Easy to reach | Open 6 days a week, with Sunday morning hours (hours from Google) | வாரத்தில் 6 நாட்கள், ஞாயிறு காலையிலும் திறந்திருக்கும் (நேரம் Google படி) | Hero timings card, footer |
+| Qualified specialist | Dr. N. Manikandan, M.B.B.S., M.S. (Ortho) | டாக்டர் நா. மணிகண்டன், M.B.B.S., M.S. (Ortho) | Hero, doctor section, every service page ("Reviewed by") |
+| Role | Government Doctor and Consultant Orthopaedic Surgeon | அரசு மருத்துவர், எலும்புமுறிவு மற்றும் முடநீக்கியல் அறுவைசிகிச்சை நிபுணர் (எலும்பு, மூட்டு சிறப்பு டாக்டர்) | Doctor section, About page. The official title stays as on his card |
+| Care under one roof | Consultation, digital X-ray, physiotherapy, and plaster and dressing, all at the clinic | டாக்டர் ஆலோசனை, டிஜிட்டல் எக்ஸ்ரே, பிசியோதெரபி, பிளாஸ்டர், கட்டு, எல்லாமே ஒரே கிளினிக்கில் | Hero fact chips, plan step 2 |
+| Range of care | 13 services for bones, joints and spine, from fractures to joint replacement and children's bone care | எலும்பு முறிவு முதல் மூட்டு மாற்று ஆபரேஷன், குழந்தைகள் எலும்பு சிகிச்சை வரை, எலும்பு, மூட்டு, முதுகெலும்புக்கு 13 சேவைகள் | What we treat |
+| A clear approach | Relief first, then the root cause, then movement. Safety first in every treatment. | முதலில் வலி குறைப்பு, பிறகு உண்மையான காரணம், பிறகு மீண்டும் நடமாட்டம். எந்த சிகிச்சையிலும் பாதுகாப்பு முதலில். | Plan section, About page |
+| Explained in your language | Dr. Manikandan explains your condition and options in Tamil or English | உங்கள் பிரச்சனையையும் வழிகளையும் டாக்டர் மணிகண்டன் தமிழிலோ ஆங்கிலத்திலோ விளக்குகிறார் | Doctor section, plan step 2 |
+| Evidence-based care | Treatment based on medical evidence, chosen for your condition | மருத்துவ ஆதாரங்களின் அடிப்படையில், உங்கள் பிரச்சனைக்கு ஏற்ற சிகிச்சை | About page, safety section |
+| Community care | Free medical camps for the community | நம் ஊர் மக்களுக்காக இலவச மருத்துவ முகாம்கள் | Free camps section |
+| Patients' rating on Google | Rated 4.9 out of 5 on Google, from 59 reviews (as of 28 October 2026) | Google-ல் 5-க்கு 4.9 ரேட்டிங் (59 ரிவ்யூக்கள், 28 அக்டோபர் 2026 நிலவரப்படி) | Google rating section, hero fact chip. Approved for display; rules in section 10, part 9 (home page) |
+| Easy to reach | Open 6 days a week, with Sunday morning hours (hours from Google) | வாரத்தில் 6 நாள், ஞாயிறு காலையிலும் கிளினிக் திறந்திருக்கும் (நேரம் Google-ல் உள்ளபடி) | Hero timings card, footer |
 
 ### Credibility: what would make it stronger (needs the doctor's input)
 
@@ -131,12 +133,12 @@ Never use: quoted reviews on our own site (link to Google instead), patient coun
 
 | Step | English | Tamil |
 |---|---|---|
-| 1. Book | **Call or WhatsApp us.** Tell us where it hurts, and we will give you a time to visit. | **அழைக்கவும் அல்லது வாட்ஸ்அப் செய்யவும்.** எங்கே வலிக்கிறது என்று சொல்லுங்கள், வருவதற்கான நேரத்தைச் சொல்கிறோம். |
-| 2. Relief and a diagnosis | **Meet Dr. Manikandan.** He eases your pain first, then examines you and, if needed, takes a digital X-ray at the clinic to find the root cause. | **Dr. மணிகண்டனைச் சந்தியுங்கள்.** முதலில் உங்கள் வலியைக் குறைத்து, பிறகு பரிசோதித்து, தேவைப்பட்டால் கிளினிக்கிலேயே டிஜிட்டல் எக்ஸ்ரே எடுத்து மூல காரணத்தைக் கண்டறிகிறார். |
-| 3. Move again | **Follow a clear plan.** Treatment, physiotherapy and simple exercises for home, with surgery only when it is the right choice for you. | **தெளிவான திட்டத்தைப் பின்பற்றுங்கள்.** சிகிச்சை, பிசியோதெரபி, வீட்டில் செய்யக்கூடிய எளிய பயிற்சிகள். உங்களுக்குச் சரியான தேர்வாக இருந்தால் மட்டுமே அறுவை சிகிச்சை. |
+| 1. Book | **Call or WhatsApp us.** Tell us where it hurts, and we will give you an appointment time. | **போன் அல்லது வாட்ஸ்அப் செய்யுங்கள்.** எங்கே வலி இருக்கிறது என்று சொல்லுங்கள், டாக்டரைப் பார்க்க அப்பாயின்ட்மென்ட் நேரம் தருகிறோம். |
+| 2. Relief and a diagnosis | **Meet Dr. Manikandan.** He eases your pain first, then examines you and, if needed, takes a digital X-ray at the clinic to find the root cause. | **டாக்டர் மணிகண்டனைப் பாருங்கள்.** முதலில் வலியைக் குறைக்கிறார். பிறகு உங்களைப் பரிசோதித்து, தேவைப்பட்டால் கிளினிக்கிலேயே எக்ஸ்ரே எடுத்து, வலிக்கான உண்மையான காரணத்தைக் கண்டுபிடிக்கிறார். |
+| 3. Move again | **Follow a clear plan.** Treatment, physiotherapy and simple exercises for home, with surgery only when it is the right choice for you. | **தெளிவான சிகிச்சைத் திட்டம்.** சிகிச்சை, பிசியோதெரபி, வீட்டில் செய்ய எளிய பயிற்சிகள். ஆபரேஷன் உங்களுக்கு உண்மையில் தேவைப்பட்டால் மட்டுமே. |
 
 **Short version for the 3-step graphic:** Relieve the pain → Find the cause → Move again
-**தமிழில்:** வலி நிவாரணம் → காரணம் கண்டறிதல் → மீண்டும் இயக்கம்
+**தமிழில்:** வலியைக் குறைப்பது → காரணத்தைக் கண்டுபிடிப்பது → மீண்டும் நடப்பது
 
 ### Agreement plan: our promises of care (what the patient can count on)
 
@@ -144,10 +146,10 @@ These describe how we work, not results. They are safe to state.
 
 | English | Tamil |
 |---|---|
-| **Relief first.** We ease your pain before anything else. | **முதலில் நிவாரணம்.** எதற்கும் முன் உங்கள் வலியைக் குறைக்கிறோம். |
-| **We explain.** You will know the cause and every option, in plain words. | **விளக்கிச் சொல்கிறோம்.** காரணத்தையும் எல்லா வழிகளையும் எளிய வார்த்தைகளில் தெரிந்துகொள்வீர்கள். |
-| **Options before surgery.** Non-surgical care, physiotherapy and regenerative therapies are considered first, where they suit you. | **அறுவை சிகிச்சைக்கு முன் மற்ற வழிகள்.** உங்களுக்குப் பொருந்துமானால், அறுவை சிகிச்சையற்ற சிகிச்சை, பிசியோதெரபி, மீளுருவாக்க சிகிச்சைகள் முதலில் பரிசீலிக்கப்படும். |
-| **Safety first.** Every treatment is chosen to be safe for you. | **பாதுகாப்பே முதன்மை.** ஒவ்வொரு சிகிச்சையும் உங்களுக்குப் பாதுகாப்பானதாகவே தேர்ந்தெடுக்கப்படுகிறது. |
+| **Relief first.** We ease your pain before anything else. | **முதலில் வலி குறைப்பு.** எதற்கும் முன் உங்கள் வலியைக் குறைக்கிறோம். |
+| **We explain.** You will know the cause and every option, in plain words. | **தெளிவாகச் சொல்கிறோம்.** என்ன பிரச்சனை, என்னென்ன வழிகள் என்று புரியும்படி சொல்கிறோம். |
+| **Options before surgery.** Non-surgical care, physiotherapy and injection treatments such as PRP are considered first, where they suit you. | **முதலில் மற்ற வழிகள்.** உங்களுக்குப் பொருந்தினால், ஆபரேஷன் இல்லாத சிகிச்சை, பிசியோதெரபி, PRP போன்ற ஊசி சிகிச்சைகளை முதலில் பார்க்கிறோம். |
+| **Safety first.** Every treatment is chosen to be safe for you. | **பாதுகாப்பு முதலில்.** ஒவ்வொரு சிகிச்சையும் உங்களுக்குப் பாதுகாப்பானதாக இருக்க வேண்டும் என்பதே எங்கள் முதல் கவனம். |
 
 ---
 
@@ -157,12 +159,12 @@ These describe how we work, not results. They are safe to state.
 
 | Use | English | Tamil | Action |
 |---|---|---|---|
-| Main button | Book an appointment | முன்பதிவு செய்ய | Opens the call or WhatsApp choice |
-| Call | Call now / Call +91 94445 53070 | அழைக்கவும் / அழைக்க +91 94445 53070 | Opens the phone's dialler |
-| WhatsApp | WhatsApp us | வாட்ஸ்அப் செய்யவும் | Opens WhatsApp with a short greeting |
-| Supporting line under the buttons | Tell us where it hurts. We will give you a time. | எங்கே வலிக்கிறது என்று சொல்லுங்கள். நேரத்தைச் சொல்கிறோம். | |
+| Main button | Book an appointment | அப்பாயின்ட்மென்ட் புக் செய்ய | Opens the call or WhatsApp choice |
+| Call | Call now / Call +91 94445 53070 | இப்போதே போன் செய்ய / போன் செய்ய +91 94445 53070 | Opens the phone's dialler |
+| WhatsApp | WhatsApp us | வாட்ஸ்அப் செய்ய | Opens WhatsApp with a short greeting |
+| Supporting line under the buttons | Tell us where it hurts. We will give you an appointment time. | எங்கே வலி இருக்கிறது என்று சொல்லுங்கள். டாக்டரைப் பார்க்க அப்பாயின்ட்மென்ட் நேரம் தருகிறோம். | |
 
-**Suggested WhatsApp greeting** (prefilled, the visitor can change it): "Hello, I would like to book an appointment with Dr. Manikandan." / "வணக்கம், Dr. மணிகண்டனைச் சந்திக்க முன்பதிவு செய்ய விரும்புகிறேன்."
+**Suggested WhatsApp greeting** (prefilled, the visitor can change it): "Hello, I would like an appointment to see Dr. Manikandan." / "வணக்கம், டாக்டர் மணிகண்டனைப் பார்க்க அப்பாயின்ட்மென்ட் வேண்டும்."
 
 There is no online booking system yet, so "Book an appointment" leads to a call or WhatsApp. The phone number is kept in one place on the site, so it is always the same everywhere.
 
@@ -170,14 +172,14 @@ There is no online booking system yet, so "Book an appointment" leads to a call 
 
 | English | Tamil | Leads to |
 |---|---|---|
-| Find your problem | உங்கள் பிரச்சனையைக் கண்டறியுங்கள் | What we treat, service pages |
-| Not sure what you need? Ask us on WhatsApp | எந்த சிகிச்சை தேவை என்று தெரியவில்லையா? வாட்ஸ்அப்பில் கேளுங்கள் | WhatsApp |
-| Get directions | வழி காட்டு | Google Maps |
-| See today's timings | இன்றைய நேரத்தைப் பார்க்க | Timings card |
-| Posture tips for desk workers and drivers | கணினி வேலை செய்பவர்கள், ஓட்டுநர்களுக்கான உடல் நிலை குறிப்புகள் | A prevention guide page (to be written and approved by the doctor) |
-| Read reviews on Google | Google-இல் மதிப்பீடுகளைப் படிக்க | Our Google Business Profile |
-| Enquire for your company | உங்கள் நிறுவனத்துக்காக விசாரிக்க | WhatsApp or the contact form, with "Company posture session" as the subject |
-| Follow our free camp updates | இலவச முகாம் தகவல்களுக்குப் பின்தொடருங்கள் | Instagram @rani_ortho_care |
+| Find your problem | உங்கள் பிரச்சனையைப் பாருங்கள் | What we treat, service pages |
+| Not sure what you need? Ask us on WhatsApp | எந்த சிகிச்சை வேண்டும் என்று தெரியவில்லையா? வாட்ஸ்அப்பில் கேளுங்கள் | WhatsApp |
+| Get directions | வழி (மேப்) | Google Maps |
+| See today's timings | இன்றைய நேரம் பார்க்க | Timings card |
+| Posture tips for desk workers and drivers | கம்ப்யூட்டர் வேலை செய்பவர்கள், டிரைவர்களுக்கு சரியாக உட்கார சில டிப்ஸ் | A prevention guide page (to be written and approved by the doctor) |
+| Read reviews on Google | Google-ல் ரிவ்யூக்களைப் படிக்க | Our Google Business Profile |
+| Enquire for your company | உங்கள் கம்பெனிக்காகக் கேட்க | WhatsApp or the contact form, with "Company posture session" as the subject |
+| Follow our free camp updates | இலவச முகாம் விவரங்களுக்கு எங்களை ஃபாலோ செய்யுங்கள் | Instagram @rani_ortho_care |
 
 ---
 
@@ -187,9 +189,9 @@ StoryBrand asks what happens if the hero does nothing. For a clinic this must st
 
 | English | Tamil |
 |---|---|
-| Pain left alone can make walking, work and sleep harder over time. | கவனிக்காமல் விடும் வலி, காலப்போக்கில் நடப்பதையும், வேலையையும், தூக்கத்தையும் கடினமாக்கலாம். |
-| Many bone and joint problems are simpler to treat when they are found early. | பல எலும்பு, மூட்டு பிரச்சனைகளை ஆரம்பத்திலேயே கண்டறிந்தால் சிகிச்சை எளிதாக இருக்கும். |
-| You don't have to get used to living with pain. | வலியுடன் வாழப் பழகிக்கொள்ள வேண்டிய அவசியம் இல்லை. |
+| Pain left alone can make walking, work and sleep harder over time. | வலியை அப்படியே விட்டுவிட்டால், நாளடைவில் நடப்பதும், வேலை செய்வதும், தூங்குவதும் கஷ்டமாகலாம். |
+| Many bone and joint problems are simpler to treat when they are found early. | பல எலும்பு, மூட்டு பிரச்சனைகளை ஆரம்பத்திலேயே கவனித்தால் சிகிச்சை எளிது. |
+| You don't have to live with pain. | வலியைப் பொறுத்துக்கொண்டு வாழ வேண்டியதில்லை. |
 
 ---
 
@@ -199,15 +201,15 @@ Show the picture of a good outcome as an aim, never as a promise.
 
 | From | To (English) | To (Tamil) |
 |---|---|---|
-| Pain on every step | Walking with comfort again | மீண்டும் சௌகரியமாக நடத்தல் |
+| Pain on every step | Walking with comfort again | மீண்டும் சிரமம் இல்லாமல் நடப்பது |
 | Worry and mixed advice | A clear plan you understand | உங்களுக்குப் புரியும் தெளிவான திட்டம் |
-| "Surgery is the only way" | Knowing all your options | எல்லா வழிகளையும் தெரிந்துகொள்ளுதல் |
-| Depending on others | Doing things for yourself | உங்கள் வேலைகளை நீங்களே செய்தல் |
+| "Surgery is the only way" | Knowing all your options | என்னென்ன வழிகள் இருக்கின்றன என்று தெரிந்துகொள்வது |
+| Depending on others | Doing things for yourself | உங்கள் வேலைகளை நீங்களே செய்வது |
 | Aches after every working day | Daily habits that protect your back and neck | முதுகையும் கழுத்தையும் பாதுகாக்கும் தினசரிப் பழக்கங்கள் |
-| Arriving in a wheelchair | Our aim: to help every patient move and walk again | எங்கள் நோக்கம்: ஒவ்வொரு நோயாளியும் மீண்டும் இயங்கவும் நடக்கவும் உதவுவது |
+| Arriving in a wheelchair | Our aim: to help every patient move and walk again | எங்கள் நோக்கம்: ஒவ்வொரு நோயாளியும் மீண்டும் நடக்க உதவுவது |
 
 **Success line for the site:** Back to the things you love: a morning walk, a full day's work, time with your family.
-**தமிழில்:** நீங்கள் விரும்புவதற்கு மீண்டும்: காலை நடை, முழு நாள் வேலை, குடும்பத்துடன் நேரம்.
+**தமிழில்:** உங்களுக்குப் பிடித்தவற்றுக்கு மீண்டும் திரும்புங்கள்: காலை நடை, முழு நாள் வேலை, குடும்பத்துடன் நேரம்.
 
 ---
 
@@ -217,77 +219,112 @@ Show the picture of a good outcome as an aim, never as a promise.
 |---|---|---|
 | Brand tagline (fixed) | Your Mobility, Our Mission | உங்கள் இயக்கம், எங்கள் நோக்கம் |
 | Philosophy (fixed) | Life is movement, movement is life | வாழ்க்கையே இயக்கம், இயக்கமே வாழ்க்கை |
-| Approach line | Relief first. Root cause next. Then, movement again. | முதலில் நிவாரணம். பிறகு மூல காரணம். பிறகு மீண்டும் இயக்கம். |
-| One-liner (problem, solution, result) | Bone, joint or back pain makes every day harder. At Rani Ortho Care, Dr. N. Manikandan eases your pain first, treats the root cause, and helps you move again, with options before surgery. | எலும்பு, மூட்டு அல்லது முதுகு வலி ஒவ்வொரு நாளையும் கடினமாக்குகிறது. ராணி ஆர்த்தோ கேரில், Dr. நா. மணிகண்டன் முதலில் உங்கள் வலியைக் குறைத்து, மூல காரணத்திற்குச் சிகிச்சை அளித்து, அறுவை சிகிச்சைக்கு முன் மற்ற வழிகளுடன், நீங்கள் மீண்டும் இயங்க உதவுகிறார். |
-| Spoken version (for camps, phone, Instagram) | We are Rani Ortho Care. When you come in pain, we relieve it first, then find what is causing it, and help you walk and work again. Call or WhatsApp us to book. | நாங்கள் ராணி ஆர்த்தோ கேர். வலியுடன் வரும்போது, முதலில் வலியைக் குறைத்து, பிறகு அதன் காரணத்தைக் கண்டறிந்து, நீங்கள் மீண்டும் நடக்கவும் வேலை செய்யவும் உதவுகிறோம். முன்பதிவுக்கு அழைக்கவும் அல்லது வாட்ஸ்அப் செய்யவும். |
+| Approach line | Relief first. Root cause next. Then, movement again. | முதலில் வலியைக் குறைப்போம். பிறகு காரணத்தைக் கண்டுபிடிப்போம். பிறகு மீண்டும் நடக்க வைப்போம். |
+| One-liner (problem, solution, result) | Bone, joint or back pain makes every day harder. At Rani Ortho Care, Dr. N. Manikandan eases your pain first, treats the root cause, and helps you move again, with options before surgery. | எலும்பு, மூட்டு, முதுகு வலி இருந்தால் ஒவ்வொரு நாளும் கஷ்டம். ராணி ஆர்த்தோ கேரில், டாக்டர் நா. மணிகண்டன் முதலில் உங்கள் வலியைக் குறைத்து, உண்மையான காரணத்துக்கு சிகிச்சை தருகிறார். ஆபரேஷனுக்கு முன் மற்ற வழிகளையும் பார்த்து, நீங்கள் மீண்டும் நன்றாக நடக்க உதவுகிறார். |
+| Spoken version (for camps, phone, Instagram) | We are Rani Ortho Care. When you come in pain, we relieve it first, then find what is causing it, and help you walk and work again. Call or WhatsApp us to book. | நாங்க ராணி ஆர்த்தோ கேர். வலியோட வந்தா, முதல்ல வலியைக் குறைக்கிறோம். அப்புறம் என்ன காரணம்னு கண்டுபிடிச்சு, நீங்க மறுபடியும் நடக்கவும் வேலை செய்யவும் உதவுறோம். அப்பாயின்ட்மென்ட்டுக்கு போன் இல்லன்னா வாட்ஸ்அப் பண்ணுங்க. |
+
+The spoken version uses spoken Tamil on purpose: it is only for things said aloud (camps, phone, Instagram videos), never for website text.
 
 ---
 
 ## 10. Home page copy, in story order {#home}
 
-This follows the home page message order agreed in the business model, arranged as a story. Headings marked H1 or H2 follow the heading rules; card titles are not headings. The H1 and page title are confirmed against the keyword map before building. The place name appears once in the body copy (in the hero).
+This follows the home page message order agreed in the business model, arranged as a story. Headings marked H1 or H2 follow the heading rules; card titles are not headings. The H1 and page title are confirmed against the keyword map before building. The place name appears once in the body copy (in the hero). The Tamil was approved in the home page review (draft 1, 29 October 2026).
 
 ### 1. Hero (the hero's want, the guide, the direct action)
-- **Eyebrow:** Orthopaedic and physiotherapy clinic · எலும்பியல் மற்றும் பிசியோதெரபி மையம்
+- **Small label:** Orthopaedic and physiotherapy clinic
+  எலும்பு, மூட்டு மற்றும் பிசியோதெரபி கிளினிக்
 - **H1:** Relief from bone and joint pain, so you can move again
-  எலும்பு, மூட்டு வலியிலிருந்து நிவாரணம், மீண்டும் இயல்பாக நடமாட
-- **Lead:** Rani Ortho Care in Karaikudi relieves your pain first, then finds and treats the cause. Care is led by orthopaedic surgeon Dr. N. Manikandan, M.B.B.S., M.S. (Ortho).
-  காரைக்குடி ராணி ஆர்த்தோ கேர், முதலில் உங்கள் வலியைக் குறைத்து, பிறகு அதன் காரணத்தைக் கண்டறிந்து சிகிச்சை அளிக்கிறது. எலும்பியல் அறுவை சிகிச்சை நிபுணர் Dr. நா. மணிகண்டன், M.B.B.S., M.S. (Ortho) தலைமையில் சிகிச்சை.
-- **Buttons:** Book an appointment · WhatsApp us / முன்பதிவு செய்ய · வாட்ஸ்அப் செய்யவும்
-- **Under the buttons:** Tell us where it hurts. We will give you a time. / எங்கே வலிக்கிறது என்று சொல்லுங்கள். நேரத்தைச் சொல்கிறோம்.
+  எலும்பு, மூட்டு வலி குறைய, மீண்டும் நன்றாக நடக்க உதவுகிறோம்
+- **Intro:** Rani Ortho Care in Karaikudi relieves your pain first, then finds and treats the cause. Your doctor is orthopaedic surgeon Dr. N. Manikandan, M.B.B.S., M.S. (Ortho).
+  காரைக்குடி ராணி ஆர்த்தோ கேரில், முதலில் உங்கள் வலியைக் குறைக்கிறோம். பிறகு வலிக்கான உண்மையான காரணத்தைக் கண்டுபிடித்து சிகிச்சை தருகிறோம். உங்களைப் பார்ப்பவர்: எலும்பு, மூட்டு சிறப்பு டாக்டர் நா. மணிகண்டன், M.B.B.S., M.S. (Ortho).
+- **Buttons:** Book an appointment · WhatsApp us
+  அப்பாயின்ட்மென்ட் புக் செய்ய · வாட்ஸ்அப் செய்ய
+- **Under the buttons:** Tell us where it hurts. We will give you an appointment time.
+  எங்கே வலி இருக்கிறது என்று சொல்லுங்கள். டாக்டரைப் பார்க்க அப்பாயின்ட்மென்ட் நேரம் தருகிறோம்.
 - **Fact chips:** Digital X-ray · Physiotherapy · Children's bone care · Open 6 days · 4.9 on Google
+  டிஜிட்டல் எக்ஸ்ரே · பிசியோதெரபி · குழந்தைகள் எலும்பு சிகிச்சை · வாரத்தில் 6 நாள் · Google-ல் 4.9
 
 ### 2. "Does this sound like you?" (the problem, in their words)
-- **H2:** Does this sound like you? · இது உங்களுக்கும் நடக்கிறதா?
-- **Lead:** You are not alone. These are some of the problems we help with every day.
-  நீங்கள் மட்டும் இல்லை. நாங்கள் தினமும் உதவும் சில பிரச்சனைகள் இவை.
-- **Cards:** four to six lines from section 2 (knee pain, told I need surgery, neck pain from desk work, back pain from riding, a fall, a child's foot), each linking to its service page.
-- **Closing line:** Whatever brought you here, the first step is the same: let us ease your pain.
-  எதற்காக வந்திருந்தாலும், முதல் படி ஒன்றுதான்: உங்கள் வலியைக் குறைக்க எங்களை அனுமதியுங்கள்.
+- **H2:** Does this sound like you?
+  உங்களுக்கும் இப்படி இருக்கிறதா?
+- **Intro:** You are not alone. These are some of the problems we see every day.
+  நீங்கள் மட்டும் இல்லை. தினமும் நாங்கள் பார்க்கும் சில பிரச்சனைகள் இவை.
+- **Cards:** six lines from section 2 (knee pain, told I need surgery, neck pain from desk work, back pain from riding, a fall, a child's foot), each linking to its service page.
+- **Closing line:** Whatever brought you here, the first step is the same: easing your pain.
+  எந்தப் பிரச்சனையாக இருந்தாலும், முதல் வேலை ஒன்றுதான்: உங்கள் வலியைக் குறைப்பது.
 
 ### 3. How we help, in 3 steps (the plan)
-- **H2:** How we help, in 3 simple steps · 3 எளிய படிகளில் நாங்கள் உதவும் விதம்
-- **Steps:** section 5 process plan.
-- **Button:** Book an appointment / முன்பதிவு செய்ய
+- **H2:** How we help, in 3 simple steps
+  நாங்கள் எப்படி உதவுகிறோம்: 3 எளிய படிகள்
+- **Steps:** section 5 process plan, with the 3-step graphic.
+- **Button:** Book an appointment
+  அப்பாயின்ட்மென்ட் புக் செய்ய
 
-### 4. What we treat (the existing section)
-- **H2:** Help for bones, joints and spine · எலும்பு, மூட்டு, முதுகுத் தண்டுக்கு உதவி
-- Six tiles and "See all 13 services", as in the sample home page.
+### 4. What we treat
+- **H2:** Help for bones, joints and spine
+  எலும்பு, மூட்டு, முதுகெலும்பு பிரச்சனைகளுக்கு உதவி
+- **Intro:** Find your problem below. Every visit starts with easing your pain, then we look for the cause.
+  உங்கள் பிரச்சனையைக் கீழே பாருங்கள். ஒவ்வொரு முறையும் முதலில் வலியைக் குறைத்து, பிறகு காரணத்தைப் பார்க்கிறோம்.
+- **Tile, knee:** Knee and joint pain · Relief for knee, shoulder and joint pain, and care for arthritis.
+  முட்டி, மூட்டு வலி · முட்டி, தோள்பட்டை, மூட்டு வலிக்கும், மூட்டு வீக்கத்துக்கும் (ஆர்த்ரைடிஸ்) சிகிச்சை.
+- **Tile, back:** Back and neck pain · Treatment for back and neck pain, disc problems and nerve compression.
+  முதுகு, கழுத்து வலி · முதுகு வலி, கழுத்து வலி, டிஸ்க் பிரச்சனை, நரம்பு அழுத்தம் ஆகியவற்றுக்கு சிகிச்சை.
+- **Tile, fractures:** Fractures and injuries · Care for broken bones, sprains, sports injuries and accident injuries.
+  எலும்பு முறிவு, காயங்கள் · எலும்பு உடைதல், சுளுக்கு, விளையாட்டில் ஏற்படும் காயம், விபத்துக் காயங்களுக்கு சிகிச்சை.
+- **Tile, replacement:** Knee and hip replacement · Joint replacement surgery when other treatments are not enough.
+  முட்டி, இடுப்பு மூட்டு மாற்று · மற்ற சிகிச்சைகள் போதாதபோது, மூட்டு மாற்று ஆபரேஷன்.
+- **Tile, physiotherapy:** Physiotherapy and rehab · Exercises and therapy to rebuild strength after injury, surgery or stroke.
+  பிசியோதெரபி · காயம், ஆபரேஷன், பக்கவாதத்துக்குப் பிறகு மீண்டும் பலம் பெற பயிற்சிகளும் சிகிச்சையும்.
+- **Tile, children:** Children's bone care · Treatment for clubfoot and other bone and leg problems in children.
+  குழந்தைகள் எலும்பு சிகிச்சை · குழந்தைகளின் பாத வளைவு (கிளப் ஃபுட்), கால் மற்றும் எலும்பு பிரச்சனைகளுக்கு சிகிச்சை.
+- **Help box:** Not sure what you need? Call or WhatsApp us and tell us where it hurts. We will guide you.
+  எந்த சிகிச்சை வேண்டும் என்று தெரியவில்லையா? போன் அல்லது வாட்ஸ்அப் செய்து எங்கே வலிக்கிறது என்று சொல்லுங்கள். என்ன செய்யலாம் என்று சொல்கிறோம்.
+- **Link:** See all 13 services
+  13 சேவைகளையும் பார்க்க
 
 ### 5. Options before surgery (answers the biggest internal problem)
-- **H2:** Options before surgery · அறுவை சிகிச்சைக்கு முன் மற்ற வழிகள்
-- **Body:** Surgery is not always the first answer. Depending on your condition, we may suggest non-surgical treatment, physiotherapy or regenerative therapies such as PRP. If you want to postpone surgery, we can talk about options to manage your condition safely. When surgery is the right choice, such as knee or hip replacement, we explain why and what to expect.
-  அறுவை சிகிச்சை எப்போதும் முதல் தீர்வு அல்ல. உங்கள் நிலையைப் பொறுத்து, அறுவை சிகிச்சையற்ற சிகிச்சை, பிசியோதெரபி அல்லது PRP போன்ற மீளுருவாக்க சிகிச்சைகளைப் பரிந்துரைக்கலாம். அறுவை சிகிச்சையைத் தள்ளிப்போட விரும்பினால், உங்கள் நிலையைப் பாதுகாப்பாக நிர்வகிக்கும் வழிகளைப் பற்றிப் பேசலாம். முழங்கால் அல்லது இடுப்பு மூட்டு மாற்று போன்ற அறுவை சிகிச்சையே சரியான தேர்வு என்றால், ஏன் என்பதையும் என்ன எதிர்பார்க்கலாம் என்பதையும் விளக்குகிறோம்.
-- **Link:** Ask about your options / உங்களுக்கான வழிகளைப் பற்றிக் கேளுங்கள்
+- **H2:** Options before surgery
+  ஆபரேஷன் மட்டும்தான் ஒரே வழியா?
+- **Text:** Surgery is not always the first answer. Depending on your condition, we may suggest non-surgical treatment, physiotherapy or injection treatments such as PRP. If you want to postpone surgery, we can talk about options to manage your condition safely. When surgery is the right choice, such as knee or hip replacement, we explain why and what to expect.
+  எப்போதும் ஆபரேஷன் தான் முதல் வழி இல்லை. உங்கள் பிரச்சனையைப் பொறுத்து, ஆபரேஷன் இல்லாத சிகிச்சை, பிசியோதெரபி, அல்லது PRP போன்ற ஊசி சிகிச்சைகளைப் பரிந்துரைக்கலாம். ஆபரேஷனைத் தள்ளிப்போட விரும்பினால், அதுவரை பாதுகாப்பாகக் கவனித்துக்கொள்ளும் வழிகளைப் பற்றிப் பேசலாம். முட்டி அல்லது இடுப்பு மூட்டு மாற்று போன்ற ஆபரேஷன் தான் சரியான வழி என்றால், ஏன் என்பதையும் என்ன எதிர்பார்க்கலாம் என்பதையும் தெளிவாகச் சொல்கிறோம்.
+- **Link:** Ask about your options
+  உங்களுக்கு என்ன வழிகள் இருக்கின்றன என்று கேளுங்கள்
 
 ### 6. Prevention at work (a separate audience)
-- **H2:** Work without pain · வலியில்லாமல் வேலை செய்யுங்கள்
-- **Body:** Long hours at a desk, on a bike or lifting loads can lead to neck and back pain. We teach simple habits: how to sit, which chair to use, a few exercises before and after work, and which signs mean you should see a doctor. We also offer posture sessions for companies and worksites.
-  மேசையில் நீண்ட நேரம் வேலை, வண்டி ஓட்டுதல், சுமை தூக்குதல் ஆகியவை கழுத்து, முதுகு வலிக்குக் காரணமாகலாம். எளிய பழக்கங்களைக் கற்றுத் தருகிறோம்: எப்படி உட்கார வேண்டும், எந்த நாற்காலி பயன்படுத்த வேண்டும், வேலைக்கு முன்னும் பின்னும் சில பயிற்சிகள், எந்த அறிகுறி வந்தால் மருத்துவரைப் பார்க்க வேண்டும். நிறுவனங்களுக்கும் பணியிடங்களுக்கும் உடல் நிலைப் பயிற்சி வகுப்புகளும் நடத்துகிறோம்.
-- **Links:** Posture tips · Enquire for your company / உடல் நிலை குறிப்புகள் · உங்கள் நிறுவனத்துக்காக விசாரிக்க
+- **H2:** Work without pain
+  வலி இல்லாமல் வேலை செய்யுங்கள்
+- **Text:** Long hours at a desk, on a bike or lifting loads can lead to neck and back pain. We teach simple habits: how to sit, which chair to use, a few exercises before and after work, and which signs mean you should see a doctor. We also hold posture sessions at companies and worksites.
+  நீண்ட நேரம் கம்ப்யூட்டர் முன் உட்காருவது, பைக் அல்லது வண்டி ஓட்டுவது, பாரம் தூக்குவது ஆகியவற்றால் கழுத்து, முதுகு வலி வரலாம். சில எளிய பழக்கங்களைச் சொல்லித் தருகிறோம்: எப்படி உட்கார வேண்டும், எந்த மாதிரி சேர் பயன்படுத்த வேண்டும், வேலைக்கு முன்னும் பின்னும் செய்ய சில பயிற்சிகள், எந்த அறிகுறி வந்தால் டாக்டரைப் பார்க்க வேண்டும். கம்பெனிகளுக்கும் வேலை செய்யும் இடங்களுக்கும் வந்து பயிற்சி வகுப்புகளும் நடத்துகிறோம்.
+- **Links:** Posture tips · Enquire for your company
+  சரியாக உட்கார சில டிப்ஸ் · உங்கள் கம்பெனிக்காகக் கேட்க
 
 ### 7. Recovery and rehabilitation, and children's bone care
-- **H2:** Help to move again after surgery, a stroke or an injury · அறுவை சிகிச்சை, பக்கவாதம் அல்லது காயத்துக்குப் பின் மீண்டும் இயங்க உதவி
-- **Body:** Physiotherapy rebuilds strength step by step: after surgery, after a stroke, and for children with cerebral palsy who need help with movement and coordination. For babies and children, we also treat clubfoot and other leg and bone problems.
-  பிசியோதெரபி படிப்படியாக வலிமையை மீட்டெடுக்கிறது: அறுவை சிகிச்சைக்குப் பின், பக்கவாதத்துக்குப் பின், மேலும் இயக்கம் மற்றும் ஒருங்கிணைப்பில் உதவி தேவைப்படும் மூளை முடக்குவாதக் குழந்தைகளுக்கு. குழந்தைகளுக்கான கிளப் பாதம் மற்றும் பிற கால், எலும்பு பிரச்சனைகளுக்கும் சிகிச்சை அளிக்கிறோம்.
+- **H2:** Help to move again after surgery, a stroke or an injury
+  ஆபரேஷன், பக்கவாதம் அல்லது காயத்துக்குப் பிறகு மீண்டும் நடக்க உதவி
+- **Text:** Physiotherapy rebuilds strength step by step: after surgery, after a stroke, and for children with cerebral palsy who need help with movement and coordination. For babies and children, we also treat clubfoot and other leg and bone problems.
+  பிசியோதெரபி மூலம் கொஞ்சம் கொஞ்சமாக பலம் திரும்ப உதவுகிறோம்: ஆபரேஷனுக்குப் பிறகு, பக்கவாதத்துக்குப் பிறகு, மேலும் கை கால்களை ஒழுங்காக அசைக்கச் சிரமப்படும் CP (மூளை முடக்குவாதம்) உள்ள குழந்தைகளுக்கு. சிறு குழந்தைகளின் பாத வளைவு (கிளப் ஃபுட்), கால் வளைவு மற்றும் பிற எலும்பு பிரச்சனைகளுக்கும் சிகிச்சை தருகிறோம்.
 
 ### 8. Meet your doctor (the guide: empathy plus authority)
-- **H2:** Meet Dr. N. Manikandan · Dr. நா. மணிகண்டனைச் சந்தியுங்கள்
+- **H2:** Meet Dr. N. Manikandan
+  டாக்டர் நா. மணிகண்டன் பற்றி
 - **Credentials line:** M.B.B.S., M.S. (Ortho) · Government Doctor · Consultant Orthopaedic Surgeon
-- **Body:** Dr. Manikandan believes that life is movement, and movement is life. His aim for every patient is simple: ease the pain, treat the cause, and help them move again, safely. He takes time to explain your condition and your options, in Tamil or English.
-  வாழ்க்கையே இயக்கம், இயக்கமே வாழ்க்கை என்பதே Dr. மணிகண்டனின் நம்பிக்கை. ஒவ்வொரு நோயாளிக்கும் அவரது நோக்கம் எளிது: வலியைக் குறைப்பது, காரணத்திற்குச் சிகிச்சை அளிப்பது, பாதுகாப்பாக மீண்டும் இயங்க உதவுவது. உங்கள் நிலையையும் வழிகளையும் தமிழிலோ ஆங்கிலத்திலோ நேரம் எடுத்து விளக்குகிறார்.
+  M.B.B.S., M.S. (Ortho) · அரசு மருத்துவர் · எலும்புமுறிவு மற்றும் முடநீக்கியல் அறுவைசிகிச்சை நிபுணர் (எலும்பு, மூட்டு சிறப்பு டாக்டர்)
+- **Text:** Dr. Manikandan believes that life is movement, and movement is life. His aim for every patient is simple: ease the pain, treat the cause, and help them move again, safely. He takes time to explain your condition and your options, in Tamil or English.
+  "வாழ்க்கையே இயக்கம், இயக்கமே வாழ்க்கை" என்பது டாக்டர் மணிகண்டனின் நம்பிக்கை. ஒவ்வொரு நோயாளிக்கும் அவர் நோக்கம் எளிது: வலியைக் குறைப்பது, காரணத்துக்கு சிகிச்சை தருவது, பாதுகாப்பாக மீண்டும் நடக்க உதவுவது. உங்கள் பிரச்சனையையும், என்னென்ன வழிகள் இருக்கின்றன என்பதையும் தமிழிலோ ஆங்கிலத்திலோ நேரம் எடுத்து விளக்குகிறார்.
 - **Promises:** the four lines of the agreement plan (section 5).
 
 ### 9. What patients say on Google (social proof)
-- **H2:** What patients say about us · நோயாளிகள் எங்களைப் பற்றி
+- **H2:** What patients say about us
+  நோயாளிகள் எங்களைப் பற்றி என்ன சொல்கிறார்கள்
 - **Rating line:** Rated 4.9 out of 5 on Google, from 59 reviews
-  Google-இல் 59 மதிப்பீடுகளில் 5-க்கு 4.9
+  Google-ல் 5-க்கு 4.9 ரேட்டிங் (59 ரிவ்யூக்கள்)
 - **Small text under it:** As of 28 October 2026. Ratings and reviews are from Google.
-  28 அக்டோபர் 2026 நிலவரப்படி. மதிப்பீடுகள் Google-இல் இருந்து.
-- **Body:** Patients and families share their experience of the clinic on our Google page, in their own words.
-  நோயாளிகளும் குடும்பத்தினரும் கிளினிக் பற்றிய தங்கள் அனுபவத்தை, தங்கள் சொந்த வார்த்தைகளில், எங்கள் Google பக்கத்தில் பகிர்கிறார்கள்.
+  28 அக்டோபர் 2026 நிலவரப்படி. ரேட்டிங்கும் ரிவ்யூக்களும் Google-ல் இருந்து.
+- **Text:** Patients and families share their experience of the clinic on our Google page, in their own words.
+  எங்கள் கிளினிக்கில் சிகிச்சை பெற்றவர்களும் அவர்கள் குடும்பத்தினரும் தங்கள் அனுபவத்தை Google-ல் அவர்களே எழுதியிருக்கிறார்கள்.
 - **Buttons:** Read reviews on Google · Share your experience
-  Google-இல் மதிப்பீடுகளைப் படிக்க · உங்கள் அனுபவத்தைப் பகிருங்கள்
+  Google-ல் ரிவ்யூக்களைப் படிக்க · உங்கள் அனுபவத்தை எழுத
 - **Rules for this section:**
   - The rating and count are typed in by hand with the date, and updated every month during the SEO routine. Never round up.
   - Stars are drawn as a graphic, and the rating is also written as text for screen readers.
@@ -297,37 +334,54 @@ This follows the home page message order agreed in the business model, arranged 
   - Placed after "Meet your doctor" so the proof sits next to the guide.
 
 ### 10. Free medical camps (community, a trust story)
-- **H2:** Care for our community · நம் சமூகத்திற்கான சேவை
-- **Body:** We hold free medical camps so that more people can get their bone and joint problems checked, close to home. Follow us on Instagram to know about the next camp.
-  வீட்டுக்கு அருகிலேயே அதிகமானோர் தங்கள் எலும்பு, மூட்டு பிரச்சனைகளைப் பரிசோதித்துக்கொள்ள, இலவச மருத்துவ முகாம்களை நடத்துகிறோம். அடுத்த முகாம் பற்றி அறிய Instagram-இல் எங்களைப் பின்தொடருங்கள்.
+- **H2:** Care for our community
+  நம் ஊர் மக்களுக்கான இலவச மருத்துவ முகாம்கள்
+- **Text:** We hold free medical camps so that more people can get their bone and joint problems checked, close to home. Follow us on Instagram to know about the next camp.
+  வீட்டுக்கு அருகிலேயே அதிகம் பேர் தங்கள் எலும்பு, மூட்டு பிரச்சனைகளைப் பரிசோதித்துக்கொள்ள, இலவச மருத்துவ முகாம்கள் நடத்துகிறோம். அடுத்த முகாம் எப்போது, எங்கே என்று தெரிந்துகொள்ள Instagram-ல் எங்களை ஃபாலோ செய்யுங்கள்.
 - Add places, dates and photos when they are confirmed.
 
 ### 11. Stakes and success, then the final call to action
-- **H2:** You don't have to live with pain · வலியுடன் வாழ வேண்டிய அவசியம் இல்லை
-- **Body:** Many bone and joint problems are simpler to treat when they are found early. Take the first step today, and get back to the things you love: a morning walk, a full day's work, time with your family.
-  பல எலும்பு, மூட்டு பிரச்சனைகளை ஆரம்பத்திலேயே கண்டறிந்தால் சிகிச்சை எளிதாக இருக்கும். இன்றே முதல் அடியை எடுத்து வையுங்கள். நீங்கள் விரும்புவதற்கு மீண்டும் திரும்புங்கள்: காலை நடை, முழு நாள் வேலை, குடும்பத்துடன் நேரம்.
+- **H2:** You don't have to live with pain
+  வலியைப் பொறுத்துக்கொண்டு வாழ வேண்டியதில்லை
+- **Text:** Many bone and joint problems are simpler to treat when they are found early. Take the first step today, and get back to the things you love: a morning walk, a full day's work, time with your family.
+  பல எலும்பு, மூட்டு பிரச்சனைகளை ஆரம்பத்திலேயே கவனித்தால் சிகிச்சை எளிது. இன்றே முதல் அடி எடுத்து வையுங்கள். உங்களுக்குப் பிடித்தவற்றுக்கு மீண்டும் திரும்புங்கள்: காலை நடை, முழு நாள் வேலை, குடும்பத்துடன் நேரம்.
 - **Buttons:** Book an appointment · Call now · WhatsApp us
+  அப்பாயின்ட்மென்ட் புக் செய்ய · இப்போதே போன் செய்ய · வாட்ஸ்அப் செய்ய
 - **Under the buttons:** today's timings and the address, the same as on Google.
 
 ### 12. Questions people ask (short answers first, 40 to 60 words, for Google and AI assistants)
 
 **How do I book an appointment?**
-Call or WhatsApp us on +91 94445 53070 and tell us where it hurts. We will give you a time to visit. The clinic is open Monday to Saturday, 9 AM to 10 PM, and on Sunday from 10 AM to 12 PM. You can also visit us during these hours.
+Call or WhatsApp us on +91 94445 53070 and tell us where it hurts. We will give you an appointment time to see the doctor. The clinic is open Monday to Saturday, 9 AM to 10 PM, and on Sunday from 10 AM to 12 PM. You can also visit us during these hours.
 
-**முன்பதிவு செய்வது எப்படி?**
-+91 94445 53070 என்ற எண்ணில் அழைத்தோ வாட்ஸ்அப் செய்தோ, எங்கே வலிக்கிறது என்று சொல்லுங்கள். வருவதற்கான நேரத்தைச் சொல்கிறோம். கிளினிக் திங்கள் முதல் சனி வரை காலை 9 முதல் இரவு 10 வரையும், ஞாயிறு காலை 10 முதல் மதியம் 12 வரையும் திறந்திருக்கும். இந்த நேரங்களில் நேரடியாகவும் வரலாம்.
+**அப்பாயின்ட்மென்ட் புக் செய்வது எப்படி?**
++91 94445 53070 என்ற நம்பருக்கு போன் அல்லது வாட்ஸ்அப் செய்து, எங்கே வலி இருக்கிறது என்று சொல்லுங்கள். டாக்டரைப் பார்க்க அப்பாயின்ட்மென்ட் நேரம் தருகிறோம். கிளினிக் திங்கள் முதல் சனி வரை காலை 9 முதல் இரவு 10 வரையும், ஞாயிறு காலை 10 முதல் மதியம் 12 வரையும் திறந்திருக்கும். இந்த நேரத்தில் நேரிலும் வரலாம்.
 
 **Do I always need surgery for knee pain?**
-No, not always. Many people with knee pain are treated with medicines, physiotherapy, exercises or therapies such as PRP. Surgery such as knee replacement is considered when other treatments are not enough. Dr. Manikandan examines your knee and explains every option before you decide.
+No, not always. Many people with knee pain are treated with medicines, physiotherapy, exercises or injection treatments such as PRP. Surgery such as knee replacement is considered when other treatments are not enough. Dr. Manikandan examines your knee and explains every option before you decide.
 
-**முழங்கால் வலிக்கு எப்போதும் அறுவை சிகிச்சை தேவையா?**
-இல்லை, எப்போதும் அல்ல. முழங்கால் வலி உள்ள பலருக்கு மருந்துகள், பிசியோதெரபி, பயிற்சிகள் அல்லது PRP போன்ற சிகிச்சைகள் அளிக்கப்படுகின்றன. மற்ற சிகிச்சைகள் போதாதபோது மட்டுமே மூட்டு மாற்று போன்ற அறுவை சிகிச்சை பரிசீலிக்கப்படுகிறது. நீங்கள் முடிவெடுக்கும் முன், Dr. மணிகண்டன் பரிசோதித்து எல்லா வழிகளையும் விளக்குகிறார்.
+**முட்டி வலிக்கு எப்போதும் ஆபரேஷன் தேவையா?**
+இல்லை, எப்போதும் இல்லை. முட்டி வலி உள்ள பலருக்கு மருந்து, பிசியோதெரபி, பயிற்சிகள் அல்லது PRP போன்ற ஊசி சிகிச்சைகள் தரப்படுகின்றன. மற்ற சிகிச்சைகள் போதாதபோது தான் மூட்டு மாற்று ஆபரேஷன் பற்றி யோசிக்கப்படும். நீங்கள் முடிவு எடுப்பதற்கு முன், டாக்டர் மணிகண்டன் உங்கள் முட்டியைப் பரிசோதித்து எல்லா வழிகளையும் விளக்குகிறார்.
 
 **Can I get an X-ray at the clinic?**
 Yes. Rani Ortho Care has a digital X-ray facility, so if the doctor needs an X-ray to find the cause of your pain or check a fracture, it can be taken at the clinic. Please bring any earlier X-rays, scans and prescriptions with you.
 
 **கிளினிக்கிலேயே எக்ஸ்ரே எடுக்க முடியுமா?**
-ஆம். ராணி ஆர்த்தோ கேரில் டிஜிட்டல் எக்ஸ்ரே வசதி உள்ளது. வலியின் காரணத்தைக் கண்டறிய அல்லது எலும்பு முறிவைப் பார்க்க மருத்துவருக்கு எக்ஸ்ரே தேவைப்பட்டால், கிளினிக்கிலேயே எடுக்கலாம். முன்பு எடுத்த எக்ஸ்ரே, ஸ்கேன், மருந்துச் சீட்டுகளைக் கொண்டு வாருங்கள்.
+ஆம். ராணி ஆர்த்தோ கேரில் டிஜிட்டல் எக்ஸ்ரே வசதி இருக்கிறது. வலிக்கான காரணத்தைக் கண்டுபிடிக்க அல்லது எலும்பு உடைந்திருக்கிறதா என்று பார்க்க டாக்டருக்கு எக்ஸ்ரே தேவைப்பட்டால், கிளினிக்கிலேயே எடுக்கலாம். முன்பு எடுத்த எக்ஸ்ரே, ஸ்கேன், மருந்துச் சீட்டு இருந்தால் கொண்டு வாருங்கள்.
+
+### 13. Header, footer and phone bar (on every page)
+- **Menu:** Home · Services · Doctor · Contact · Menu
+  முகப்பு · சேவைகள் · டாக்டர் · தொடர்புக்கு · மெனு
+- **Call buttons:** Call now · Call +91 94445 53070
+  போன் செய்ய · போன் செய்ய +91 94445 53070
+- **Open status:** Open now · Closed now · Today's timings
+  இப்போது திறந்திருக்கிறது · இப்போது மூடியிருக்கிறது · இன்றைய நேரம்
+- **Timings:** Mon to Sat 9 AM to 10 PM · Sun 10 AM to 12 PM
+  திங்கள் முதல் சனி: காலை 9 முதல் இரவு 10 வரை · ஞாயிறு: காலை 10 முதல் மதியம் 12 வரை
+- **Footer titles:** Visit us · Call or WhatsApp · Timings · Get directions
+  எங்கள் முகவரி · போன் அல்லது வாட்ஸ்அப் · நேரம் · வழி (மேப்)
+- **Phone bar:** Call · WhatsApp · Directions
+  போன் · வாட்ஸ்அப் · வழி
 
 ---
 
@@ -353,19 +407,19 @@ Every service page tells the same short story, so visitors always know where to 
 - **H1:** Knee pain treatment, so you can walk with comfort again
 - **Problem:** Does your knee hurt when you climb stairs, sit on the floor or stand up from a chair? Is it stiff in the morning, or swollen by evening?
 - **Empathy:** Knee pain can make even a short walk feel long. We start by easing it.
-- **How we help:** We relieve your pain first. Then Dr. Manikandan examines your knee and, if needed, takes a digital X-ray to find the cause, such as arthritis, a ligament or meniscus injury, or wear in the joint. Your plan may include medicines, physiotherapy, exercises for home, or therapies such as PRP.
+- **How we help:** We relieve your pain first. Then Dr. Manikandan examines your knee and, if needed, takes a digital X-ray to find the cause, such as arthritis, a ligament or meniscus injury, or wear in the joint. Your plan may include medicines, physiotherapy, exercises for home, or injection treatments such as PRP.
 - **Options:** If the joint is badly worn and other treatments are not enough, knee replacement may be the right choice. We explain why, and what recovery involves.
 - **Stakes:** Knee pain left alone can make walking harder over time.
 - **Success:** Our aim is to help you walk, climb stairs and get through your day with comfort.
 
-### உதாரணம்: முழங்கால் வலி (Tamil)
-- **H1:** முழங்கால் வலி சிகிச்சை, மீண்டும் சௌகரியமாக நடக்க
-- **பிரச்சனை:** படி ஏறும்போது, தரையில் உட்காரும்போது, நாற்காலியிலிருந்து எழும்போது முழங்கால் வலிக்கிறதா? காலையில் இறுக்கமாகவோ, மாலைக்குள் வீக்கமாகவோ இருக்கிறதா?
-- **புரிதல்:** முழங்கால் வலி, சிறிய நடையைக்கூட நீண்டதாக உணர வைக்கும். அதனால் முதலில் வலியைக் குறைக்கிறோம்.
-- **நாங்கள் உதவும் விதம்:** முதலில் உங்கள் வலியைக் குறைக்கிறோம். பிறகு Dr. மணிகண்டன் உங்கள் முழங்காலைப் பரிசோதித்து, தேவைப்பட்டால் டிஜிட்டல் எக்ஸ்ரே எடுத்து, மூட்டு வீக்கம், தசைநார் அல்லது மெனிஸ்கஸ் காயம், மூட்டுத் தேய்மானம் போன்ற காரணத்தைக் கண்டறிகிறார். உங்கள் திட்டத்தில் மருந்துகள், பிசியோதெரபி, வீட்டுப் பயிற்சிகள் அல்லது PRP போன்ற சிகிச்சைகள் இருக்கலாம்.
-- **வழிகள்:** மூட்டு அதிகம் தேய்ந்து, மற்ற சிகிச்சைகள் போதாதபோது, மூட்டு மாற்று அறுவை சிகிச்சை சரியான தேர்வாக இருக்கலாம். ஏன் என்பதையும், குணமடைதல் எப்படி இருக்கும் என்பதையும் விளக்குகிறோம்.
-- **கவனிக்க:** கவனிக்காமல் விடும் முழங்கால் வலி, காலப்போக்கில் நடப்பதைக் கடினமாக்கலாம்.
-- **நோக்கம்:** நீங்கள் சௌகரியமாக நடக்கவும், படி ஏறவும், அன்றாட வேலைகளைச் செய்யவும் உதவுவதே எங்கள் நோக்கம்.
+### உதாரணம்: முட்டி வலி (Tamil)
+- **H1:** முட்டி வலிக்கு சிகிச்சை, மீண்டும் சிரமம் இல்லாமல் நடக்க
+- **பிரச்சனை:** படி ஏறும்போது, தரையில் உட்காரும்போது, சேரிலிருந்து எழும்போது முட்டி வலிக்கிறதா? காலையில் இறுக்கமாக இருக்கிறதா, சாயங்காலம் வீங்குகிறதா?
+- **புரிதல்:** முட்டி வலி இருந்தால், கொஞ்ச தூரம் நடப்பதுகூட ரொம்ப தூரம் போல இருக்கும். அதனால் முதலில் வலியைக் குறைக்கிறோம்.
+- **நாங்கள் எப்படி உதவுகிறோம்:** முதலில் உங்கள் வலியைக் குறைக்கிறோம். பிறகு டாக்டர் மணிகண்டன் உங்கள் முட்டியைப் பரிசோதித்து, தேவைப்பட்டால் எக்ஸ்ரே எடுத்து, காரணத்தைக் கண்டுபிடிக்கிறார்: மூட்டு வீக்கம் (ஆர்த்ரைடிஸ்), ஜவ்வு கிழிவு (லிகமென்ட் அல்லது மெனிஸ்கஸ் காயம்), அல்லது மூட்டுத் தேய்மானம். உங்கள் திட்டத்தில் மருந்து, பிசியோதெரபி, வீட்டில் செய்ய பயிற்சிகள், அல்லது PRP போன்ற ஊசி சிகிச்சைகள் இருக்கலாம்.
+- **வழிகள்:** மூட்டு அதிகம் தேய்ந்து, மற்ற சிகிச்சைகள் போதாதபோது, மூட்டு மாற்று ஆபரேஷன் சரியான வழியாக இருக்கலாம். ஏன் என்பதையும், ஆபரேஷனுக்குப் பிறகு குணமாக என்ன செய்ய வேண்டும் என்பதையும் தெளிவாகச் சொல்கிறோம்.
+- **கவனிக்க:** முட்டி வலியை அப்படியே விட்டுவிட்டால், நாளடைவில் நடப்பது கஷ்டமாகலாம்.
+- **நோக்கம்:** நீங்கள் சிரமம் இல்லாமல் நடக்கவும், படி ஏறவும், அன்றாட வேலைகளைச் செய்யவும் உதவுவதே எங்கள் நோக்கம்.
 
 ---
 
@@ -374,6 +428,7 @@ Every service page tells the same short story, so visitors always know where to 
 ### Rules used in this framework
 - The patient is the hero; the clinic is the guide. Write "you" more than "we".
 - Short sentences and everyday words, in both languages. Medical terms get a plain explanation the first time.
+- Tamil follows Style A from the Tamil style guide: simple written Tamil, with the English words people actually say written in Tamil letters.
 - Outcomes are described as aims ("our aim is", "may", "can help"), never as promises.
 - No "cure", "permanent", "guaranteed", "best", "No. 1", no fixed timeframes, no comparisons with other doctors.
 - Stakes are gentle, one line per page at most.
@@ -386,15 +441,18 @@ Every service page tells the same short story, so visitors always know where to 
 |---|---|---|---|
 | 1 | Where are surgeries done (clinic or partner hospital)? | **Open:** being checked | "Options before surgery" and the joint replacement and spine pages wait for this |
 | 2 | Can we say he explains "in Tamil or English"? | **Yes**, he does both | Used in the guide, the doctor section and the credibility table |
-| 3 | Can we offer posture sessions for companies now? | **Yes**, offer it now | "We also offer posture sessions for companies and worksites" stays, with an "Enquire for your company" link |
+| 3 | Can we offer posture sessions for companies now? | **Yes**, offer it now | "We also hold posture sessions at companies and worksites" stays, with an "Enquire for your company" link |
 | 4 | Should the Google rating be shown? | **Yes**, as its own section | Added as home page part 9, with the rules listed there |
 | 5 | Which success line? | **B:** "time with your family" | Used in the success section and the home page closing section |
+| 6 | Which style of Tamil? | **Style A:** simple written Tamil | All Tamil rewritten in v0.3; home page approved after the review PDF |
 
-**About question 5.** The "success" part of StoryBrand paints a picture of the patient's life after treatment. The first draft said "time with your family". Option B, "time with your family", was chosen because it includes older patients, working people and parents alike.
+**About question 5.** The "success" part of StoryBrand paints a picture of the patient's life after treatment. The first draft said "time with your grandchildren". Option B, "time with your family", was chosen because it includes older patients, working people and parents alike.
 
 ### Still to confirm with Dr. Manikandan
 1. Where surgeries are done (question 1).
-2. His registration number, years of experience, and any memberships he wants shown.
-3. Names or number of companies already coached, if they agree to be named.
-4. Free camp details: places, dates, photos.
-5. Approval of the whole framework, and of the Tamil text after the native-speaker review.
+2. "PRP போன்ற ஊசி சிகிச்சைகள்" (injection treatments such as PRP) in place of "regenerative therapies": is it accurate for PRP, GFC and BMAC?
+3. The hero says patients are seen by him ("உங்களைப் பார்ப்பவர்"). Is that right?
+4. His registration number, years of experience, and any memberships he wants shown.
+5. Names or number of companies already coached, if they agree to be named.
+6. Free camp details: places, dates, photos.
+7. Approval of the whole framework, and of the Tamil text after the native-speaker check (UAT).
