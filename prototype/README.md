@@ -8,6 +8,7 @@ The project's single reference page for Rani Ortho Care. Dr. N. Manikandan and t
 1. **About:** the clinic, the doctor, contact details, hours (from Google), services, online presence
 2. **Business core:** mission, philosophy, care journey, the eight pillars, website goals
 3. **Assets:** logos (with download links), print materials, brand colours, map QR, what is still needed
+4. **Design system:** the mood board for the website (`design-system.html`), matching `DESIGN.md`. Unlike sections 1 to 3, it uses the real website colours and fonts.
 
 ## Updating it
 - **All content is in `content.js`.** Each text has `en` and `ta`. Change it there; there's no need to touch `index.html`.
@@ -32,7 +33,8 @@ To update the link after changing the prototype:
 
 ## Files
 - `index.html`: layout, styles and interface labels
-- `content.js`: all content (English and Tamil)
+- `content.js`: all content for sections 1 to 3 (English and Tamil)
+- `design-system.html`: section 4, the design system mood board (a standalone page)
 - `img/`: logo copies cropped to their artwork for display (the originals are in `brand-assets/logo/`)
 - `previews/`: JPEG previews of the print PDFs
 - `build-artifact.py`: builds the private-link version in `dist/`

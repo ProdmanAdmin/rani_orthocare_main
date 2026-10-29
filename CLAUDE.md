@@ -17,6 +17,7 @@ The full business model, in English and Tamil, is in **`docs/business-model.md`*
   6. regenerative therapies: PRP, GFC, BMAC, cartilage regeneration
   7. non-surgical management, for people avoiding or postponing surgery
   8. patient safety first
+- **Area and audience:** about 15 to 20 km around the clinic. Mainly older patients with walking difficulty, people needing physiotherapy or orthopaedic surgery, and their families, many reading Tamil and English. Design for clarity over style: see `DESIGN.md`.
 - **Positioning:** options before surgery, prevention for working people, and free medical camps as the community story. The site leads with relief and movement, not with surgery.
 - **Claims:** the business model records the doctor's own words. Public copy uses the safe wording in `docs/business-model.md` section 6. Never write "permanent", "cure" or "near-curative", or give fixed timeframes such as "delay surgery for 5 years". Final medical wording is approved by the doctor.
 - **Brand facts and assets:** `docs/business-context.md` (facts, hours, open questions) and `brand-assets/` (logo, print materials). Opening hours always follow the Google Business Profile. Justdial is not used as a source.
@@ -41,7 +42,7 @@ Stack: Next.js 15 (App Router, JavaScript), React 19, Tailwind CSS 3. No databas
 | `docs/design-references.md` | What we took from the 7 reference websites |
 | `SEO-PLAYBOOK.md` | **The complete SEO/AEO process**: audit method and scoring, keyword library, growth plan, the 10 implementation tasks, testing, go-live, monthly routine, lessons learned. Do not re-plan SEO from scratch: follow the playbook. |
 | `README.md` | Setup, where every setting lives, first-day checklist, deploy steps |
-| `DESIGN.md` | Design tokens, components, accessibility rules (fill it in when the design system arrives) |
+| `DESIGN.md` | **The design system:** colours, fonts (Atkinson Hyperlegible Next and Noto Sans Tamil), type scale and layout for mobile, tablet and desktop, components, accessibility. The visual mood board is `prototype/design-system.html` |
 | `HANDOFF.md` | Where the last session stopped. **Read at session start, update at session end.** |
 | `docs/templates/` | Audit report, testing guide, progress report, keyword CSV templates for client documents |
 

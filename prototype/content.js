@@ -4,7 +4,7 @@
 // Sources: docs/business-context.md and docs/business-model.md. Keep these in step with those files.
 
 window.CONTENT = {
-  updated: "2026-10-28",
+  updated: "2026-10-29",
 
   clinic: {
     name: { en: "Rani Ortho Care", ta: "ராணி ஆர்த்தோ கேர்" },
@@ -176,6 +176,7 @@ window.CONTENT = {
     { en: "Free medical camp details: dates, places, photos", ta: "இலவச மருத்துவ முகாம் விவரங்கள்: தேதிகள், இடங்கள், புகைப்படங்கள்" },
     { en: "Google Business Profile link and owner access", ta: "Google வணிகப் பக்க இணைப்பு மற்றும் அணுகல்" },
     { en: "Doctor's approval of the website wording for medical claims", ta: "மருத்துவ வாசகங்களுக்கு மருத்துவரின் ஒப்புதல்" },
-    { en: "Mood board and design system (next step)", ta: "மூட் போர்டு மற்றும் வடிவமைப்பு முறை (அடுத்த கட்டம்)" },
+    { en: "Approval of the design system (section 4) by Dr. N. Manikandan", ta: "வடிவமைப்பு முறைக்கு (பகுதி 4) மருத்துவரின் ஒப்புதல்" },
+    { en: "A white version of the logo for dark backgrounds", ta: "அடர் பின்னணிக்கான வெள்ளை லோகோ" },
   ],
 };

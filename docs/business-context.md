@@ -34,6 +34,12 @@ Nothing here goes into `lib/site.js` until it is confirmed.
 
 ---
 
+## Service area and audience (2026-10-29)
+
+- **Brand area:** about **15 to 20 km around the clinic** in Karaikudi. This is the area for local SEO, the Areas We Serve page and brand building.
+- **Nearby places to confirm with a map before use:** Devakottai, Kottaiyur, Kandanur, Puduvayal, Pallathur, Kanadukathan, Ariyakudi, Sakkottai. These are candidates only; check each distance first.
+- **Audience:** people with bone, joint and spine problems. Mainly older patients who find walking hard or uncomfortable, people needing physiotherapy, people needing orthopaedic surgery, and their families. Many are biliterate (Tamil and English); some read one language better. The design system (`DESIGN.md`) is built for them.
+
 ## 2. Services (from the printed "Available Services" sheet)
 
 The clinic's own heading for this list is "Trusted Care for Bones, Joints & Spine Problems". The Tamil equivalent is எலும்பு, மூட்டு மற்றும் முதுகுத் தண்டு பிரச்சனைகளுக்கு நம்பகமான பராமரிப்பு.
