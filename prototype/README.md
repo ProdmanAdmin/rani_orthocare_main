@@ -1,8 +1,8 @@
 # Project Prototype
 
-The project's single reference page for Rani Ortho Care. Dr. N. Manikandan and the team use it to see the clinic's details, business core and assets in one place, in English and Tamil. New sections are added step by step: next come the mood board, the design system and the website look and feel.
+The project's single reference page for Rani Ortho Care. Dr. N. Manikandan and the team use it to see the clinic's details, business core and assets in one place, in English and Tamil. New sections are added step by step: the design system is section 4, and the website look and feel comes next.
 
-**This is not the website.** It is a static page outside the Next.js app, so it is never deployed with the site. Its colours are **temporary**, taken from the brand assets. The website's palette comes from the mood board, and it is not recorded in `DESIGN.md` yet.
+**This is not the website.** It is a static page outside the Next.js app, so it is never deployed with the site. Sections 1 to 3 use **temporary** colours taken from the brand assets. The website's real palette and fonts are in `DESIGN.md` and section 4.
 
 ## Sections
 1. **About:** the clinic, the doctor, contact details, hours (from Google), services, online presence
@@ -25,7 +25,7 @@ python3 -m http.server 4173 --bind 127.0.0.1
 Then open http://localhost:4173/prototype/. In Claude Code, the `prototype` entry in `.claude/launch.json` starts the same server.
 
 ## Private link (for the doctor)
-Published privately at https://claude.ai/artifact/3Z3pqhqPBAs97eMZKTuXyx. Only the owner can open it until it is shared from the page's **Share** menu. Each section has its own link, ending in `#about`, `#business` or `#assets`.
+Published at https://claude.ai/artifact/3Z3pqhqPBAs97eMZKTuXyx and shared as "anyone with the link". Sections 1 to 3 have their own links ending in `#about`, `#business` or `#assets`; section 4 is `design-system.html` next to it.
 
 To update the link after changing the prototype:
 1. Run `python3 -I prototype/build-artifact.py`. It writes `prototype/dist/index.html` (not committed) and lists the files to publish.
