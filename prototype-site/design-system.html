@@ -109,7 +109,7 @@
     @media (max-width: 1023px) { nav.proto { order: 3; width: 100%; margin-left: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); } nav.proto a { justify-content: center; text-align: center; padding: 6px; font-size: 15px; line-height: 1.25; } }
 
     /* Cover */
-    .cover { background: linear-gradient(180deg, var(--blue-tint), var(--white)); padding-block: var(--section); border-bottom: 1px solid var(--line); }
+    .cover { background: radial-gradient(40% 70% at 85% 35%, rgba(61, 181, 74, .16), transparent 70%), radial-gradient(35% 60% at 70% 90%, rgba(60, 89, 168, .14), transparent 70%), linear-gradient(180deg, var(--blue-tint), var(--white)); padding-block: var(--section); border-bottom: 1px solid var(--line); }
     .cover-grid { display: grid; gap: 32px; align-items: center; }
     @media (min-width: 1024px) { .cover-grid { grid-template-columns: 7fr 5fr; } }
     .cover h1 { font-size: var(--fs-display); line-height: 1.15; font-weight: 800; letter-spacing: -.01em; }
@@ -146,7 +146,7 @@
     .bands-demo { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: grid; max-width: 560px; }
     .bands-demo div { padding: 12px 16px; font-weight: 700; font-size: 16px; color: var(--ink); border-bottom: 1px solid rgba(20, 35, 74, .06); }
     .why-sw { height: 48px; border-radius: 12px; display: block; }
-    footer.page { border-top: 6px solid var(--spine); }
+    footer.page { border-top: 6px solid var(--spine); background: linear-gradient(135deg, #14234A, #1E3263); }
     .role-card.c30 { border-top-color: var(--navy); }
     .role-card.c10 { border-top-color: var(--green); }
     .role-card .pct { font-size: var(--fs-h2); font-weight: 800; color: var(--ink); line-height: 1; }
@@ -222,10 +222,43 @@
     .btn-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 10px 24px; border-radius: 12px; font-size: var(--fs-btn); font-weight: 700; line-height: 1.2; text-decoration: none; border: 2px solid transparent; cursor: pointer; font-family: inherit; text-align: center; }
     .btn .ico-sm { width: 24px; height: 24px; }
-    .btn-primary { background: var(--green); color: var(--white); }
-    .btn-primary:hover { background: var(--green-hover); }
-    .btn-secondary { background: var(--white); color: var(--blue-deep); border-color: var(--blue-deep); }
-    .btn-secondary:hover { background: var(--blue-tint); }
+    .btn { position: relative; overflow: hidden; isolation: isolate; transition: transform .2s cubic-bezier(.2,.7,.2,1), box-shadow .2s cubic-bezier(.2,.7,.2,1); }
+    .btn-primary { background: var(--green); background-image: linear-gradient(180deg, #228639 0%, #1B7030 100%); color: var(--white); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .28), 0 6px 16px rgba(27, 112, 48, .28); }
+    .btn-primary::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, .32) 50%, transparent 70%); transform: translateX(-120%); transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+    .btn-primary:hover, .btn-primary.is-hover { background-image: linear-gradient(180deg, #1F7D36 0%, #155A26 100%); transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .28), 0 10px 22px rgba(27, 112, 48, .32); }
+    .btn-primary:hover::after { transform: translateX(120%); }
+    .btn-primary.is-hover::after { transform: translateX(0); }
+    .btn:active, .btn.is-press { transform: scale(.98); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 2px 6px rgba(27, 112, 48, .25); }
+    .btn.is-focus { outline: 3px solid var(--navy); outline-offset: 2px; box-shadow: 0 0 0 2px var(--white), inset 0 1px 0 rgba(255, 255, 255, .28); }
+    .btn-secondary { background: rgba(255, 255, 255, .9); color: var(--blue-deep); border-color: var(--blue-deep); box-shadow: 0 1px 2px rgba(20, 35, 74, .06), 0 4px 12px rgba(20, 35, 74, .06); }
+    .btn-secondary:hover { background: var(--blue-tint); transform: translateY(-2px); }
+    .states { display: grid; gap: 16px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    @media (min-width: 1024px) { .states { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    .states > div { display: grid; gap: 10px; justify-items: start; align-content: start; padding: 12px; border-radius: 14px; background: var(--band-sky); min-width: 0; }
+    .bsizes { display: grid; gap: var(--gap); }
+    @media (min-width: 1024px) { .bsizes { grid-template-columns: 0.85fr 1fr 1.25fr; } }
+    .bsize { border: 1px solid var(--line); border-radius: 16px; padding: 16px; display: grid; gap: 14px; align-content: start; background: var(--white); min-width: 0; }
+    .bs-head { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; color: var(--ink); }
+    .bs-head .ico-sm { color: var(--blue); }
+    .bs-frame { display: grid; gap: 12px; padding: 14px; border-radius: 14px; background: var(--band-sky); border: 2px dashed #B9CCEB; overflow-x: auto; }
+    .bs-frame.row { display: flex; flex-wrap: wrap; }
+    .bs-spec { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 16px; }
+    .bs-spec dt { color: var(--muted); font-weight: 700; }
+    .bs-spec dd { margin: 0; color: var(--ink); font-weight: 700; }
+    .fx { height: 72px; border-radius: 14px; display: block; }
+    .glass-demo { margin-top: 8px; border-radius: 20px; padding: 28px 20px; display: grid; gap: 16px; justify-items: start; background: radial-gradient(50% 70% at 20% 30%, rgba(61, 181, 74, .45), transparent 70%), radial-gradient(50% 70% at 80% 70%, rgba(60, 89, 168, .55), transparent 70%), linear-gradient(135deg, #B9CCEB, #DCE7F7); }
+    .glass-card { display: flex; gap: 12px; align-items: center; background: rgba(255, 255, 255, .86); -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%); border: 1px solid rgba(255, 255, 255, .7); border-radius: 16px; padding: 14px 18px; box-shadow: 0 2px 4px rgba(20, 35, 74, .06), 0 12px 28px rgba(20, 35, 74, .12); }
+    .glass-card b { display: block; color: var(--ink); }
+    .glass-cap { background: rgba(255, 255, 255, .86); border-radius: 12px; padding: 10px 14px; font-size: 16px; color: var(--body); max-width: 60ch; }
+    .lift-demo { position: relative; overflow: hidden; display: grid; gap: 6px; padding: 18px; border-radius: 18px; border: 1px solid var(--line); background: var(--white); box-shadow: 0 1px 2px rgba(20, 35, 74, .06), 0 4px 12px rgba(20, 35, 74, .06); transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s cubic-bezier(.2,.7,.2,1); cursor: default; }
+    .lift-demo b { color: var(--ink); }
+    .lift-demo::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg, var(--blue), var(--spine)); transform: scaleX(0); transform-origin: left; transition: transform .35s cubic-bezier(.2,.7,.2,1); }
+    .lift-demo:hover, .lift-demo:focus-visible { transform: translateY(-4px); box-shadow: 0 2px 4px rgba(20, 35, 74, .06), 0 12px 28px rgba(20, 35, 74, .12); }
+    .lift-demo:hover::before, .lift-demo:focus-visible::before { transform: scaleX(1); }
+    .sh-row { display: flex; gap: 16px; }
+    .sh-row span { width: 72px; height: 56px; border-radius: 14px; background: var(--white); display: grid; place-items: center; font-weight: 700; color: var(--ink); }
+    .sh1 { box-shadow: 0 1px 2px rgba(20, 35, 74, .06), 0 4px 12px rgba(20, 35, 74, .06); }
+    .sh2 { box-shadow: 0 2px 4px rgba(20, 35, 74, .06), 0 12px 28px rgba(20, 35, 74, .12); }
     .btn-link { color: var(--blue-deep); font-weight: 700; font-size: var(--fs-btn); display: inline-flex; gap: 6px; align-items: center; text-decoration: underline; min-height: 48px; }
     .btn.ta { font-family: var(--font-ta); line-height: 1.4; }
     .btn.full { width: 100%; }
@@ -270,7 +303,8 @@
     .journey .tm { font-family: var(--font-ta); color: var(--blue-deep); font-weight: 700; font-size: 17px; line-height: 1.5; }
 
     .doc { display: grid; gap: 20px; }
-    @media (min-width: 640px) { .doc { grid-template-columns: 180px 1fr; align-items: start; } }
+    @media (min-width: 1200px) { .doc { grid-template-columns: 180px 1fr; align-items: start; } }
+    .btn-row .btn { flex-shrink: 0; max-width: 100%; }
     .photo-ph { aspect-ratio: 4/5; max-width: 220px; border-radius: 16px; background: var(--blue-tint); border: 2px dashed var(--blue); display: grid; place-items: center; text-align: center; color: var(--blue-deep); font-weight: 700; font-size: 16px; padding: 12px; }
     .chips { display: flex; gap: 8px; flex-wrap: wrap; }
     .chip { background: var(--blue-tint); color: var(--blue-deep); border-radius: 999px; padding: 6px 14px; font-size: 16px; font-weight: 700; }
@@ -366,7 +400,7 @@
           <dl class="meta">
             <div><dt>Client</dt><dd>Rani Ortho Care</dd></div>
             <div><dt>Phase</dt><dd>2 · Design system</dd></div>
-            <div><dt>Version</dt><dd>1.1 draft</dd></div>
+            <div><dt>Version</dt><dd>1.2 draft</dd></div>
             <div><dt>Date</dt><dd class="tnum">29 Oct 2026</dd></div>
           </dl>
         </div>
@@ -624,7 +658,8 @@
 
         <div class="stack-lg">
           <div class="card demo">
-            <h3>Buttons</h3>
+            <h3>Buttons: glossy and clear</h3>
+            <p>The main button has a green gradient, a thin highlight on top and a soft shadow. On hover it lifts and a light sheen sweeps across once. Try it.</p>
             <p class="demo-label">ENGLISH</p>
             <div class="btn-row">
               <a class="btn btn-primary" href="#t-comp"><i data-lucide="phone" class="ico-sm"></i>Call +91 94445 53070</a>
@@ -636,19 +671,64 @@
               <a class="btn btn-primary ta" href="#t-comp"><i data-lucide="phone" class="ico-sm"></i>இப்போதே அழைக்கவும்</a>
               <a class="btn btn-secondary ta" href="#t-comp"><i data-lucide="map-pin" class="ico-sm"></i>வழி காட்டு</a>
             </div>
-            <div class="scroll-x" style="margin-top:8px">
-              <table class="simple size-table">
-                <thead><tr><th>Button</th><th>Mobile</th><th>Tablet</th><th>Desktop</th></tr></thead>
-                <tbody>
-                  <tr><td>Height (minimum)</td><td>56 px</td><td>56 px</td><td>56 px</td></tr>
-                  <tr><td>Text</td><td>18 px bold</td><td>18 px bold</td><td>19 px bold</td></tr>
-                  <tr><td>Side padding</td><td>20 px</td><td>24 px</td><td>28 px</td></tr>
-                  <tr><td>Width in hero and CTA bands</td><td>Full width</td><td>Auto</td><td>Auto</td></tr>
-                  <tr><td>Icon</td><td colspan="3">24 px, left of the words. Tap area at least 48 × 48 px.</td></tr>
-                </tbody>
-              </table>
+            <p class="demo-label">STATES</p>
+            <div class="states">
+              <div><span class="btn btn-primary">Call now</span><span class="small">Default</span></div>
+              <div><span class="btn btn-primary is-hover">Call now</span><span class="small">Hover: lifts 2 px, deeper green, sheen</span></div>
+              <div><span class="btn btn-primary is-press">Call now</span><span class="small">Pressed: 98%</span></div>
+              <div><span class="btn btn-primary is-focus">Call now</span><span class="small">Keyboard focus ring</span></div>
             </div>
-            <p class="small">Labels say exactly what happens. The call button shows the number itself.</p>
+          </div>
+
+          <div class="card demo">
+            <h3>Button sizes on each screen</h3>
+            <p>Drawn at real size. The height stays 56 px everywhere so older fingers hit it easily; padding and text grow a little on larger screens.</p>
+            <div class="bsizes">
+              <div class="bsize">
+                <div class="bs-head"><i data-lucide="smartphone" class="ico-sm"></i><b>Mobile</b><span class="small">under 640 px</span></div>
+                <div class="bs-frame" style="max-width:340px">
+                  <span class="btn btn-primary full" style="font-size:18px;padding:10px 20px;min-height:56px"><i data-lucide="phone" class="ico-sm"></i>Call now</span>
+                  <span class="btn btn-secondary full" style="font-size:18px;padding:10px 20px;min-height:56px"><i data-lucide="message-circle" class="ico-sm"></i>WhatsApp us</span>
+                </div>
+                <dl class="bs-spec"><dt>Height</dt><dd>56 px</dd><dt>Text</dt><dd>18 px bold</dd><dt>Padding</dt><dd>20 px</dd><dt>Width</dt><dd>Full width, stacked</dd><dt>Icon</dt><dd>24 px</dd></dl>
+              </div>
+              <div class="bsize">
+                <div class="bs-head"><i data-lucide="tablet" class="ico-sm"></i><b>Tablet</b><span class="small">640 to 1023 px</span></div>
+                <div class="bs-frame row">
+                  <span class="btn btn-primary" style="font-size:18px;padding:10px 24px;min-height:56px"><i data-lucide="phone" class="ico-sm"></i>Call now</span>
+                  <span class="btn btn-secondary" style="font-size:18px;padding:10px 24px;min-height:56px"><i data-lucide="message-circle" class="ico-sm"></i>WhatsApp us</span>
+                </div>
+                <dl class="bs-spec"><dt>Height</dt><dd>56 px</dd><dt>Text</dt><dd>18 px bold</dd><dt>Padding</dt><dd>24 px</dd><dt>Width</dt><dd>Fits the words, side by side</dd><dt>Icon</dt><dd>24 px</dd></dl>
+              </div>
+              <div class="bsize">
+                <div class="bs-head"><i data-lucide="monitor" class="ico-sm"></i><b>Desktop</b><span class="small">1024 px and up</span></div>
+                <div class="bs-frame row">
+                  <span class="btn btn-primary" style="font-size:19px;padding:10px 28px;min-height:56px"><i data-lucide="phone" class="ico-sm"></i>Call +91 94445 53070</span>
+                  <span class="btn btn-secondary" style="font-size:19px;padding:10px 28px;min-height:56px"><i data-lucide="message-circle" class="ico-sm"></i>WhatsApp us</span>
+                </div>
+                <dl class="bs-spec"><dt>Height</dt><dd>56 px (header button 52 px)</dd><dt>Text</dt><dd>19 px bold</dd><dt>Padding</dt><dd>28 px</dd><dt>Width</dt><dd>Fits the words, side by side</dd><dt>Icon</dt><dd>24 px</dd></dl>
+              </div>
+            </div>
+            <p class="small">Tamil labels may wrap to two lines inside the button; the button grows taller, never narrower than its text.</p>
+          </div>
+
+          <div class="card demo">
+            <h3>Modern touches, used gently</h3>
+            <p>Gradients, frosted glass, soft shadows and short transitions make the site feel current, without ever sitting behind small text.</p>
+            <div class="grid g3">
+              <div class="stack"><span class="fx" style="background:linear-gradient(180deg,#228639,#1B7030)"></span><h4>CTA gradient</h4><p class="small">#228639 → #1B7030, top highlight, green shadow</p></div>
+              <div class="stack"><span class="fx" style="background:radial-gradient(42% 60% at 70% 40%,rgba(61,181,74,.3),transparent 70%),radial-gradient(38% 55% at 40% 80%,rgba(60,89,168,.28),transparent 70%),#FFFFFF;border:1px solid #D5DDEA"></span><h4>Hero glow</h4><p class="small">Soft green and blue light behind the hero photo and page headers</p></div>
+              <div class="stack"><span class="fx" style="background:linear-gradient(135deg,#14234A,#1E3263)"></span><h4>Navy gradient</h4><p class="small">Footer and the final call-to-action band</p></div>
+            </div>
+            <div class="glass-demo">
+              <div class="glass-card"><i data-lucide="clock" class="ico" style="color:var(--green)"></i><div><b>Today's timings</b><span class="tnum">9 AM – 10 PM</span></div></div>
+              <p class="glass-cap">Frosted glass: 86% white with a 14 px blur, so text stays sharp over any photo. Used for the timings card on the hero photo, the header after scrolling and the phone action bar.</p>
+            </div>
+            <div class="grid g3">
+              <div class="lift-demo" tabindex="0"><b>Hover or tap me</b><span class="small">Cards lift 4 px, the shadow deepens and a blue-to-green line draws along the top.</span></div>
+              <div class="stack"><h4>Shadows</h4><p class="small"><b>Level 1</b> for cards at rest, <b>Level 2</b> for hovered cards and glass.</p><div class="sh-row"><span class="sh1">1</span><span class="sh2">2</span></div></div>
+              <div class="stack"><h4>Motion</h4><p class="small">0.2 s buttons, 0.25 s cards and header, 0.6 s hero rise, 0.7 s sheen. All motion turns off if the phone asks for reduced motion.</p></div>
+            </div>
           </div>
 
           <div class="grid">
@@ -818,7 +898,7 @@
 
   <footer class="page">
     <div class="wrap">
-      <span><b>Rani Ortho Care</b> · Design system v1.1 draft</span>
+      <span><b>Rani Ortho Care</b> · Design system v1.2 draft</span>
       <span>Full specification: DESIGN.md in the project</span>
     </div>
   </footer>

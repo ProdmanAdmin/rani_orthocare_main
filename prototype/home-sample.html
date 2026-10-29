@@ -19,6 +19,15 @@
       --ink: #14234A; --body: #25304A; --muted: #46526B; --white: #FFFFFF;
       --band-sky: #E8F0FA; --band-green: #EAF5EC; --blue-tint: #EEF3FB; --green-tint: #E8F6EA;
       --line: #D5DDEA; --on-navy: #C9D6F2;
+      --grad-cta: linear-gradient(180deg, #228639 0%, #1B7030 100%);
+      --grad-cta-hover: linear-gradient(180deg, #1F7D36 0%, #155A26 100%);
+      --grad-navy: linear-gradient(135deg, #14234A 0%, #1E3263 100%);
+      --grad-band: linear-gradient(180deg, #E8F0FA 0%, #EEF4FB 100%);
+      --glow-hero: radial-gradient(42% 60% at 78% 42%, rgba(61, 181, 74, .16), transparent 70%), radial-gradient(38% 55% at 62% 78%, rgba(60, 89, 168, .14), transparent 70%);
+      --glass: rgba(255, 255, 255, .86);
+      --shadow-1: 0 1px 2px rgba(20, 35, 74, .06), 0 4px 12px rgba(20, 35, 74, .06);
+      --shadow-2: 0 2px 4px rgba(20, 35, 74, .06), 0 12px 28px rgba(20, 35, 74, .12);
+      --ease: cubic-bezier(.2, .7, .2, 1);
       --font: "Atkinson Hyperlegible Next", "Noto Sans Tamil", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
       --fs-display: 30px; --fs-h2: 24px; --fs-h3: 21px; --fs-lead: 19px; --fs-body: 18px; --fs-small: 16px; --fs-btn: 18px;
       --gutter: 16px; --section: 56px; --gap: 16px; --pad: 20px; --lh: 1.65; --lh-h: 1.2;
@@ -33,14 +42,15 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
     body { margin: 0; background: var(--white); color: var(--body); font-family: var(--font); font-size: var(--fs-body); line-height: var(--lh); -webkit-font-smoothing: antialiased; }
     body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--navy); }
     img, svg { max-width: 100%; }
     a { color: var(--blue-deep); text-underline-offset: 3px; }
     :focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; box-shadow: 0 0 0 2px var(--white); border-radius: 6px; }
     .wrap { max-width: 1200px; margin: 0 auto; padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
-    h1, h2, h3 { color: var(--ink); margin: 0; font-weight: 700; text-wrap: balance; }
+    h1, h2, h3 { color: var(--ink); margin: 0; font-weight: 700; text-wrap: balance; overflow-wrap: anywhere; }
+    :root[lang="ta"] p, :root[lang="ta"] li, :root[lang="ta"] a { overflow-wrap: anywhere; }
     p { margin: 0; }
     .ico { width: 24px; height: 24px; stroke-width: 2; flex-shrink: 0; }
     .tnum { font-variant-numeric: tabular-nums; }
@@ -54,7 +64,7 @@
 
     /* Utility bar */
     .util { background: var(--navy); color: var(--on-navy); font-size: 16px; }
-    .util .wrap { display: flex; gap: 6px 20px; align-items: center; flex-wrap: wrap; padding-block: 8px; }
+    .util .wrap { display: flex; gap: 8px 20px; align-items: center; flex-wrap: wrap; padding-block: 8px; }
     .util span { display: inline-flex; gap: 8px; align-items: center; }
     .util .ico { width: 20px; height: 20px; color: var(--spine); }
     .status { font-weight: 700; color: var(--white); }
@@ -63,16 +73,18 @@
     .util .lang { margin-left: auto; border-color: var(--white); }
     .util .lang button { min-height: 40px; }
     .util .lang button + button { border-left-color: var(--white); }
-    @media (min-width: 1024px) { .util .lang { display: none; } }
-    @media (max-width: 1023px) { header.site .lang { display: none; } .menu-btn { margin-left: auto; } }
+    @media (min-width: 1200px) { .util .lang { display: none; } }
+    @media (max-width: 1199px) { header.site .lang { display: none; } .menu-btn { margin-left: auto; } }
     .util .phone { margin-left: auto; font-weight: 700; color: var(--white); text-decoration: none; }
     @media (max-width: 639px) { .util .phone, .util .hrs { display: none; } }
 
     /* Header */
-    header.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: var(--white); border-bottom: 1px solid var(--line); box-shadow: 0 2px 10px rgba(20, 35, 74, .06); }
+    header.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: var(--white); border-bottom: 1px solid var(--line); transition: background-color .25s var(--ease), box-shadow .25s var(--ease); }
+    header.site.scrolled { background: rgba(255, 255, 255, .86); -webkit-backdrop-filter: blur(14px) saturate(160%); backdrop-filter: blur(14px) saturate(160%); box-shadow: var(--shadow-2); }
     header.site .wrap { display: flex; align-items: center; gap: 12px; min-height: 72px; padding-block: 8px; }
     @media (min-width: 1024px) { header.site .wrap { min-height: 84px; gap: 24px; } }
     .logo { flex-shrink: 1; min-width: 0; }
+    @media (min-width: 640px) { .logo { flex-shrink: 0; } }
     .logo img { display: block; height: 38px; width: auto; max-width: 100%; }
     .hero-grid > * { min-width: 0; }
     @media (min-width: 1024px) { .logo img { height: 46px; } }
@@ -83,30 +95,38 @@
     .lang { display: flex; border: 2px solid var(--navy); border-radius: 12px; overflow: hidden; flex-shrink: 0; margin-left: auto; }
     .lang button { min-height: 44px; min-width: 52px; padding: 0 10px; border: 0; background: var(--white); color: var(--navy); font: 700 17px var(--font); cursor: pointer; }
     .lang button + button { border-left: 2px solid var(--navy); font-family: "Noto Sans Tamil", var(--font); }
+    .lang button { white-space: nowrap; }
     .lang button[aria-pressed="true"] { background: var(--navy); color: var(--white); }
     .menu-btn { min-height: 48px; display: inline-flex; gap: 8px; align-items: center; padding: 0 14px; border: 2px solid var(--navy); border-radius: 12px; background: var(--white); color: var(--navy); font: 700 17px var(--font); cursor: pointer; }
     .head-call { display: none; }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       nav.main { display: flex; }
       .lang { margin-left: 0; }
       .menu-btn { display: none; }
-      .head-call { display: inline-flex; }
     }
     .mobile-menu { border-top: 1px solid var(--line); background: var(--white); }
     .mobile-menu a { display: flex; align-items: center; justify-content: space-between; min-height: 60px; padding: 0 max(var(--gutter), env(safe-area-inset-left, 0px)); border-bottom: 1px solid var(--line); font-weight: 700; font-size: 20px; color: var(--ink); text-decoration: none; }
-    @media (min-width: 1024px) { .mobile-menu { display: none !important; } }
+    @media (min-width: 1200px) { .mobile-menu { display: none !important; } }
 
     /* Buttons */
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 10px 24px; border-radius: 12px; font-size: var(--fs-btn); font-weight: 700; line-height: 1.25; text-decoration: none; border: 2px solid transparent; text-align: center; }
-    .btn-primary { background: var(--green); color: var(--white); }
-    .btn-primary:hover { background: var(--green-hover); }
-    .btn-secondary { background: var(--white); color: var(--blue-deep); border-color: var(--blue-deep); }
-    .btn-secondary:hover { background: var(--blue-tint); }
+    .btn { position: relative; overflow: hidden; isolation: isolate; transition: transform .2s var(--ease), box-shadow .2s var(--ease), background-color .2s var(--ease); }
+    .btn-primary { background: var(--green); background-image: var(--grad-cta); color: var(--white); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .28), 0 6px 16px rgba(27, 112, 48, .28); }
+    .btn-primary::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, .32) 50%, transparent 70%); transform: translateX(-120%); transition: transform .7s var(--ease); }
+    .btn-primary:hover { background-image: var(--grad-cta-hover); transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .28), 0 10px 22px rgba(27, 112, 48, .32); }
+    .btn-primary:hover::after { transform: translateX(120%); }
+    .btn:active { transform: translateY(0) scale(.98); }
+    .btn-secondary { background: rgba(255, 255, 255, .9); color: var(--blue-deep); border-color: var(--blue-deep); box-shadow: var(--shadow-1); }
+    .btn-secondary:hover { background: var(--blue-tint); transform: translateY(-2px); box-shadow: var(--shadow-2); }
     .head-call.btn { display: none; min-height: 52px; padding: 8px 18px; }
-    @media (min-width: 1024px) { .head-call.btn { display: inline-flex; } }
+    @media (min-width: 1200px) { .head-call.btn { display: inline-flex; } }
+    @media (min-width: 1024px) and (max-width: 1199px) { .head-call.btn { display: inline-flex; margin-left: auto; } header.site .menu-btn { margin-left: 12px; } }
 
     /* Section 1: hero (white band) */
-    .hero { background: var(--white); padding-block: calc(var(--section) - 16px) var(--section); }
+    .hero { background: var(--glow-hero), var(--white); padding-block: calc(var(--section) - 16px) var(--section); }
+    @keyframes rise { from { transform: translateY(14px); } to { transform: none; } }
+    .hero-grid > * { animation: rise .6s var(--ease) both; }
+    .hero-grid > aside { animation-delay: .08s; }
     .hero-grid { display: grid; gap: 32px; align-items: center; }
     @media (min-width: 1024px) { .hero-grid { grid-template-columns: 1.4fr 1fr; gap: 40px; } }
     .eyebrow { display: inline-flex; gap: 10px; align-items: center; font-weight: 700; font-size: 16px; color: var(--blue-deep); }
@@ -120,32 +140,39 @@
     .facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; padding: 0; list-style: none; }
     .facts li { display: inline-flex; gap: 8px; align-items: center; background: var(--blue-tint); color: var(--ink); border-radius: 999px; padding: 8px 14px; font-weight: 700; font-size: 16px; }
     .facts .ico { width: 20px; height: 20px; color: var(--blue); }
-    .doc-card { background: var(--band-sky); border-radius: 20px; padding: 20px; display: grid; gap: 16px; }
+    .doc-card { background: linear-gradient(160deg, rgba(255, 255, 255, .7), rgba(232, 240, 250, .9)); border: 1px solid rgba(255, 255, 255, .8); box-shadow: var(--shadow-2); border-radius: 24px; padding: 20px; display: grid; gap: 16px; position: relative; }
+    .photo-wrap { position: relative; }
     .doc-card > * { min-width: 0; }
-    @media (min-width: 640px) and (max-width: 1023px) { .doc-card { grid-template-columns: 1fr 1fr; align-items: center; } .doc-card .today { grid-column: 1 / -1; } }
-    .photo { width: 100%; aspect-ratio: 16 / 10; max-width: 100%; border-radius: 16px; background: linear-gradient(160deg, var(--white), var(--blue-tint)); border: 2px dashed var(--blue); display: grid; place-items: center; text-align: center; color: var(--blue-deep); font-weight: 700; font-size: 16px; padding: 16px; }
+    @media (min-width: 640px) and (max-width: 1023px) { .doc-card { grid-template-columns: 1fr 1fr; align-items: center; } }
+    .photo { width: 100%; aspect-ratio: 4 / 3; max-width: 100%; border-radius: 18px; background: radial-gradient(60% 60% at 30% 30%, rgba(61, 181, 74, .22), transparent 70%), linear-gradient(160deg, #DCE7F7, #B9CCEB); border: 0; display: grid; place-items: center; text-align: center; color: var(--blue-deep); font-weight: 700; font-size: 16px; padding: 16px; }
     .photo img { width: 72px; margin: 0 auto 10px; display: block; }
     .doc-name { font-size: var(--fs-h3); line-height: 1.3; }
     .doc-q { color: var(--blue-deep); font-weight: 700; }
-    .today { background: var(--white); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; display: flex; gap: 12px; align-items: center; }
+    .today { background: var(--glass); -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%); border: 1px solid rgba(255, 255, 255, .7); box-shadow: var(--shadow-2); border-radius: 16px; padding: 14px 16px; display: flex; gap: 12px; align-items: center; }
+    .photo-wrap .today { position: relative; margin: -36px 12px 0; }
+    @media (min-width: 640px) { .photo-wrap .today { position: absolute; left: 12px; right: 12px; bottom: 12px; margin: 0; } }
     .today .ico { color: var(--green); width: 28px; height: 28px; }
     .today b { color: var(--ink); display: block; }
 
     /* Section 2: what we treat (sky band) */
-    .treat { background: var(--band-sky); padding-block: var(--section); }
+    .treat { background: radial-gradient(40% 50% at 100% 0%, rgba(61, 181, 74, .1), transparent 70%), var(--grad-band); padding-block: var(--section); }
     .sec-head { display: grid; gap: 10px; margin-bottom: calc(var(--gap) + 8px); max-width: 68ch; }
     .sec-head h2 { font-size: var(--fs-h2); line-height: var(--lh-h); }
     .sec-head p { font-size: var(--fs-lead); line-height: 1.6; }
     .tiles { display: grid; gap: var(--gap); }
     @media (min-width: 640px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (min-width: 1024px) { .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-    .tile { background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: var(--pad); display: grid; gap: 12px; align-content: start; text-decoration: none; color: inherit; min-width: 0; }
-    .tile:hover { border-color: var(--blue); box-shadow: 0 6px 18px rgba(20, 35, 74, .08); }
-    .tile .ic { width: 60px; height: 60px; border-radius: 50%; background: var(--blue-tint); display: grid; place-items: center; }
+    .tile { position: relative; overflow: hidden; background: var(--white); border: 1px solid var(--line); border-radius: 18px; padding: var(--pad); display: grid; gap: 12px; align-content: start; text-decoration: none; color: inherit; min-width: 0; box-shadow: var(--shadow-1); transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease); }
+    .tile::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg, var(--blue), var(--spine)); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease); }
+    .tile:hover::before, .tile:focus-visible::before { transform: scaleX(1); }
+    .tile:hover { border-color: #B9CCEB; transform: translateY(-4px); box-shadow: var(--shadow-2); }
+    .tile:hover .more .ico { transform: translateX(4px); }
+    .tile .more .ico { transition: transform .25s var(--ease); }
+    .tile .ic { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(145deg, #F4F8FE, #DCE7F7); box-shadow: inset 0 1px 0 #FFFFFF, 0 2px 6px rgba(60, 89, 168, .15); display: grid; place-items: center; }
     .tile .ic .ico { width: 30px; height: 30px; color: var(--blue); }
     .tile h3 { font-size: var(--fs-h3); line-height: 1.3; }
     .tile .more { display: inline-flex; gap: 6px; align-items: center; color: var(--blue-deep); font-weight: 700; text-decoration: underline; margin-top: 4px; }
-    .help { margin-top: var(--gap); background: var(--white); border: 1px solid var(--line); border-left: 6px solid var(--spine); border-radius: 16px; padding: var(--pad); display: grid; gap: 16px; align-items: center; }
+    .help { margin-top: var(--gap); background: var(--glass); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, .8); border-left: 6px solid var(--spine); box-shadow: var(--shadow-1); border-radius: 18px; padding: var(--pad); display: grid; gap: 16px; align-items: center; }
     @media (min-width: 1024px) { .help { grid-template-columns: 1fr auto; } }
     .help h3 { font-size: var(--fs-h3); line-height: 1.3; }
     .help .btns { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -153,7 +180,7 @@
     .all { margin-top: 20px; display: inline-flex; gap: 6px; align-items: center; font-weight: 700; font-size: var(--fs-btn); min-height: 48px; }
 
     /* Footer */
-    footer.site { background: var(--navy); color: var(--on-navy); border-top: 6px solid var(--spine); }
+    footer.site { background: var(--navy); background-image: radial-gradient(40% 60% at 90% 0%, rgba(61, 181, 74, .14), transparent 70%), var(--grad-navy); color: var(--on-navy); border-top: 6px solid var(--spine); }
     footer.site .wrap { padding-block: var(--section) 32px; display: grid; gap: 32px; }
     .f-grid { display: grid; gap: 28px; }
     @media (min-width: 640px) { .f-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -169,7 +196,8 @@
     /* Phone action bar */
     .action-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 55; display: grid; grid-template-columns: repeat(3, 1fr); background: var(--white); border-top: 1px solid var(--line); box-shadow: 0 -4px 16px rgba(20, 35, 74, .1); padding-bottom: env(safe-area-inset-bottom, 0px); padding-left: env(safe-area-inset-left, 0px); padding-right: env(safe-area-inset-right, 0px); }
     .action-bar a { min-height: 64px; display: grid; justify-items: center; align-content: center; gap: 2px; font-weight: 700; font-size: 15px; color: var(--navy); text-decoration: none; }
-    .action-bar a:first-child { background: var(--green); color: var(--white); }
+    .action-bar a:first-child { background: var(--green); background-image: var(--grad-cta); color: var(--white); }
+    .action-bar { -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); background: rgba(255, 255, 255, .92); }
     @media (max-width: 1023px) { body { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); } }
     @media (min-width: 1024px) { .action-bar { display: none; } }
   </style>
@@ -203,7 +231,7 @@
         <button type="button" data-lang="en" aria-pressed="true">EN</button>
         <button type="button" data-lang="ta" aria-pressed="false">தமிழ்</button>
       </div>
-      <a class="btn btn-primary head-call" href="tel:+919444553070"><i data-lucide="phone" class="ico"></i><span data-k="call_short">Call now</span></a>
+      <a class="btn btn-primary head-call" href="tel:+919444553070"><i data-lucide="phone" class="ico"></i><span data-k="call_head">Call now</span></a>
       <button type="button" class="menu-btn" aria-expanded="false" aria-controls="mobile-menu"><i data-lucide="menu" class="ico"></i><span data-k="menu">Menu</span></button>
     </div>
     <nav class="mobile-menu" id="mobile-menu" aria-label="Main" hidden>
@@ -233,13 +261,13 @@
           </ul>
         </div>
         <aside class="doc-card" aria-label="Doctor and timings">
-          <div class="photo"><div><img src="img/mark.svg" alt="" width="222" height="245"><span data-k="photo">Photo of Dr. N. Manikandan with a patient</span></div></div>
+          <div class="photo-wrap"><div class="photo"><div style="margin-bottom:64px"><img src="img/mark.svg" alt="" width="222" height="245"><span data-k="photo">Doctor's photo here</span></div></div>
+            <div class="today"><i data-lucide="clock" class="ico"></i><div><b data-k="today_l">Today's timings</b><span class="tnum" id="today-hours">9 AM – 10 PM</span></div></div></div>
           <div>
             <p class="doc-name" data-k="doc_name">Dr. N. Manikandan</p>
             <p class="doc-q">M.B.B.S., M.S. (Ortho)</p>
             <p data-k="doc_role">Consultant Orthopaedic Surgeon</p>
           </div>
-          <div class="today"><i data-lucide="clock" class="ico"></i><div><b data-k="today_l">Today's timings</b><span class="tnum" id="today-hours">9 AM – 10 PM</span></div></div>
         </aside>
       </div>
     </section>
@@ -309,12 +337,12 @@
     var T = {
       en: {
         hours_short: "Mon–Sat 9 AM–10 PM · Sun 10 AM–12 PM", nav_home: "Home", nav_services: "Services", nav_doctor: "Doctor", nav_contact: "Contact", menu: "Menu",
-        call_short: "Call now", call_full: "Call +91 94445 53070", whatsapp: "WhatsApp us",
+        call_short: "Call now", call_head: "Call now", call_full: "Call +91 94445 53070", whatsapp: "WhatsApp us",
         eyebrow: "Orthopaedic and physiotherapy clinic",
         h1: 'Relief from bone and joint pain, <em>so you can move again</em>',
         lead: "Rani Ortho Care in Karaikudi relieves your pain first, then finds and treats the cause. Care is led by orthopaedic surgeon Dr. N. Manikandan.",
         fact_xray: "Digital X-ray", fact_physio: "Physiotherapy", fact_child: "Children's bone care",
-        photo: "Photo of Dr. N. Manikandan with a patient", doc_name: "Dr. N. Manikandan", doc_role: "Consultant Orthopaedic Surgeon", today_l: "Today's timings",
+        photo: "Doctor's photo here", doc_name: "Dr. N. Manikandan", doc_role: "Consultant Orthopaedic Surgeon", today_l: "Today's timings",
         treat_eyebrow: "What we treat", treat_h: "Help for bones, joints and spine",
         treat_lead: "Find your problem below. Every visit starts with relief from pain, then we look for the cause.",
         help_h: "Not sure what you need?", help_p: "Call or WhatsApp us and tell us where it hurts. We will guide you.", all: "See all 13 services",
@@ -325,12 +353,12 @@
       },
       ta: {
         hours_short: "திங்கள்–சனி காலை 9 – இரவு 10 · ஞாயிறு காலை 10 – மதியம் 12", nav_home: "முகப்பு", nav_services: "சேவைகள்", nav_doctor: "மருத்துவர்", nav_contact: "தொடர்பு", menu: "மெனு",
-        call_short: "இப்போதே அழைக்கவும்", call_full: "அழைக்க +91 94445 53070", whatsapp: "வாட்ஸ்அப் செய்யவும்",
+        call_short: "இப்போதே அழைக்கவும்", call_head: "அழைக்கவும்", call_full: "அழைக்க +91 94445 53070", whatsapp: "வாட்ஸ்அப் செய்யவும்",
         eyebrow: "எலும்பியல் மற்றும் பிசியோதெரபி மையம்",
         h1: 'எலும்பு, மூட்டு வலியிலிருந்து நிவாரணம், <em>மீண்டும் இயல்பாக நடமாட</em>',
         lead: "காரைக்குடி ராணி ஆர்த்தோ கேர், முதலில் உங்கள் வலியைக் குறைத்து, பிறகு அதன் காரணத்தைக் கண்டறிந்து சிகிச்சை அளிக்கிறது. எலும்பியல் அறுவை சிகிச்சை நிபுணர் Dr. நா. மணிகண்டன் தலைமையில் சிகிச்சை.",
         fact_xray: "டிஜிட்டல் எக்ஸ்ரே", fact_physio: "பிசியோதெரபி", fact_child: "குழந்தைகள் எலும்பு சிகிச்சை",
-        photo: "நோயாளியுடன் Dr. நா. மணிகண்டன் புகைப்படம்", doc_name: "Dr. நா. மணிகண்டன்", doc_role: "எலும்புமுறிவு மற்றும் முடநீக்கியல் அறுவைசிகிச்சை நிபுணர்", today_l: "இன்றைய நேரம்",
+        photo: "மருத்துவரின் புகைப்படம்", doc_name: "Dr. நா. மணிகண்டன்", doc_role: "எலும்புமுறிவு மற்றும் முடநீக்கியல் அறுவைசிகிச்சை நிபுணர்", today_l: "இன்றைய நேரம்",
         treat_eyebrow: "நாங்கள் சிகிச்சை அளிப்பவை", treat_h: "எலும்பு, மூட்டு, முதுகுத் தண்டுக்கு உதவி",
         treat_lead: "உங்கள் பிரச்சனையைக் கீழே தேர்ந்தெடுங்கள். ஒவ்வொரு சிகிச்சையும் வலி நிவாரணத்தில் தொடங்கி, பிறகு காரணத்தைக் கண்டறிகிறது.",
         help_h: "எந்த சிகிச்சை தேவை என்று தெரியவில்லையா?", help_p: "அழைத்தோ வாட்ஸ்அப்பிலோ எங்கே வலிக்கிறது என்று சொல்லுங்கள். நாங்கள் வழிகாட்டுவோம்.", all: "13 சேவைகளையும் பார்க்க",
@@ -384,6 +412,9 @@
     var mb = document.querySelector(".menu-btn"), mm = document.getElementById("mobile-menu");
     mb.addEventListener("click", function () { var o = mm.hidden; mm.hidden = !o; mb.setAttribute("aria-expanded", String(o)); });
     mm.addEventListener("click", function (e) { if (e.target.closest("a")) { mm.hidden = true; mb.setAttribute("aria-expanded", "false"); } });
+    var hdr = document.querySelector("header.site");
+    function onScroll() { hdr.classList.toggle("scrolled", window.scrollY > 8); }
+    window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
     render();
   })();
   </script>

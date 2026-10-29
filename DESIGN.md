@@ -1,6 +1,6 @@
 # DESIGN.md: Rani Ortho Care Design System
 
-Version 1.1 (draft for approval), 2026-10-29. v1.1: coloured section bands, smaller headings, and the reasons behind the fonts and colours (section 3a). The visual mood board for this system is section 4 of the project prototype (`prototype/design-system.html`).
+Version 1.2 (draft for approval), 2026-10-29. v1.1: coloured section bands, smaller headings, reasons for the fonts and colours (section 3a). v1.2: modern touches (section 6a): gradients, glossy CTA, frosted glass, soft shadows and gentle transitions; button sizes shown per screen; Tamil header rules. The visual mood board for this system is section 4 of the project prototype (`prototype/design-system.html`).
 
 This is the single source for how the website looks. The SEO, accessibility and content rules in `CLAUDE.md` always apply on top, and the business core in `docs/business-model.md` decides what the design must say.
 
@@ -195,7 +195,7 @@ These match Tailwind's `sm` (640) and `lg` (1024), and the text column is capped
 ### Buttons
 | Type | Look | Use |
 |---|---|---|
-| **Primary** | Action Green fill, white text, 12 px radius | The one main action: "Call now", "Book appointment" |
+| **Primary** | Glossy green gradient (section 6a), white text, 12 px radius | The one main action: "Call now", "Book appointment" |
 | **Secondary** | White fill, 2 px Blue Deep border, Blue Deep text | WhatsApp, "View services", "Get directions" |
 | **Text link** | Blue Deep, underlined, with an arrow | "Read more", inline links |
 
@@ -250,6 +250,54 @@ Amber background with dark amber text, an icon, and one sentence. Used for camp 
 ### Footer
 Navy background. Logo (white version needed), short tagline, address, phone, timings, quick links, language switch, social links (from `site.sameAs` only). Footer headings are H2 styled small, per CLAUDE.md.
 
+## 6a. Modern touches (used gently)
+
+The site should feel current and premium, like a good private clinic, **without** hurting readability for older visitors. These effects sit behind or around text, never on it.
+
+### Gradients
+| Token | Value | Use |
+|---|---|---|
+| `grad-cta` | `linear-gradient(180deg, #228639, #1B7030)` | Primary buttons. White text stays at 4.6:1 or more at the lightest point (button text is large and bold). |
+| `grad-cta-hover` | `linear-gradient(180deg, #1F7D36, #155A26)` | Primary button hover and pressed |
+| `grad-navy` | `linear-gradient(135deg, #14234A, #1E3263)` | Footer, final call-to-action band |
+| `grad-band` | `linear-gradient(180deg, #E8F0FA, #EEF4FB)` | Sky bands |
+| `glow-hero` | Two soft radial glows: spine green at 16% and Rani blue at 14% | Behind the hero photo and page headers (like a soft light behind the doctor) |
+
+Rules: gradients only use brand colours; text on a gradient is checked at its **lightest** point; no rainbow or multi-hue gradients.
+
+### Glossy primary button (the CTA)
+- Green gradient fill, a thin white highlight along the top edge (`inset 0 1px 0 rgba(255,255,255,.28)`), and a soft green shadow below.
+- **Hover:** lifts 2 px, gets a slightly deeper gradient, and a light **sheen** sweeps across once (0.7 s).
+- **Pressed:** settles back and shrinks to 98%.
+- **Focus:** 3 px navy ring with a 2 px white gap (same as all controls).
+- Secondary buttons stay white (90%) with a blue border and a soft shadow, and lift 2 px on hover.
+
+### Frosted glass
+- `background: rgba(255,255,255,.86)` with `backdrop-filter: blur(14px) saturate(140%)`, a white 1 px border and a soft shadow.
+- Used for: the "Today's timings" card over the hero photo, the sticky header once the page scrolls, the phone action bar, and help boxes on coloured bands.
+- **At least 86% white behind any text**, so text stays at 7:1 or more whatever is underneath.
+
+### Shadows (elevation)
+| Token | Value | Use |
+|---|---|---|
+| `shadow-1` | `0 1px 2px rgba(20,35,74,.06), 0 4px 12px rgba(20,35,74,.06)` | Cards at rest, secondary buttons |
+| `shadow-2` | `0 2px 4px rgba(20,35,74,.06), 0 12px 28px rgba(20,35,74,.12)` | Hovered cards, glass panels, scrolled header |
+
+### Transitions
+| What | How | Time |
+|---|---|---|
+| Buttons | Lift 2 px, deeper colour; press shrinks to 98% | 0.2 s |
+| CTA sheen | One light sweep on hover | 0.7 s |
+| Service tiles | Lift 4 px, stronger shadow, a blue-to-green line draws along the top, arrow nudges right | 0.25 s |
+| Header | Turns to frosted glass with a shadow after scrolling | 0.25 s |
+| Hero | Content rises 14 px into place on load (it is visible from the first frame) | 0.6 s |
+| Menu and FAQ | Open and close | 0.2 s |
+
+Easing `cubic-bezier(.2,.7,.2,1)` everywhere. **All motion switches off** when the visitor's phone asks for reduced motion. Still no carousels, auto-play, parallax or pop-ups.
+
+### Header and Tamil
+Tamil menu labels are much longer than English. The full desktop menu shows only from **1200 px** wide; below that the header shows the logo, a Call button (on 1024 px and up) and the **Menu** button, and on phones the language switch moves into the top bar. The header Call button uses the short Tamil label "அழைக்கவும்". Long Tamil words may break inside narrow tiles rather than push the page wider.
+
 ## 7. Icons, pictures and photography
 
 ### Icons
@@ -270,7 +318,7 @@ Simple, friendly outline pictograms for **knee, back and spine, neck, shoulder, 
 - Format: WebP or AVIF, at most 1,600 px wide, at most 200 KB (CLAUDE.md P-series).
 
 ## 8. Motion
-- Almost none. Gentle fades (200 ms) for the menu and accordions only.
+- Only the gentle transitions in section 6a.
 - No carousels, no auto-playing sliders, no parallax, no scrolling text, no pop-ups.
 - Respect `prefers-reduced-motion` everywhere.
 
