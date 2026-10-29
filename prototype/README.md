@@ -34,6 +34,11 @@ To update the link after changing the prototype:
 1. Run `python3 -I prototype/build-artifact.py`. It writes `prototype/dist/index.html` (not committed) and lists the files to publish.
 2. Republish `prototype/dist/index.html` to the same link with those files.
 
+## Hosting on Netlify (separate from the website)
+1. Run `python3 -I prototype/build-netlify.py`. It writes `prototype-site/` at the repository root (not committed): all pages, images, previews and `brand-assets/`, with paths fixed, plus `_headers` and `robots.txt` that keep it out of search engines.
+2. Drag the `prototype-site` folder onto https://app.netlify.com/drop, or create a **separate** Netlify site with that folder as its publish directory and no build command.
+3. Never use the website's own Netlify site for the prototype.
+
 ## Files
 - `index.html`: layout, styles and interface labels
 - `content.js`: all content for sections 1 to 3 (English and Tamil)
@@ -42,3 +47,4 @@ To update the link after changing the prototype:
 - `img/`: logo copies cropped to their artwork for display (the originals are in `brand-assets/logo/`)
 - `previews/`: JPEG previews of the print PDFs
 - `build-artifact.py`: builds the private-link version in `dist/`
+- `build-netlify.py`: builds the Netlify-ready folder `prototype-site/`

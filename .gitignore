@@ -9,3 +9,5 @@ out/
 
 # Built copy of the prototype for the private link
 prototype/dist/
+prototype-site/
+prototype-site.zip

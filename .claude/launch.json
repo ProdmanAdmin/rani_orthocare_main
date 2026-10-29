@@ -3,6 +3,7 @@
   "configurations": [
     { "name": "next-dev", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev"], "port": 3000 },
     { "name": "next-start", "runtimeExecutable": "npm", "runtimeArgs": ["run", "start"], "port": 3000 },
-    { "name": "prototype", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "4173", "--bind", "127.0.0.1"], "port": 4173 }
+    { "name": "prototype", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "4173", "--bind", "127.0.0.1"], "port": 4173 },
+    { "name": "prototype-site", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "4174", "--bind", "127.0.0.1", "--directory", "prototype-site"], "port": 4174 }
   ]
 }
