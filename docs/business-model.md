@@ -255,7 +255,7 @@ This is a starting list for the keyword library. Tamil-in-English spellings are 
 2. **"Molecular Therapeutics".** Which treatments does this cover? A short plain description is needed before it can have a page.
 3. **Emergency and trauma care.** Is it available only within clinic hours, or is there an on-call arrangement? Is it handled at the clinic or at a hospital?
 4. **Where surgeries are done:** at the clinic, or at a partner hospital? This affects how TKR, THR and spine pages are written.
-5. **Corporate coaching.** Has it been done for any companies yet? Should there be an enquiry form for companies?
+5. **Corporate coaching.** Answered 2026-10-29: offered now, so the site invites company enquiries. Still to ask: has it been done for any companies yet, and can they be named?
 6. **Is physiotherapy in-house?** Is there a named physiotherapist for the Team page?
 7. **Approval of the website wording** in section 6.
 

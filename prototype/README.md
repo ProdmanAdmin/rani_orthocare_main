@@ -1,6 +1,6 @@
 # Project Prototype
 
-The project's single reference page for Rani Ortho Care. Dr. N. Manikandan and the team use it to see the clinic's details, business core and assets in one place, in English and Tamil. New sections are added step by step: the design system is section 4, and the website look and feel comes next.
+The project's single reference page for Rani Ortho Care. Dr. N. Manikandan and the team use it to see the clinic's details, business core and assets in one place, in English and Tamil. New sections are added step by step: the design system is section 4, the sample home page section 5, and the StoryBrand message framework section 6.
 
 **This is not the website.** It is a static page outside the Next.js app, so it is never deployed with the site. It uses the website design system from `DESIGN.md`, so it is also a preview of the website's look and feel.
 
@@ -10,13 +10,15 @@ The project's single reference page for Rani Ortho Care. Dr. N. Manikandan and t
 3. **Assets:** logos (with download links), print materials, brand colours, map QR, what is still needed
 4. **Design system:** the mood board for the website (`design-system.html`), matching `DESIGN.md`.
 5. **Sample home:** a sample home page (`home-sample.html`) with header, hero, "What we treat" and footer, in English and Tamil.
+6. **StoryBrand:** the website message framework (`storybrand.html`), English and Tamil side by side, with a PDF download. It is built from `docs/storybrand.md`.
 
-All five sections now use the website design system (fonts, colours, section bands).
+All six sections use the website design system (fonts, colours, section bands).
 
 ## Updating it
 - **All content is in `content.js`.** Each text has `en` and `ta`. Change it there; there's no need to touch `index.html`.
 - Keep `content.js` consistent with `docs/business-context.md` and `docs/business-model.md`.
 - Change `updated` in `content.js` whenever the content changes.
+- **Section 6 is generated.** Edit `docs/storybrand.md` (and re-make `docs/storybrand.pdf`), then run `python3 -I prototype/build-storybrand.py`. Never edit `storybrand.html` by hand.
 
 ## Opening it
 It reads files from `../brand-assets/`, so serve it from the repository root:
@@ -44,6 +46,7 @@ To update the link after changing the prototype:
 - `content.js`: all content for sections 1 to 3 (English and Tamil)
 - `design-system.html`: section 4, the design system mood board (a standalone page)
 - `home-sample.html`: section 5, the sample home page (a standalone page)
+- `storybrand.html`: section 6, generated from `docs/storybrand.md` by `build-storybrand.py`; `storybrand.pdf` is a copy of `docs/storybrand.pdf` for its download button
 - `img/`: logo copies cropped to their artwork for display (the originals are in `brand-assets/logo/`)
 - `previews/`: JPEG previews of the print PDFs
 - `build-artifact.py`: builds the private-link version in `dist/`

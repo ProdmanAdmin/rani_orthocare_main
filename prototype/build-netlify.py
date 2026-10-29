@@ -18,12 +18,13 @@ if OUT.exists():
 OUT.mkdir()
 
 # Pages: in the repo the prototype reads ../brand-assets/; in the site, brand-assets/ sits beside it.
-for name in ("index.html", "design-system.html", "home-sample.html", "content.js"):
+for name in ("index.html", "design-system.html", "home-sample.html", "storybrand.html", "content.js"):
     text = (HERE / name).read_text(encoding="utf-8")
     (OUT / name).write_text(text.replace("../brand-assets/", "brand-assets/"), encoding="utf-8")
 
 for folder in ("img", "previews"):
     shutil.copytree(HERE / folder, OUT / folder)
+shutil.copy2(HERE / "storybrand.pdf", OUT / "storybrand.pdf")
 shutil.copytree(ROOT / "brand-assets", OUT / "brand-assets", ignore=shutil.ignore_patterns(".DS_Store"))
 
 # Keep the prototype out of search engines, and add basic security headers.

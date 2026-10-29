@@ -24,7 +24,9 @@ Nothing here goes into `lib/site.js` until it is confirmed.
 | Address | **No. 2, M.M. Complex, 1st Beat, Koviloor Road, near Indian Bank, Karaikudi, Tamil Nadu 630001** | Google, cards, prescription | Consistent. Combined from these sources, so confirm the exact form |
 | Opening hours | **Mon–Sat 9 AM–10 PM; Sun 10 AM–12 PM** | Google Business Profile | **Use these.** The website must match Google exactly. The printed hours (evenings plus Sunday 4–10 PM) are out of date and not used |
 | Domain | **raniorthocare.com** | User | **Owned by the clinic.** It currently shows a GoDaddy parking page, which goes away once the domain is pointed at Netlify |
-| Google Business Profile | "Orthopedic clinic in Karaikudi, Tamil Nadu". 4.9 from 59 reviews. Website button present | Google | Needs a link to the place listing (for `mapUrl` and `sameAs`) and owner access. The rating is a third-party figure and must not be added to our own structured data (CLAUDE.md rule 8) |
+| Google Business Profile | "Orthopedic clinic in Karaikudi, Tamil Nadu". 4.9 from 59 reviews. Website button present | Google | Needs a link to the place listing (for `mapUrl` and `sameAs`) and owner access. The rating is a third-party figure and must not be added to our own structured data (CLAUDE.md rule 8). **Approved for display on the site (2026-10-29)** as its own section with the date and a link to Google, without copying review text: see `docs/storybrand.md` |
+| Languages of care | Dr. Manikandan explains to patients in **Tamil and English** | User, 2026-10-29 | Confirmed |
+| Corporate posture sessions | Offered **now** to companies and worksites, and to individuals | User, 2026-10-29 | Confirmed. Names of companies already coached: still to ask |
 | Instagram | **@rani_ortho_care** (https://www.instagram.com/rani_ortho_care/). Bio: "Rani Ortho Care 🦴 \| Karaikudi · Orthopedic doctor \| Bone & joint pain · Knee \| Back \| Sports injury · PRP \| Physio \| X-ray · 📍 Karaikudi \| 📞 9444553070" | Instagram | Real link, so it goes in `sameAs`. Posts are mainly festival greetings with contact details |
 
 ### Open questions
