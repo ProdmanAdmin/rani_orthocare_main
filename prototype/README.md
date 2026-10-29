@@ -35,7 +35,7 @@ To update the link after changing the prototype:
 2. Republish `prototype/dist/index.html` to the same link with those files.
 
 ## Hosting on Netlify (separate from the website)
-1. Run `python3 -I prototype/build-netlify.py`. It writes `prototype-site/` at the repository root (not committed): all pages, images, previews and `brand-assets/`, with paths fixed, plus `_headers` and `robots.txt` that keep it out of search engines.
+1. Run `python3 -I prototype/build-netlify.py`. It writes `prototype-site/` at the repository root (committed, so Netlify can also deploy it from Git): all pages, images, previews and `brand-assets/`, with paths fixed, plus `_headers` and `robots.txt` that keep it out of search engines.
 2. Drag the `prototype-site` folder onto https://app.netlify.com/drop, or create a **separate** Netlify site with that folder as its publish directory and no build command.
 3. Never use the website's own Netlify site for the prototype.
 

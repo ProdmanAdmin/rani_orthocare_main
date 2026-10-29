@@ -1,0 +1,927 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Rani Ortho Care Design System</title>
+  <meta name="claude:viewport-fit-sides" content="cover">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="img/mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700;800&family=Noto+Sans+Tamil:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Layout: a long single-column mood board; each numbered band is one part of the system.
+       Rani Ortho Care design system v1.0 (see DESIGN.md). One light theme by design: the page sets every colour itself. */
+    :root {
+      color-scheme: light;
+      --navy: #14234A;
+      --blue: #3C59A8;
+      --blue-deep: #2A4590;
+      --green: #1B7030;
+      --green-hover: #155A26;
+      --spine: #3DB54A;
+      --ink: #14234A;
+      --body: #25304A;
+      --muted: #46526B;
+      --white: #FFFFFF;
+      --band-sky: #E8F0FA;
+      --band-green: #EAF5EC;
+      --blue-tint: #EEF3FB;
+      --green-tint: #E8F6EA;
+      --line: #D5DDEA;
+      --line-strong: #7D8BA6;
+      --on-navy: #C9D6F2;
+      --amber-bg: #FFF4DF;
+      --amber-text: #8A4B00;
+      --error: #B42318;
+
+      --font-en: "Atkinson Hyperlegible Next", "Noto Sans Tamil", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --font-ta: "Noto Sans Tamil", "Atkinson Hyperlegible Next", "Latha", "Nirmala UI", sans-serif;
+
+      /* Mobile type scale (tablet and desktop below) */
+      --fs-display: 30px; --fs-h1: 28px; --fs-h2: 24px; --fs-h3: 21px; --fs-h4: 19px;
+      --fs-lead: 19px; --fs-body: 18px; --fs-small: 16px; --fs-btn: 18px;
+      --gutter: 16px; --section: 56px; --gap: 16px; --pad: 20px;
+    }
+    @media (min-width: 400px) { :root { --gutter: 20px; } }
+    @media (min-width: 640px) {
+      :root { --fs-display: 38px; --fs-h1: 34px; --fs-h2: 28px; --fs-h3: 23px; --fs-h4: 20px; --fs-lead: 20px; --fs-body: 18px; --fs-small: 16px; --fs-btn: 18px;
+              --gutter: 32px; --section: 72px; --gap: 24px; --pad: 24px; }
+    }
+    @media (min-width: 1024px) {
+      :root { --fs-display: 44px; --fs-h1: 40px; --fs-h2: 32px; --fs-h3: 26px; --fs-h4: 22px; --fs-lead: 21px; --fs-body: 20px; --fs-small: 17px; --fs-btn: 19px;
+              --gutter: 40px; --section: 96px; --gap: 24px; --pad: 32px; }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+    body { margin: 0; background: var(--white); color: var(--body); font-family: var(--font-en); font-size: var(--fs-body); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--white); }
+    img, svg { max-width: 100%; }
+    a { color: var(--blue-deep); text-underline-offset: 3px; }
+    .ta { font-family: var(--font-ta); }
+    :focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; box-shadow: 0 0 0 2px var(--white); border-radius: 6px; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
+    h1, h2, h3, h4 { color: var(--ink); font-weight: 700; margin: 0; text-wrap: balance; }
+    h2 { font-size: var(--fs-h2); line-height: 1.25; }
+    h3 { font-size: var(--fs-h3); line-height: 1.3; }
+    h4 { font-size: var(--fs-h4); line-height: 1.35; }
+    p { margin: 0; }
+    .lead { font-size: var(--fs-lead); line-height: 1.55; color: var(--body); max-width: 68ch; }
+    .small { font-size: var(--fs-small); color: var(--muted); line-height: 1.5; }
+    .eyebrow { font-size: 16px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--blue-deep); display: flex; gap: 10px; align-items: center; }
+    .eyebrow b { display: inline-grid; place-items: center; min-width: 32px; height: 32px; border-radius: 999px; background: var(--navy); color: var(--white); letter-spacing: 0; font-size: 15px; }
+    .stack { display: grid; gap: 12px; }
+    .stack-lg { display: grid; gap: var(--gap); }
+    .grid { display: grid; gap: var(--gap); }
+    .g2, .g3, .g4 { grid-template-columns: 1fr; }
+    @media (min-width: 640px) { .g2, .g3, .g4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } .g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    .grid > * { min-width: 0; }
+    .card { background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: var(--pad); }
+    .card.tint { background: var(--blue-tint); border-color: var(--blue-tint); }
+    .band { padding-block: var(--section); }
+    .band.sky { background: var(--band-sky); }
+    .band.green { background: var(--band-green); }
+    .band.sky .card.tint, .band.green .card.tint { background: var(--white); border-color: var(--line); }
+    .band-head { display: grid; gap: 12px; margin-bottom: calc(var(--gap) + 8px); }
+    .band-head .lead { color: var(--muted); }
+    .ico { width: 32px; height: 32px; stroke-width: 2; color: var(--blue); flex-shrink: 0; }
+    .ico-sm { width: 24px; height: 24px; stroke-width: 2; flex-shrink: 0; }
+    .ico-circle { width: 56px; height: 56px; border-radius: 50%; background: var(--blue-tint); display: grid; place-items: center; }
+    .tnum { font-variant-numeric: tabular-nums; }
+
+    /* Site header (the real header pattern) */
+    .util { background: var(--navy); color: var(--on-navy); font-size: 16px; }
+    .util .wrap { display: flex; gap: 8px 20px; align-items: center; justify-content: space-between; flex-wrap: wrap; padding-block: 8px; }
+    .util span { display: inline-flex; gap: 8px; align-items: center; }
+    .util .ico-sm { color: var(--spine); width: 20px; height: 20px; }
+    header.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: var(--white); border-bottom: 1px solid var(--line); box-shadow: 0 2px 10px rgba(20, 35, 74, .06); }
+    header.site .wrap { display: flex; align-items: center; gap: 16px; min-height: 76px; flex-wrap: wrap; padding-block: 8px; }
+    .logo img { height: 40px; width: auto; display: block; }
+    @media (min-width: 1024px) { .logo img { height: 48px; } }
+    nav.proto { display: flex; gap: 4px; margin-left: auto; flex-wrap: wrap; }
+    nav.proto a { min-height: 48px; display: inline-flex; align-items: center; padding: 0 14px; border-radius: 12px; font-weight: 700; font-size: 17px; color: var(--body); text-decoration: none; }
+    nav.proto a:hover { background: var(--blue-tint); color: var(--blue-deep); }
+    nav.proto a[aria-current="page"] { background: var(--navy); color: var(--white); }
+    @media (max-width: 1023px) { nav.proto { order: 3; width: 100%; margin-left: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); } nav.proto a { justify-content: center; text-align: center; padding: 6px; font-size: 15px; line-height: 1.25; } }
+
+    /* Cover */
+    .cover { background: linear-gradient(180deg, var(--blue-tint), var(--white)); padding-block: var(--section); border-bottom: 1px solid var(--line); }
+    .cover-grid { display: grid; gap: 32px; align-items: center; }
+    @media (min-width: 1024px) { .cover-grid { grid-template-columns: 7fr 5fr; } }
+    .cover h1 { font-size: var(--fs-display); line-height: 1.15; font-weight: 800; letter-spacing: -.01em; }
+    .cover h1 span { color: var(--green); }
+    .cover .ta-line { font-family: var(--font-ta); font-size: var(--fs-h3); line-height: 1.5; font-weight: 700; color: var(--blue-deep); }
+    .meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; border-top: 1px solid var(--line); padding-top: 20px; margin-top: 8px; }
+    @media (min-width: 640px) { .meta { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    .meta dt { font-size: 16px; font-weight: 700; color: var(--muted); }
+    .meta dd { margin: 2px 0 0; font-weight: 700; color: var(--ink); }
+    .cover-logo { background: var(--white); border: 1px solid var(--line); border-radius: 24px; padding: 32px; display: grid; gap: 20px; justify-items: center; }
+    .cover-logo img { max-height: 200px; width: auto; }
+    .spine-rule { height: 8px; width: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--navy) 0 55%, var(--blue) 55% 80%, var(--spine) 80% 100%); }
+
+    /* Readers */
+    .reader { display: grid; gap: 14px; align-content: start; }
+    .reader h3 { font-size: var(--fs-h4); }
+    .reader ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+
+    /* Principles */
+    .principles { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--gap); counter-reset: p; }
+    @media (min-width: 640px) { .principles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .principles { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .principles li { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; }
+    .principles li::before { counter-increment: p; content: counter(p); width: 44px; height: 44px; border-radius: 12px; background: var(--navy); color: var(--white); font-weight: 800; display: grid; place-items: center; font-size: 20px; }
+    .principles h3 { font-size: var(--fs-h4); margin-bottom: 4px; }
+
+    /* 60/30/10 */
+    .ratio { display: flex; height: 72px; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); font-weight: 700; }
+    .ratio div { display: flex; align-items: center; padding: 0 16px; font-size: 16px; }
+    .ratio .r60 { flex: 60; background: var(--white); color: var(--ink); background-image: linear-gradient(90deg, var(--white) 0 50%, var(--band-sky) 50% 100%); }
+    .ratio .r30 { flex: 30; background: var(--navy); color: var(--white); }
+    .ratio .r10 { flex: 10; background: var(--green); color: var(--white); justify-content: center; padding: 0 6px; }
+    .role-card { border-top: 6px solid var(--line); }
+    .bands-demo { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: grid; max-width: 560px; }
+    .bands-demo div { padding: 12px 16px; font-weight: 700; font-size: 16px; color: var(--ink); border-bottom: 1px solid rgba(20, 35, 74, .06); }
+    .why-sw { height: 48px; border-radius: 12px; display: block; }
+    footer.page { border-top: 6px solid var(--spine); }
+    .role-card.c30 { border-top-color: var(--navy); }
+    .role-card.c10 { border-top-color: var(--green); }
+    .role-card .pct { font-size: var(--fs-h2); font-weight: 800; color: var(--ink); line-height: 1; }
+    .hexes { display: flex; gap: 8px; flex-wrap: wrap; }
+    .hex { display: inline-flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; color: var(--ink); background: var(--band-sky); border-radius: 999px; padding: 4px 12px 4px 6px; }
+    .hex i { width: 22px; height: 22px; border-radius: 50%; border: 1px solid rgba(20, 35, 74, .15); display: inline-block; }
+
+    /* Swatches */
+    .swatches { display: grid; gap: var(--gap); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    @media (min-width: 640px) { .swatches { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .swatches { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    .swatch { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--white); text-align: left; padding: 0; font: inherit; color: inherit; cursor: pointer; display: grid; min-width: 0; }
+    .swatch .sw-chip { height: 88px; display: flex; align-items: flex-end; justify-content: space-between; padding: 10px 12px; font-size: 16px; font-weight: 700; }
+    .swatch .info { padding: 12px 14px 14px; display: grid; gap: 2px; }
+    .swatch .name { font-weight: 700; color: var(--ink); font-size: 17px; }
+    .swatch .code { font-weight: 700; color: var(--blue-deep); font-size: 16px; }
+    .swatch .use { font-size: 16px; color: var(--muted); line-height: 1.4; }
+    .swatch:hover { border-color: var(--blue); }
+    .sw-group { display: grid; gap: 12px; }
+    .sw-group + .sw-group { margin-top: 32px; }
+    .sw-group > h3 { font-size: var(--fs-h4); }
+    .badge-logo { font-size: 13px; font-weight: 700; background: rgba(255,255,255,.92); color: var(--navy); border-radius: 999px; padding: 2px 8px; }
+    .toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--navy); color: var(--white); padding: 12px 20px; border-radius: 12px; font-weight: 700; z-index: 70; }
+
+    /* Type */
+    .face { display: grid; gap: 16px; }
+    .face .aa { font-size: 96px; line-height: 1; font-weight: 700; color: var(--ink); }
+    .face .glyphs { font-size: 22px; line-height: 1.6; color: var(--body); word-break: break-word; }
+    .face .why { color: var(--muted); }
+    .legible { display: flex; gap: 12px; flex-wrap: wrap; }
+    .legible span { font-size: 36px; font-weight: 700; color: var(--ink); background: var(--band-sky); border-radius: 12px; padding: 4px 16px; letter-spacing: .08em; }
+    .devices { display: inline-flex; border: 2px solid var(--navy); border-radius: 14px; overflow: hidden; }
+    .devices button { min-height: 48px; padding: 0 18px; border: 0; background: var(--white); color: var(--navy); font: 700 17px var(--font-en); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+    .devices button + button { border-left: 2px solid var(--navy); }
+    @media (max-width: 639px) { .devices { width: 100%; } .devices button { flex: 1; padding: 0 8px; justify-content: center; } .devices button svg { display: none; } }
+    .stack-lg > *, .stack > * { min-width: 0; }
+    .phone-frame .mock-bar { gap: 8px; flex-wrap: nowrap; }
+    .phone-frame .menu-btn { padding: 0 10px; }
+    .devices button[aria-pressed="true"] { background: var(--navy); color: var(--white); }
+    .scale-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; }
+    table.scale { width: 100%; border-collapse: collapse; min-width: 900px; }
+    table.scale td.sample { min-width: 420px; width: 50%; }
+    table.scale th, table.scale td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+    table.scale thead th { background: var(--band-sky); font-size: 16px; color: var(--muted); }
+    table.scale td.num { font-size: 16px; font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--muted); }
+    table.scale td.num.on { color: var(--white); background: var(--navy); }
+    table.scale tbody tr:last-child td { border-bottom: 0; }
+    .sample { color: var(--ink); }
+    .sample .en { display: block; }
+    .sample .tm { display: block; font-family: var(--font-ta); color: var(--blue-deep); margin-top: 4px; }
+    .rules { margin: 0; padding-left: 22px; display: grid; gap: 8px; }
+
+    /* Layout */
+    .bp { display: grid; gap: 14px; align-content: start; }
+    .frame { border: 3px solid var(--navy); border-radius: 18px; padding: 12px; background: var(--white); }
+    .cols { display: grid; gap: 6px; height: 120px; }
+    .cols i { background: var(--blue-tint); border: 1px dashed var(--blue); border-radius: 6px; }
+    .bp dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 16px; }
+    .bp dt { color: var(--muted); font-weight: 700; }
+    .bp dd { margin: 0; color: var(--ink); font-weight: 700; }
+    .spacing { display: grid; gap: 8px; }
+    .spacing div { display: grid; grid-template-columns: 48px 1fr; gap: 12px; align-items: center; font-size: 16px; font-weight: 700; color: var(--muted); }
+    .spacing span { height: 16px; background: var(--blue); border-radius: 4px; }
+    .scroll-x { overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; }
+    table.simple { width: 100%; border-collapse: collapse; min-width: 560px; }
+    table.simple th, table.simple td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); font-size: 17px; }
+    table.simple thead th { background: var(--band-sky); color: var(--muted); font-size: 16px; }
+    table.simple tbody tr:last-child td { border-bottom: 0; }
+
+    /* Components */
+    .demo { display: grid; gap: 16px; }
+    .demo-label { font-size: 16px; font-weight: 700; color: var(--muted); }
+    .btn-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 10px 24px; border-radius: 12px; font-size: var(--fs-btn); font-weight: 700; line-height: 1.2; text-decoration: none; border: 2px solid transparent; cursor: pointer; font-family: inherit; text-align: center; }
+    .btn .ico-sm { width: 24px; height: 24px; }
+    .btn-primary { background: var(--green); color: var(--white); }
+    .btn-primary:hover { background: var(--green-hover); }
+    .btn-secondary { background: var(--white); color: var(--blue-deep); border-color: var(--blue-deep); }
+    .btn-secondary:hover { background: var(--blue-tint); }
+    .btn-link { color: var(--blue-deep); font-weight: 700; font-size: var(--fs-btn); display: inline-flex; gap: 6px; align-items: center; text-decoration: underline; min-height: 48px; }
+    .btn.ta { font-family: var(--font-ta); line-height: 1.4; }
+    .btn.full { width: 100%; }
+    .size-table td, .size-table th { font-size: 16px; }
+
+    .lang { display: inline-flex; border: 2px solid var(--navy); border-radius: 12px; overflow: hidden; }
+    .lang span { min-height: 44px; min-width: 64px; display: grid; place-items: center; padding: 0 12px; font-weight: 700; color: var(--navy); background: var(--white); font-size: 17px; }
+    .lang span.on { background: var(--navy); color: var(--white); }
+    .lang span.ta { font-family: var(--font-ta); }
+
+    .mock { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--white); }
+    .mock-util { background: var(--navy); color: var(--on-navy); padding: 8px 16px; font-size: 15px; display: flex; gap: 16px; flex-wrap: wrap; }
+    .mock-util b { color: var(--spine); }
+    .mock-bar { display: flex; align-items: center; gap: 16px; padding: 12px 16px; flex-wrap: wrap; }
+    .mock-bar img { height: 36px; width: auto; }
+    .mock-nav { display: flex; gap: 20px; font-weight: 700; color: var(--ink); font-size: 17px; margin-left: auto; flex-wrap: wrap; }
+    .mock-nav span.cur { color: var(--blue-deep); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 8px; text-decoration-color: var(--spine); }
+    .menu-btn { display: inline-flex; gap: 8px; align-items: center; min-height: 48px; padding: 0 14px; border: 2px solid var(--navy); border-radius: 12px; font-weight: 700; color: var(--navy); }
+    .phone-frame { width: 100%; max-width: 360px; border: 3px solid var(--navy); border-radius: 28px; overflow: hidden; background: var(--white); }
+    .phone-body { padding: 16px; display: grid; gap: 12px; }
+    .action-bar { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); background: var(--white); }
+    .action-bar span { min-height: 64px; display: grid; justify-items: center; align-content: center; gap: 2px; font-size: 15px; font-weight: 700; color: var(--navy); }
+    .action-bar span:first-child { background: var(--green); color: var(--white); }
+    .action-bar .ico-sm { width: 24px; height: 24px; }
+
+    .tile { display: grid; gap: 12px; align-content: start; text-decoration: none; color: inherit; border: 1px solid var(--line); border-radius: 16px; padding: var(--pad); background: var(--white); }
+    .tile:hover { border-color: var(--blue); box-shadow: 0 4px 16px rgba(20, 35, 74, .08); }
+    .tile h4 { font-size: var(--fs-h3); }
+    .tile .more { color: var(--blue-deep); font-weight: 700; display: inline-flex; gap: 6px; align-items: center; text-decoration: underline; }
+    .tile.ta h4, .tile.ta p, .tile.ta .more { font-family: var(--font-ta); }
+    .tile.ta h4 { line-height: 1.5; }
+    .tile.ta p { line-height: 1.85; }
+
+    .journey { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+    @media (min-width: 640px) { .journey { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .journey { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    .journey li { border: 1px solid var(--line); border-radius: 16px; padding: var(--pad); background: var(--white); display: grid; gap: 10px; align-content: start; position: relative; }
+    .journey .n { display: flex; align-items: center; gap: 12px; }
+    .journey .n b { width: 44px; height: 44px; border-radius: 50%; background: var(--navy); color: var(--white); display: grid; place-items: center; font-size: 20px; }
+    .journey li:last-child .n b { background: var(--green); }
+    .journey h4 { font-size: var(--fs-h4); }
+    .journey .tm { font-family: var(--font-ta); color: var(--blue-deep); font-weight: 700; font-size: 17px; line-height: 1.5; }
+
+    .doc { display: grid; gap: 20px; }
+    @media (min-width: 640px) { .doc { grid-template-columns: 180px 1fr; align-items: start; } }
+    .photo-ph { aspect-ratio: 4/5; max-width: 220px; border-radius: 16px; background: var(--blue-tint); border: 2px dashed var(--blue); display: grid; place-items: center; text-align: center; color: var(--blue-deep); font-weight: 700; font-size: 16px; padding: 12px; }
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+    .chip { background: var(--blue-tint); color: var(--blue-deep); border-radius: 999px; padding: 6px 14px; font-size: 16px; font-weight: 700; }
+    .open-now { display: inline-flex; gap: 8px; align-items: center; background: var(--green-tint); color: var(--green); border-radius: 999px; padding: 6px 14px; font-weight: 700; font-size: 16px; }
+    .open-now::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--green); }
+    table.hours { width: 100%; border-collapse: collapse; }
+    table.hours td { padding: 12px 8px; border-bottom: 1px solid var(--line); }
+    table.hours td:last-child { text-align: right; font-weight: 700; color: var(--ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
+    table.hours tr.today td { background: var(--green-tint); font-weight: 700; }
+
+    details.faq { border: 1px solid var(--line); border-radius: 16px; background: var(--white); }
+    details.faq + details.faq { margin-top: 12px; }
+    details.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 18px var(--pad); min-height: 64px; font-weight: 700; color: var(--ink); font-size: var(--fs-h4); line-height: 1.35; }
+    details.faq summary::-webkit-details-marker { display: none; }
+    details.faq summary::after { content: "+"; width: 36px; height: 36px; flex-shrink: 0; border-radius: 50%; background: var(--blue-tint); color: var(--blue-deep); display: grid; place-items: center; font-size: 26px; font-weight: 700; }
+    details.faq[open] summary::after { content: "−"; }
+    details.faq .ans { padding: 0 var(--pad) 20px; }
+
+    .field { display: grid; gap: 8px; }
+    .field label { font-weight: 700; font-size: 16px; color: var(--ink); }
+    .field input, .field select { min-height: 56px; border: 2px solid var(--line-strong); border-radius: 12px; padding: 0 16px; font: 400 18px var(--font-en); color: var(--ink); background: var(--white); width: 100%; }
+    .field.err input { border-color: var(--error); }
+    .field .msg { color: var(--error); font-weight: 700; font-size: 16px; display: flex; gap: 8px; align-items: center; }
+
+    .notice { background: var(--amber-bg); color: var(--amber-text); border-radius: 16px; padding: 16px 20px; display: flex; gap: 12px; align-items: flex-start; font-weight: 700; }
+
+    .foot-mock { background: var(--navy); color: var(--on-navy); border-radius: 16px; padding: var(--pad); display: grid; gap: 20px; }
+    .foot-mock h4 { color: var(--white); font-size: 18px; }
+    .foot-mock .grid { gap: 20px; }
+    .foot-mock a { color: var(--white); }
+    .foot-logo { background: var(--white); border-radius: 12px; padding: 8px 12px; display: inline-block; }
+    .foot-logo img { height: 36px; width: auto; display: block; }
+
+    /* Icons and imagery */
+    .icons { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    @media (min-width: 640px) { .icons { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .icons { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+    .icons div { border: 1px solid var(--line); border-radius: 14px; padding: 14px; display: grid; gap: 8px; justify-items: start; background: var(--white); min-width: 0; }
+    .icons strong { color: var(--ink); font-size: 17px; }
+    .icons code { font-size: 15px; color: var(--muted); word-break: break-all; }
+    .picto { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    @media (min-width: 640px) { .picto { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    .picto div { border: 2px dashed var(--line-strong); border-radius: 14px; padding: 16px; display: grid; gap: 4px; text-align: center; min-height: 110px; align-content: center; }
+    .picto b { color: var(--ink); }
+    .picto span { font-family: var(--font-ta); color: var(--blue-deep); font-size: 17px; }
+    .dodont { display: grid; gap: var(--gap); }
+    @media (min-width: 640px) { .dodont { grid-template-columns: 1fr 1fr; } }
+    .dodont .card h3 { display: flex; gap: 10px; align-items: center; font-size: var(--fs-h4); margin-bottom: 12px; }
+    .dodont ul { margin: 0; padding-left: 22px; display: grid; gap: 10px; }
+    .do h3 { color: var(--green); }
+    .dont h3 { color: var(--error); }
+    .do { border-top: 6px solid var(--green); }
+    .dont { border-top: 6px solid var(--error); }
+    .checklist { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+    @media (min-width: 1024px) { .checklist { grid-template-columns: 1fr 1fr; gap: 12px 32px; } }
+    .checklist li { display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: start; }
+    .checklist .ico-sm { color: var(--green); margin-top: 3px; }
+
+    footer.page { background: var(--navy); color: var(--on-navy); }
+    footer.page .wrap { padding-block: 32px; display: flex; gap: 12px 24px; justify-content: space-between; flex-wrap: wrap; font-size: 17px; }
+    footer.page b { color: var(--white); }
+  </style>
+</head>
+<body>
+  <div class="util">
+    <div class="wrap">
+      <span><i data-lucide="clock" class="ico-sm"></i>Mon–Sat 9 AM–10 PM · Sun 10 AM–12 PM</span>
+      <span><i data-lucide="phone" class="ico-sm"></i><span class="tnum">+91 94445 53070</span></span>
+    </div>
+  </div>
+  <header class="site">
+    <div class="wrap">
+      <a class="logo" href="index.html#about" aria-label="Rani Ortho Care prototype, About"><img src="img/logo-horizontal-en.svg" alt="Rani Ortho Care" width="905" height="188"></a>
+      <nav class="proto" aria-label="Prototype sections">
+        <a href="index.html#about">1 · About</a>
+        <a href="index.html#business">2 · Business core</a>
+        <a href="index.html#assets">3 · Assets</a>
+        <a href="design-system.html" aria-current="page">4 · Design system</a>
+        <a href="home-sample.html">5 · Sample home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- 01 Cover -->
+    <section class="cover" aria-labelledby="t-cover">
+      <div class="wrap cover-grid">
+        <div class="stack-lg">
+          <p class="eyebrow"><b>01</b>Mood board · Design system</p>
+          <h1 id="t-cover">Clear care, <span>easy to read</span></h1>
+          <p class="ta-line">தெளிவான சிகிச்சை, எளிதாகப் படிக்க</p>
+          <p class="lead">The design direction for the Rani Ortho Care website: colour, type, layout and components for mobile, tablet and desktop. Built for older patients and their families, in English and Tamil.</p>
+          <dl class="meta">
+            <div><dt>Client</dt><dd>Rani Ortho Care</dd></div>
+            <div><dt>Phase</dt><dd>2 · Design system</dd></div>
+            <div><dt>Version</dt><dd>1.1 draft</dd></div>
+            <div><dt>Date</dt><dd class="tnum">29 Oct 2026</dd></div>
+          </dl>
+        </div>
+        <div class="cover-logo">
+          <img src="img/logo-stacked-en.svg" alt="Rani Ortho Care logo: Your Mobility, Our Mission" width="812" height="435">
+          <div class="spine-rule" aria-hidden="true"></div>
+          <p class="small" style="text-align:center">The blue R and the green spine set the whole palette.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 Readers -->
+    <section class="band" aria-labelledby="t-readers">
+      <div class="wrap">
+        <div class="band-head">
+          <p class="eyebrow"><b>02</b>Who we design for</p>
+          <h2 id="t-readers">People in pain, within 15 to 20 km of the clinic</h2>
+          <p class="lead">Most visitors arrive worried and in discomfort, on a phone. Many are older, many read Tamil more easily than English, and some read slowly. Every choice below is made for them.</p>
+        </div>
+        <div class="grid g4">
+          <div class="card reader"><span class="ico-circle"><i data-lucide="accessibility" class="ico"></i></span><h3>Elderly patient</h3><p>60+, knee, back or hip pain, may find walking hard. Often reads Tamil first. Weaker eyesight.</p><ul class="small"><li>Big, clear text</li><li>One obvious step: call</li><li>Pictures that explain</li></ul></div>
+          <div class="card reader"><span class="ico-circle"><i data-lucide="users" class="ico"></i></span><h3>Family member</h3><p>25 to 50, booking for a parent, often on a phone, sometimes from another city.</p><ul class="small"><li>Doctor, timings, map, phone in seconds</li><li>WhatsApp to ask first</li></ul></div>
+          <div class="card reader"><span class="ico-circle"><i data-lucide="armchair" class="ico"></i></span><h3>Working adult</h3><p>IT staff, drivers, riders and manual workers with neck or back pain, or wanting prevention.</p><ul class="small"><li>Plain explanation</li><li>What the clinic will do</li></ul></div>
+          <div class="card reader"><span class="ico-circle"><i data-lucide="baby" class="ico"></i></span><h3>Parent of a child</h3><p>A child with clubfoot, a leg deformity or a bone problem.</p><ul class="small"><li>Reassurance</li><li>Clear steps and the doctor's details</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 Principles -->
+    <section class="band sky" aria-labelledby="t-principles">
+      <div class="wrap">
+        <div class="band-head">
+          <p class="eyebrow"><b>03</b>Principles</p>
+          <h2 id="t-principles">Seven rules every page follows</h2>
+        </div>
+        <ol class="principles">
+          <li><div><h3>Clear before clever</h3><p>Plain layouts and high contrast. Nothing decorative competes with words.</p></div></li>
+          <li><div><h3>Readable without glasses</h3><p>Body text 18 px on phones, 20 px on desktop. Nothing below 16 px.</p></div></li>
+          <li><div><h3>One main action</h3><p>Call or WhatsApp is always one tap away. Each section ends with one next step.</p></div></li>
+          <li><div><h3>Words with pictures</h3><p>Every service has an icon or photo and a label. Icons never stand alone.</p></div></li>
+          <li><div><h3>One language at a time</h3><p>A page is fully English or fully Tamil, with the switch always visible.</p></div></li>
+          <li><div><h3>Calm and trustworthy</h3><p>Real photos, soft blue structure, green only for "go". No fear imagery.</p></div></li>
+          <li><div><h3>Same place, every page</h3><p>Header, language switch, call buttons and footer never move.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 04 Colour strategy -->
+    <section class="band" aria-labelledby="t-strategy">
+      <div class="wrap">
+        <div class="band-head">
+          <p class="eyebrow"><b>04</b>Colour strategy</p>
+          <h2 id="t-strategy">The 60 / 30 / 10 rule</h2>
+          <p class="lead">Calm white reading surfaces, a steady Rani blue structure, and one green that always means "go". Both colours come straight from the logo.</p>
+        </div>
+        <div class="stack-lg">
+          <div class="ratio" role="img" aria-label="60 percent white and mist, 30 percent navy and blue, 10 percent green"><div class="r60">60% · White &amp; soft bands</div><div class="r30">30% · Rani Navy &amp; Blue</div><div class="r10">10%</div></div>
+          <div class="grid g3">
+            <div class="card role-card stack"><p class="pct">60%</p><h3>Reading surfaces</h3><p>White pages and cards, with soft sky and green bands so each section stands apart.</p><div class="hexes"><span class="hex"><i style="background:#FFFFFF"></i>#FFFFFF</span><span class="hex"><i style="background:#E8F0FA"></i>#E8F0FA</span><span class="hex"><i style="background:#EAF5EC"></i>#EAF5EC</span><span class="hex"><i style="background:#EEF3FB"></i>#EEF3FB</span></div></div>
+            <div class="card role-card c30 stack"><p class="pct">30%</p><h3>Structure and trust</h3><p>Header bar, headings, icons, links and footer. The blue of the "R" makes the site feel like the clinic's own print.</p><div class="hexes"><span class="hex"><i style="background:#14234A"></i>#14234A</span><span class="hex"><i style="background:#3C59A8"></i>#3C59A8</span><span class="hex"><i style="background:#2A4590"></i>#2A4590</span></div></div>
+            <div class="card role-card c10 stack"><p class="pct">10%</p><h3>Action and movement</h3><p>Only the main button ("Call now"), "Open now" and the final step of care. Green means "go", like the spine in the logo.</p><div class="hexes"><span class="hex"><i style="background:#1B7030"></i>#1B7030</span><span class="hex"><i style="background:#3DB54A"></i>#3DB54A</span></div></div>
+          </div>
+          <div class="card stack">
+            <h3>Section bands: telling sections apart</h3>
+            <p>An all-white page makes sections run together. Each section sits on its own band, and two bands of the same colour never touch.</p>
+            <div class="bands-demo" aria-label="Example home page band order">
+              <div style="background:#FFFFFF">Hero · White</div>
+              <div style="background:#E8F0FA">Care journey · Sky</div>
+              <div style="background:#FFFFFF">What we treat · White</div>
+              <div style="background:#EAF5EC">Prevention and camps · Green</div>
+              <div style="background:#E8F0FA">Doctor and timings · Sky</div>
+              <div style="background:#14234A;color:#FFFFFF">Call-to-action · Navy</div>
+              <div style="background:#3DB54A;min-height:8px;padding:0" aria-hidden="true"></div>
+              <div style="background:#14234A;color:#C9D6F2">Footer · Navy</div>
+            </div>
+            <p class="small">Cards inside a coloured band are white with a border, so they stand out.</p>
+          </div>
+          <p class="notice"><i data-lucide="info" class="ico-sm"></i><span>The logo green <b>#3DB54A</b> is too light for text on white (2.7:1). Buttons and text use the darker Action Green <b>#1B7030</b>; the logo green is kept for decoration and for use on navy.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 Tokens -->
+    <section class="band sky" aria-labelledby="t-tokens">
+      <div class="wrap">
+        <div class="band-head">
+          <p class="eyebrow"><b>05</b>Full palette</p>
+          <h2 id="t-tokens">Colour tokens</h2>
+          <p class="lead">Every colour with its job and its contrast on white. Body text meets 7:1 for older eyes. Tap a swatch to copy its code.</p>
+        </div>
+        <div id="swatches"></div>
+      </div>
+    </section>
+
+    <!-- 06 Why -->
+    <section class="band green" aria-labelledby="t-why">
+      <div class="wrap">
+        <div class="band-head">
+          <p class="eyebrow"><b>06</b>Why these choices</p>
+          <h2 id="t-why">Fonts and colours that feel like healing</h2>
+          <p class="lead">Every choice comes from the patients and from the clinic's own logo. The aim: clear, calm and kind, in both languages.</p>
+        </div>
+        <div class="grid g2">
+          <div class="card stack">
+            <p class="demo-label">ENGLISH FONT</p>
+            <h3>Atkinson Hyperlegible Next</h3>
+            <ul class="rules">
+              <li><b>Made for weak eyesight.</b> Commissioned by the Braille Institute of America, a charity for people with low vision. Most of our readers are older.</li>
+              <li><b>Every letter is unmistakable.</b> A misread phone number, timing or medicine name is a real problem in healthcare. Clear letters are part of patient safety.</li>
+              <li><b>Warm, not clinical.</b> Rounded, open shapes feel friendly and calm, right for a clinic that promises relief first.</li>
+            </ul>
+          </div>
+          <div class="card stack">
+            <p class="demo-label">TAMIL FONT</p>
+            <h3>Noto Sans Tamil</h3>
+            <ul class="rules">
+              <li><b>Familiar.</b> The standard Tamil font on most Android phones, which most of our readers use. Familiar letters are less tiring to read.</li>
+              <li><b>Complete and correct.</b> Every letter, conjunct and vowel sign is covered, so health words are read exactly as written.</li>
+              <li><b>Calm and even.</b> Plain strokes keep long Tamil words clear, and match the steady tone of the English face.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid g4" style="margin-top:var(--gap)">
+          <div class="card stack"><span class="why-sw" style="background:#14234A"></span><h4>Navy and blue</h4><p class="small">From the blue "R". The colour people most link with medicine, cleanliness and trust. Navy adds quiet expertise. It calms rather than alarms.</p></div>
+          <div class="card stack"><span class="why-sw" style="background:#1B7030"></span><h4>Green</h4><p class="small">From the spine in the "R". Growth, recovery, healing and "go". Kept for one job: the next step towards recovery.</p></div>
+          <div class="card stack"><span class="why-sw" style="background:linear-gradient(90deg,#FFFFFF 0 34%,#E8F0FA 34% 67%,#EAF5EC 67%);border:1px solid #D5DDEA"></span><h4>White with soft bands</h4><p class="small">Clean and hygienic, with soft sky and green bands so every section has its own calm space.</p></div>
+          <div class="card stack"><span class="why-sw" style="background:#B42318"></span><h4>Red only for errors</h4><p class="small">Red means alarm and pain. The clinic's message is relief, so red appears only on form errors.</p></div>
+        </div>
+        <p class="lead" style="margin-top:var(--gap);color:var(--ink);font-weight:700">The palette tells the care journey in colour: calm blue (you are in safe hands), then green (movement and recovery).</p>
+      </div>
+    </section>
+
+    <!-- 07 Typography -->
+    <section class="band" aria-labelledby="t-type">
+      <div class="wrap">
+        <div class="band-head">
+          <p class="eyebrow"><b>07</b>Typography</p>
+          <h2 id="t-type">Two clear faces, one for each script</h2>
+          <p class="lead">An English face built for readers with low vision, and a Tamil face with open, even letters. Both are free Google Fonts.</p>
+        </div>
+        <div class="grid g2">
+          <div class="card face">
+            <p class="demo-label">ENGLISH · ATKINSON HYPERLEGIBLE NEXT · 400, 700, 800</p>
+            <p class="aa">Aa</p>
+            <p class="glyphs">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br><span class="tnum">0123456789 +91 94445 53070</span></p>
+            <div class="legible" aria-label="Letters that are easy to confuse are clearly different"><span>Il1</span><span>O0</span><span>bd</span><span>rn m</span></div>
+            <p class="why">Designed by the Braille Institute for low vision. Look-alike letters such as I, l and 1 are drawn differently, so medicine names and phone numbers are read correctly.</p>
+          </div>
+          <div class="card face">
+            <p class="demo-label">TAMIL · NOTO SANS TAMIL · 400, 500, 700</p>
+            <p class="aa ta">அஆ</p>
+            <p class="glyphs ta">அ ஆ இ ஈ உ ஊ எ ஏ ஐ ஒ ஓ ஔ<br>க ங ச ஞ ட ண த ந ப ம ய ர ல வ ழ ள ற ன<br>கி கீ கு கூ கெ கே கை கொ கோ க்ஷ ஸ்ரீ</p>
+            <p class="ta" style="font-size:24px;line-height:1.8;color:var(--ink);font-weight:700">முழங்கால் வலி · முதுகு வலி · எலும்பு முறிவு</p>
+            <p class="why">Open shapes and even strokes keep vowel signs (கி, கு, கொ) clear on low-cost phone screens. Every conjunct and Tamil numeral is covered.</p>
+          </div>
+        </div>
+
+        <div class="stack-lg" style="margin-top:48px">
+          <div style="display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+            <h3>Type scale for each screen size</h3>
+            <div class="devices" role="group" aria-label="Show sizes for">
+              <button type="button" data-dev="m" aria-pressed="false"><i data-lucide="smartphone" class="ico-sm"></i>Mobile</button>
+              <button type="button" data-dev="t" aria-pressed="false"><i data-lucide="tablet" class="ico-sm"></i>Tablet</button>
+              <button type="button" data-dev="d" aria-pressed="true"><i data-lucide="monitor" class="ico-sm"></i>Desktop</button>
+            </div>
+          </div>
+          <p class="small">The samples are drawn at the size of the screen you pick. Mobile is under 640 px, tablet 640 to 1023 px, desktop 1024 px and up.</p>
+          <div class="scale-wrap">
+            <table class="scale">
+              <thead><tr><th>Style</th><th>Sample (English and Tamil)</th><th>Mobile</th><th>Tablet</th><th>Desktop</th><th>Weight</th><th>Line height EN / TA</th></tr></thead>
+              <tbody id="scale"></tbody>
+            </table>
+          </div>
+          <div class="grid g2">
+            <div class="card tint stack"><h4>Tamil rules</h4>
+              <ul class="rules">
+                <li>Same sizes as English, with taller line heights so vowel signs above and below never collide.</li>
+                <li>Headings may wrap to 2 or 3 lines. Buttons allow 2 lines of Tamil.</li>
+                <li>No capitals, no letter-spacing, no italics in Tamil.</li>
+                <li>Never set Tamil in an English-only font.</li>
+              </ul>
+            </div>
+            <div class="card tint stack"><h4>Reading rules</h4>
+              <ul class="rules">
+                <li>45 to 70 characters per line (max width 68ch).</li>
+                <li>Left aligned, never justified. Centre only short headings.</li>
+                <li>2 to 4 sentences per paragraph. Lists for steps and symptoms.</li>
+                <li>Phone numbers and timings in aligned figures.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 Layout -->
+    <section class="band sky" aria-labelledby="t-layout">
+      <div class="wrap">
+        <div class="band-head">
+          <p class="eyebrow"><b>08</b>Layout</p>
+          <h2 id="t-layout">Three screen sizes, one grid</h2>
+          <p class="lead">Four columns on phones, eight on tablets, twelve on desktop. Generous side margins and space between sections, so nothing feels crowded.</p>
+        </div>
+        <div class="grid g3">
+          <div class="card bp"><h3>Mobile</h3><div class="frame" style="max-width:180px"><div class="cols" style="grid-template-columns:repeat(4,1fr)"><i></i><i></i><i></i><i></i></div></div>
+            <dl><dt>Width</dt><dd>0 to 639 px</dd><dt>Columns</dt><dd>4</dd><dt>Side margin</dt><dd>16 to 20 px</dd><dt>Gap</dt><dd>16 px</dd><dt>Sections</dt><dd>56 px apart</dd></dl></div>
+          <div class="card bp"><h3>Tablet</h3><div class="frame" style="max-width:300px"><div class="cols" style="grid-template-columns:repeat(8,1fr)"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+            <dl><dt>Width</dt><dd>640 to 1023 px</dd><dt>Columns</dt><dd>8</dd><dt>Side margin</dt><dd>32 px</dd><dt>Gap</dt><dd>24 px</dd><dt>Sections</dt><dd>72 px apart</dd></dl></div>
+          <div class="card bp"><h3>Desktop</h3><div class="frame"><div class="cols" style="grid-template-columns:repeat(12,1fr);gap:4px"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+            <dl><dt>Width</dt><dd>1024 px and up</dd><dt>Columns</dt><dd>12</dd><dt>Container</dt><dd>max 1200 px</dd><dt>Side margin</dt><dd>40 px</dd><dt>Sections</dt><dd>96 px apart</dd></dl></div>
+        </div>
+        <div class="grid g2" style="margin-top:var(--gap)">
+          <div class="card stack"><h3>Spacing scale</h3><p class="small">An 8-point scale. Use only these steps.</p>
+            <div class="spacing">
+              <div>4<span style="width:4px"></span></div><div>8<span style="width:8px"></span></div><div>12<span style="width:12px"></span></div><div>16<span style="width:16px"></span></div><div>24<span style="width:24px"></span></div><div>32<span style="width:32px"></span></div><div>48<span style="width:48px"></span></div><div>64<span style="width:64px"></span></div><div>96<span style="width:96px"></span></div>
+            </div>
+          </div>
+          <div class="card stack"><h3>Shapes</h3>
+            <div class="scroll-x" style="border:0"><table class="simple" style="min-width:0">
+              <tbody>
+                <tr><td>Buttons</td><td><b>12 px</b> corners</td></tr>
+                <tr><td>Cards and images</td><td><b>16 px</b> corners, 1 px border</td></tr>
+                <tr><td>Chips</td><td>Fully round</td></tr>
+                <tr><td>Shadows</td><td>Only on sticky header and phone action bar</td></tr>
+              </tbody>
+            </table></div>
+            <p class="small">Clear borders show where each card ends, which helps readers with weaker eyesight.</p>
+          </div>
+        </div>
+        <h3 style="margin-top:48px;margin-bottom:16px">How common sections change size</h3>
+        <div class="scroll-x">
+          <table class="simple">
+            <thead><tr><th>Section</th><th>Mobile</th><th>Tablet</th><th>Desktop</th></tr></thead>
+            <tbody>
+              <tr><td><b>Hero</b> (text and photo)</td><td>Stacked: text, buttons, photo</td><td>Stacked, wider photo</td><td>Two columns, 7 + 5</td></tr>
+              <tr><td><b>Service tiles</b></td><td>1 column</td><td>2 columns</td><td>3 or 4 columns</td></tr>
+              <tr><td><b>Care journey</b></td><td>Vertical list</td><td>2 × 2</td><td>4 in a row</td></tr>
+              <tr><td><b>Doctor profile</b></td><td>Photo above text</td><td>Photo beside text</td><td>4 + 8 columns</td></tr>
+              <tr><td><b>Service page</b></td><td>1 column</td><td>1 column, 68ch</td><td>8 text + 4 side panel</td></tr>
+              <tr><td><b>Footer</b></td><td>Stacked</td><td>2 columns</td><td>4 columns</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 Components -->
+    <section class="band" aria-labelledby="t-comp">
+      <div class="wrap">
+        <div class="band-head">
+          <p class="eyebrow"><b>09</b>Components</p>
+          <h2 id="t-comp">The building blocks</h2>
+          <p class="lead">Each one is shown as it will look on the website, in English and Tamil.</p>
+        </div>
+
+        <div class="stack-lg">
+          <div class="card demo">
+            <h3>Buttons</h3>
+            <p class="demo-label">ENGLISH</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="#t-comp"><i data-lucide="phone" class="ico-sm"></i>Call +91 94445 53070</a>
+              <a class="btn btn-secondary" href="#t-comp"><i data-lucide="message-circle" class="ico-sm"></i>WhatsApp us</a>
+              <a class="btn-link" href="#t-comp">View all services<i data-lucide="chevron-right" class="ico-sm"></i></a>
+            </div>
+            <p class="demo-label">TAMIL</p>
+            <div class="btn-row">
+              <a class="btn btn-primary ta" href="#t-comp"><i data-lucide="phone" class="ico-sm"></i>இப்போதே அழைக்கவும்</a>
+              <a class="btn btn-secondary ta" href="#t-comp"><i data-lucide="map-pin" class="ico-sm"></i>வழி காட்டு</a>
+            </div>
+            <div class="scroll-x" style="margin-top:8px">
+              <table class="simple size-table">
+                <thead><tr><th>Button</th><th>Mobile</th><th>Tablet</th><th>Desktop</th></tr></thead>
+                <tbody>
+                  <tr><td>Height (minimum)</td><td>56 px</td><td>56 px</td><td>56 px</td></tr>
+                  <tr><td>Text</td><td>18 px bold</td><td>18 px bold</td><td>19 px bold</td></tr>
+                  <tr><td>Side padding</td><td>20 px</td><td>24 px</td><td>28 px</td></tr>
+                  <tr><td>Width in hero and CTA bands</td><td>Full width</td><td>Auto</td><td>Auto</td></tr>
+                  <tr><td>Icon</td><td colspan="3">24 px, left of the words. Tap area at least 48 × 48 px.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="small">Labels say exactly what happens. The call button shows the number itself.</p>
+          </div>
+
+          <div class="grid">
+            <div class="card demo">
+              <h3>Header: desktop</h3>
+              <div class="mock">
+                <div class="mock-util"><span>Mon–Sat 9 AM–10 PM</span><b>● Open now</b></div>
+                <div class="mock-bar">
+                  <img src="img/logo-horizontal-en.svg" alt="" width="905" height="188">
+                  <div class="mock-nav"><span class="cur">Home</span><span>Services</span><span>Doctor</span><span>Camps</span><span>Contact</span></div>
+                  <div class="lang"><span class="on">EN</span><span class="ta">தமிழ்</span></div>
+                </div>
+              </div>
+              <p class="small">Logo, 5 or 6 menu items at 18 px, the language switch and a green Call button. A navy bar on top shows today's timings.</p>
+            </div>
+            <div class="card demo">
+              <h3>Header and action bar: phone</h3>
+              <div class="phone-frame">
+                <div class="mock-bar" style="border-bottom:1px solid var(--line)">
+                  <img src="img/mark.svg" alt="" width="222" height="245" style="height:40px">
+                  <div class="lang" style="margin-left:auto"><span class="on" style="min-width:48px">EN</span><span class="ta" style="min-width:56px">தமிழ்</span></div>
+                  <span class="menu-btn"><i data-lucide="menu" class="ico-sm"></i>Menu</span>
+                </div>
+                <div class="phone-body"><p style="font-weight:700;color:var(--ink);font-size:24px;line-height:1.25">Relief from knee and back pain</p><p class="small">Page content…</p></div>
+                <div class="action-bar"><span><i data-lucide="phone" class="ico-sm"></i>Call</span><span><i data-lucide="message-circle" class="ico-sm"></i>WhatsApp</span><span><i data-lucide="map-pin" class="ico-sm"></i>Directions</span></div>
+              </div>
+              <p class="small">"Menu" is written in words. Call, WhatsApp and Directions stay fixed at the bottom, 64 px tall.</p>
+            </div>
+          </div>
+
+          <div class="card demo">
+            <h3>Service tiles</h3>
+            <div class="grid g3">
+              <a class="tile" href="#t-comp"><span class="ico-circle"><i data-lucide="bone" class="ico"></i></span><h4>Knee pain and arthritis</h4><p>Relief first, then treatment of the cause, so you can walk with less pain.</p><span class="more">Learn more<i data-lucide="chevron-right" class="ico-sm"></i></span></a>
+              <a class="tile ta" href="#t-comp"><span class="ico-circle"><i data-lucide="activity" class="ico"></i></span><h4>முதுகு மற்றும் கழுத்து வலி</h4><p>முதலில் வலி நிவாரணம், பிறகு மூல காரணத்திற்குச் சிகிச்சை.</p><span class="more">மேலும் அறிய<i data-lucide="chevron-right" class="ico-sm"></i></span></a>
+              <a class="tile" href="#t-comp"><span class="ico-circle"><i data-lucide="dumbbell" class="ico"></i></span><h4>Physiotherapy</h4><p>Exercises and therapy that rebuild strength after injury, surgery or stroke.</p><span class="more">Learn more<i data-lucide="chevron-right" class="ico-sm"></i></span></a>
+            </div>
+          </div>
+
+          <div class="card demo">
+            <h3>Care journey: the signature visual</h3>
+            <ol class="journey">
+              <li><div class="n"><b>1</b><i data-lucide="heart-pulse" class="ico"></i></div><h4>Relieve the pain</h4><p class="tm">வலி நிவாரணம்</p><p class="small">Comfort comes first.</p></li>
+              <li><div class="n"><b>2</b><i data-lucide="search" class="ico"></i></div><h4>Find the root cause</h4><p class="tm">மூல காரணம்</p><p class="small">Then we find why it hurts.</p></li>
+              <li><div class="n"><b>3</b><i data-lucide="footprints" class="ico"></i></div><h4>Restore movement</h4><p class="tm">மீண்டும் இயக்கம்</p><p class="small">So you can walk again.</p></li>
+              <li><div class="n"><b>4</b><i data-lucide="shield-check" class="ico"></i></div><h4>Safely, always</h4><p class="tm">எப்போதும் பாதுகாப்பாக</p><p class="small">No harm, at every step.</p></li>
+            </ol>
+          </div>
+
+          <div class="grid g2">
+            <div class="card demo">
+              <h3>Doctor card</h3>
+              <div class="doc">
+                <div class="photo-ph">Real photo of Dr. N. Manikandan (4:5)</div>
+                <div class="stack">
+                  <h4 style="font-size:var(--fs-h3)">Dr. N. Manikandan</h4>
+                  <p style="color:var(--blue-deep);font-weight:700">M.B.B.S., M.S. (Ortho)</p>
+                  <div class="chips"><span class="chip">Consultant Orthopaedic Surgeon</span><span class="chip">Government Doctor</span></div>
+                  <div class="btn-row"><a class="btn btn-primary" href="#t-comp"><i data-lucide="phone" class="ico-sm"></i>Call</a><a class="btn btn-secondary" href="#t-comp"><i data-lucide="message-circle" class="ico-sm"></i>WhatsApp</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="card demo">
+              <h3>Timings and "Open now"</h3>
+              <span class="open-now">Open now</span>
+              <table class="hours"><tbody>
+                <tr class="today"><td>Monday to Saturday (today)</td><td>9 AM – 10 PM</td></tr>
+                <tr><td>Sunday</td><td>10 AM – 12 PM</td></tr>
+              </tbody></table>
+              <p class="small">Today's row is highlighted. "Open now" uses words and a dot, never colour alone.</p>
+            </div>
+          </div>
+
+          <div class="grid g2">
+            <div class="card demo">
+              <h3>FAQ</h3>
+              <details class="faq" open><summary>Where is the clinic?</summary><div class="ans"><p>On Koviloor Road, near Indian Bank, in Karaikudi. Tap Directions to open the map on your phone.</p></div></details>
+              <details class="faq"><summary class="ta">மையம் எங்கே உள்ளது?</summary><div class="ans ta"><p>காரைக்குடி, கோவிலூர் சாலையில், இந்தியன் வங்கி அருகில் உள்ளது.</p></div></details>
+              <p class="small">Questions are 20 px+, with a large plus sign, and work without JavaScript.</p>
+            </div>
+            <div class="card demo">
+              <h3>Form fields</h3>
+              <div class="field"><label for="f-name">Your name</label><input id="f-name" type="text" value="Lakshmi"></div>
+              <div class="field err"><label for="f-phone">Mobile number</label><input id="f-phone" type="tel" value="94445" aria-describedby="f-phone-msg"><p class="msg" id="f-phone-msg"><i data-lucide="alert-circle" class="ico-sm"></i>Please enter your 10-digit mobile number.</p></div>
+              <div class="field"><label for="f-area">Where is the pain?</label><select id="f-area"><option>Knee</option><option>Back or neck</option><option>Shoulder</option><option>Hip</option><option>Child's leg or foot</option></select></div>
+            </div>
+          </div>
+
+          <div class="grid g2">
+            <div class="card demo">
+              <h3>Notice banner</h3>
+              <p class="notice"><i data-lucide="calendar-days" class="ico-sm"></i><span>Example: free bone and joint camp, Sunday 15 November, 10 AM to 1 PM. Shows until the camp date, then hides itself.</span></p>
+            </div>
+            <div class="card demo">
+              <h3>Language switch</h3>
+              <div class="lang"><span class="on">EN</span><span class="ta">தமிழ்</span></div>
+              <p class="small">Two words, the current one filled navy. Same place on every page; keeps the reader on the same page in the other language.</p>
+            </div>
+          </div>
+
+          <div class="card demo">
+            <h3>Footer</h3>
+            <div class="foot-mock">
+              <span class="foot-logo"><img src="img/logo-horizontal-en.svg" alt="" width="905" height="188"></span>
+              <div class="grid g4">
+                <div><h4>Visit</h4><p>No. 2, M.M. Complex, 1st Beat, Koviloor Road, near Indian Bank, Karaikudi 630001</p></div>
+                <div><h4>Call or WhatsApp</h4><p class="tnum"><a href="#t-comp">+91 94445 53070</a><br>04565 233070</p></div>
+                <div><h4>Timings</h4><p>Mon–Sat 9 AM–10 PM<br>Sun 10 AM–12 PM</p></div>
+                <div><h4>Follow</h4><p><a href="#t-comp">Instagram</a></p></div>
+              </div>
+            </div>
+            <p class="small">A white logo version is needed for the navy footer. Until then, the logo sits on a white tile.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 Icons and imagery -->
+    <section class="band green" aria-labelledby="t-icons">
+      <div class="wrap">
+        <div class="band-head">
+          <p class="eyebrow"><b>10</b>Icons and pictures</p>
+          <h2 id="t-icons">Pictures that explain, always with words</h2>
+          <p class="lead">Simple line icons, 2 px stroke, in Rani Blue. Every icon has a label next to it.</p>
+        </div>
+        <div class="icons" id="icons"></div>
+
+        <h3 style="margin-top:48px;margin-bottom:8px">Body-area pictograms (to be drawn)</h3>
+        <p class="small" style="margin-bottom:16px">So readers can point to where it hurts, even without the medical word. Same line style, the painful area in spine green.</p>
+        <div class="picto">
+          <div><b>Knee</b><span>முழங்கால்</span></div><div><b>Back and spine</b><span>முதுகு</span></div><div><b>Neck</b><span>கழுத்து</span></div><div><b>Shoulder</b><span>தோள்பட்டை</span></div>
+          <div><b>Hip</b><span>இடுப்பு</span></div><div><b>Hand and wrist</b><span>கை, மணிக்கட்டு</span></div><div><b>Foot and ankle</b><span>பாதம், கணுக்கால்</span></div><div><b>Child's leg</b><span>குழந்தையின் கால்</span></div>
+        </div>
+
+        <div class="dodont" style="margin-top:48px">
+          <div class="card do"><h3><i data-lucide="check-circle" class="ico-sm"></i>Photos to use</h3>
+            <ul><li>Dr. N. Manikandan, real and smiling</li><li>The clinic building, so people recognise it</li><li>Older adults walking, standing, moving</li><li>Physiotherapy sessions and the X-ray room</li><li>Free camps in nearby villages (with consent)</li></ul></div>
+          <div class="card dont"><h3><i data-lucide="x-circle" class="ico-sm"></i>Photos to avoid</h3>
+            <ul><li>Skeletons and red "pain glow" images</li><li>Gym models and foreign-looking stock photos</li><li>Any watermarked image</li><li>Identifiable patients without written consent</li><li>Dark, worrying or bloody scenes</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 Accessibility -->
+    <section class="band sky" aria-labelledby="t-a11y">
+      <div class="wrap">
+        <div class="band-head">
+          <p class="eyebrow"><b>11</b>Checklist</p>
+          <h2 id="t-a11y">Before any page goes live</h2>
+          <p class="lead">Checked at 375 px, 768 px and 1280 px wide, in English and in Tamil.</p>
+        </div>
+        <ul class="checklist">
+          <li><i data-lucide="check" class="ico-sm"></i><span>Body text 18 px or more on phones, 20 px on desktop. Nothing under 16 px.</span></li>
+          <li><i data-lucide="check" class="ico-sm"></i><span>Body text contrast 7:1 or more. Buttons and large text 4.5:1 or more.</span></li>
+          <li><i data-lucide="check" class="ico-sm"></i><span>One H1. Headings in order: H1, H2, H3, H4.</span></li>
+          <li><i data-lucide="check" class="ico-sm"></i><span>Every icon has a word. Every image has alt text in the page's language.</span></li>
+          <li><i data-lucide="check" class="ico-sm"></i><span>Tap targets 48 × 48 px or more. Focus ring visible on everything.</span></li>
+          <li><i data-lucide="check" class="ico-sm"></i><span>Works at 200% zoom with no sideways scrolling.</span></li>
+          <li><i data-lucide="check" class="ico-sm"></i><span>Tamil headings and buttons wrap cleanly, with no clipped vowel signs.</span></li>
+          <li><i data-lucide="check" class="ico-sm"></i><span>Call, WhatsApp and Directions one tap away on phones.</span></li>
+          <li><i data-lucide="check" class="ico-sm"></i><span>No information by colour alone. Nothing moves on its own.</span></li>
+          <li><i data-lucide="check" class="ico-sm"></i><span>Calm words only: no "best", "guaranteed", "100%" or "permanent cure".</span></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page">
+    <div class="wrap">
+      <span><b>Rani Ortho Care</b> · Design system v1.1 draft</span>
+      <span>Full specification: DESIGN.md in the project</span>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script>
+  (function () {
+    // Colour tokens (keep in step with DESIGN.md section 3).
+    var groups = [
+      { title: "Brand core", items: [
+        { n: "Rani Navy", t: "navy", h: "#14234A", u: "Headings, header bar, footer", c: "15.3:1", logo: false, dark: true },
+        { n: "Rani Blue", t: "blue", h: "#3C59A8", u: "From the logo. Icons, large accents", c: "6.6:1", logo: true, dark: true },
+        { n: "Blue Deep", t: "blue-deep", h: "#2A4590", u: "Links, secondary buttons, labels", c: "8.9:1", dark: true },
+        { n: "Action Green", t: "green", h: "#1B7030", u: "Main buttons, Open now", c: "White text 6.2:1", dark: true },
+        { n: "Green Pressed", t: "green-hover", h: "#155A26", u: "Button hover and pressed", c: "White text 8.3:1", dark: true },
+        { n: "Spine Green", t: "spine", h: "#3DB54A", u: "From the logo. Decoration only", c: "2.7:1 · no text", logo: true }
+      ]},
+      { title: "Surfaces and borders", items: [
+        { n: "White", t: "white", h: "#FFFFFF", u: "Main page surface" },
+        { n: "Sky Band", t: "band-sky", h: "#E8F0FA", u: "Every other section", c: "Body 11.4:1" },
+        { n: "Green Band", t: "band-green", h: "#EAF5EC", u: "Prevention, physio, camps", c: "Body 11.7:1" },
+        { n: "Blue Tint", t: "blue-tint", h: "#EEF3FB", u: "Cards, icon circles, highlights" },
+        { n: "Green Tint", t: "green-tint", h: "#E8F6EA", u: "Open now, success" },
+        { n: "Line", t: "line", h: "#D5DDEA", u: "Card borders, dividers" },
+        { n: "Line Strong", t: "line-strong", h: "#7D8BA6", u: "Form field borders", c: "3.4:1", dark: true }
+      ]},
+      { title: "Text", items: [
+        { n: "Ink", t: "ink", h: "#14234A", u: "Headings", c: "15.3:1", dark: true },
+        { n: "Body", t: "body", h: "#25304A", u: "Paragraphs", c: "13.1:1", dark: true },
+        { n: "Muted", t: "muted", h: "#46526B", u: "Captions, meta", c: "7.8:1", dark: true },
+        { n: "On Navy", t: "on-navy", h: "#C9D6F2", u: "Text on navy", c: "10.5:1 on navy" }
+      ]},
+      { title: "Status", items: [
+        { n: "Notice", t: "amber-text / amber-bg", h: "#8A4B00", bg: "#FFF4DF", u: "Camp dates, holiday timings", c: "6.2:1" },
+        { n: "Error", t: "error", h: "#B42318", u: "Form errors, with icon and words", c: "6.6:1", dark: true }
+      ]}
+    ];
+    var html = "";
+    groups.forEach(function (g) {
+      html += '<div class="sw-group"><h3>' + g.title + '</h3><div class="swatches">';
+      g.items.forEach(function (s) {
+        var fg = s.dark ? "#FFFFFF" : "#14234A";
+        var bg = s.bg ? 'background:' + s.bg + ';color:' + s.h : 'background:' + s.h + ';color:' + fg;
+        html += '<button type="button" class="swatch" data-hex="' + s.h + '" aria-label="Copy ' + s.n + ' ' + s.h + '">' +
+          '<span class="sw-chip" style="' + bg + (s.h === "#FFFFFF" ? ';border-bottom:1px solid #D5DDEA' : '') + '"><span>' + (s.c || "") + '</span>' + (s.logo ? '<span class="badge-logo">logo</span>' : '') + '</span>' +
+          '<span class="info"><span class="name">' + s.n + '</span><span class="code">' + s.h + (s.bg ? ' on ' + s.bg : '') + '</span><span class="use">' + s.u + '</span><span class="use">token: ' + s.t + '</span></span></button>';
+      });
+      html += "</div></div>";
+    });
+    document.getElementById("swatches").innerHTML = html;
+
+    var toastTimer;
+    function toast(msg) {
+      var el = document.querySelector(".toast");
+      if (!el) { el = document.createElement("div"); el.className = "toast"; el.setAttribute("role", "status"); document.body.appendChild(el); }
+      el.textContent = msg; el.hidden = false;
+      clearTimeout(toastTimer); toastTimer = setTimeout(function () { el.hidden = true; }, 1600);
+    }
+    document.getElementById("swatches").addEventListener("click", function (e) {
+      var b = e.target.closest(".swatch"); if (!b) return;
+      var hex = b.dataset.hex;
+      try {
+        navigator.clipboard.writeText(hex).then(function () { toast("Copied " + hex); }, function () { toast(hex); });
+      } catch (err) { toast(hex); }
+    });
+
+    // Type scale (keep in step with DESIGN.md section 4).
+    var scale = [
+      { s: "Display", m: 30, t: 38, d: 44, w: 800, lh: "1.2 / 1.4", en: "Walk again with less pain", ta: "வலி குறைந்து மீண்டும் நடக்க" },
+      { s: "H1", m: 28, t: 34, d: 40, w: 700, lh: "1.25 / 1.45", en: "Knee pain treatment", ta: "முழங்கால் வலி சிகிச்சை" },
+      { s: "H2", m: 24, t: 28, d: 32, w: 700, lh: "1.3 / 1.5", en: "How we treat knee pain", ta: "முழங்கால் வலிக்கு எங்கள் சிகிச்சை" },
+      { s: "H3", m: 21, t: 23, d: 26, w: 700, lh: "1.3 / 1.5", en: "Physiotherapy", ta: "பிசியோதெரபி" },
+      { s: "H4", m: 19, t: 20, d: 22, w: 700, lh: "1.35 / 1.55", en: "When should I see a doctor?", ta: "எப்போது மருத்துவரைப் பார்க்க வேண்டும்?" },
+      { s: "Lead", m: 19, t: 20, d: 21, w: 400, lh: "1.55 / 1.75", en: "We relieve your pain first, then treat the cause.", ta: "முதலில் வலியைக் குறைத்து, பிறகு காரணத்திற்குச் சிகிச்சை." },
+      { s: "Body", m: 18, t: 18, d: 20, w: 400, lh: "1.65 / 1.85", en: "Most knee pain improves with the right care and exercise.", ta: "சரியான சிகிச்சையும் பயிற்சியும் இருந்தால் பெரும்பாலான முழங்கால் வலி குறையும்." },
+      { s: "Small", m: 16, t: 16, d: 17, w: 400, lh: "1.5 / 1.7", en: "Last updated 29 October 2026", ta: "கடைசியாகப் புதுப்பித்தது 29 அக்டோபர் 2026" },
+      { s: "Button", m: 18, t: 18, d: 19, w: 700, lh: "1.2 / 1.4", en: "Call now", ta: "இப்போதே அழைக்கவும்" }
+    ];
+    var dev = window.matchMedia("(min-width: 1024px)").matches ? "d" : window.matchMedia("(min-width: 640px)").matches ? "t" : "m";
+    function drawScale() {
+      document.getElementById("scale").innerHTML = scale.map(function (r) {
+        var px = r[dev], lh = r.lh.split(" / ");
+        return '<tr><th scope="row">' + r.s + '</th><td class="sample"><span class="en" style="font-size:' + px + 'px;line-height:' + lh[0] + ';font-weight:' + r.w + '">' + r.en + '</span>' +
+          '<span class="tm" style="font-size:' + px + 'px;line-height:' + lh[1] + ';font-weight:' + Math.min(r.w, 700) + '">' + r.ta + '</span></td>' +
+          ["m", "t", "d"].map(function (k) { return '<td class="num' + (k === dev ? " on" : "") + '">' + r[k] + ' px</td>'; }).join("") +
+          '<td class="num">' + r.w + '</td><td class="num">' + r.lh + '</td></tr>';
+      }).join("");
+      document.querySelectorAll(".devices button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.dev === dev)); });
+    }
+    document.querySelectorAll(".devices button").forEach(function (b) { b.addEventListener("click", function () { dev = b.dataset.dev; drawScale(); }); });
+    drawScale();
+
+    // Icon set (Lucide names; keep in step with DESIGN.md section 7).
+    var icons = [["phone", "Call"], ["message-circle", "WhatsApp"], ["map-pin", "Directions"], ["clock", "Timings"], ["calendar-days", "Camps, dates"],
+      ["bone", "Bones, fractures"], ["person-standing", "Posture"], ["accessibility", "Mobility"], ["footprints", "Walking again"], ["baby", "Children"],
+      ["hand", "Hand and wrist"], ["activity", "Pain, spine"], ["heart-pulse", "Pain relief"], ["scan-line", "X-ray"], ["armchair", "Desk work"],
+      ["dumbbell", "Physiotherapy"], ["shield-check", "Safety"], ["stethoscope", "Consultation"], ["languages", "Language"], ["chevron-right", "Next, more"]];
+    document.getElementById("icons").innerHTML = icons.map(function (i) {
+      return '<div><i data-lucide="' + i[0] + '" class="ico"></i><strong>' + i[1] + '</strong><code>' + i[0] + '</code></div>';
+    }).join("");
+
+    if (window.lucide) window.lucide.createIcons({ attrs: { "stroke-width": 2, "aria-hidden": "true" } });
+  })();
+  </script>
+</body>
+</html>
