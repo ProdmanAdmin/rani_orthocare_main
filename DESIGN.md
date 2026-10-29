@@ -1,6 +1,6 @@
 # DESIGN.md: Rani Ortho Care Design System
 
-Version 1.0 (draft for approval), 2026-10-29. The visual mood board for this system is section 4 of the project prototype (`prototype/design-system.html`).
+Version 1.1 (draft for approval), 2026-10-29. v1.1: coloured section bands, smaller headings, and the reasons behind the fonts and colours (section 3a). The visual mood board for this system is section 4 of the project prototype (`prototype/design-system.html`).
 
 This is the single source for how the website looks. The SEO, accessibility and content rules in `CLAUDE.md` always apply on top, and the business core in `docs/business-model.md` decides what the design must say.
 
@@ -34,7 +34,7 @@ Many readers are **biliterate** (Tamil and English) and some read only one langu
 ### Strategy: 60 / 30 / 10
 | Share | Role | Colours |
 |---|---|---|
-| **60%** | Reading surfaces: pages, cards, text areas | White `#FFFFFF`, Mist `#F5F8FC`, Blue Tint `#EEF3FB` |
+| **60%** | Reading surfaces: pages, cards, text areas, and the soft section bands | White `#FFFFFF`, Sky Band `#E8F0FA`, Green Band `#EAF5EC`, Blue Tint `#EEF3FB` |
 | **30%** | Structure and trust: header, headings, footer, icons, links | Rani Navy `#14234A`, Rani Blue `#3C59A8`, Blue Deep `#2A4590` |
 | **10%** | Action and movement: main buttons, active states, "open now" | Action Green `#1B7030` (spine green `#3DB54A` for decoration only) |
 
@@ -55,7 +55,8 @@ Contrast is against white unless stated. Body text targets **AAA (7:1)**; button
 | `body` | `#25304A` | Paragraphs | 13.1:1 |
 | `muted` | `#46526B` | Secondary text, captions, meta | 7.8:1 |
 | `white` | `#FFFFFF` | Main surface | |
-| `mist` | `#F5F8FC` | Alternate section bands | |
+| `band-sky` | `#E8F0FA` | Alternate section band (the main one) | Body on it: 11.4:1 |
+| `band-green` | `#EAF5EC` | Section band for prevention, physiotherapy, camps and community | Body on it: 11.7:1 |
 | `blue-tint` | `#EEF3FB` | Cards on white, highlight panels | Body on it: 11.8:1 |
 | `green-tint` | `#E8F6EA` | "Open now" chip, success messages | Green text on it: 5.5:1 |
 | `line` | `#D5DDEA` | Card borders, dividers | |
@@ -64,10 +65,51 @@ Contrast is against white unless stated. Body text targets **AAA (7:1)**; button
 | `amber-bg` / `amber-text` | `#FFF4DF` / `#8A4B00` | Notices: camp dates, holiday timings | 6.2:1 |
 | `error` | `#B42318` | Form errors (with an icon and text, never colour alone) | 6.6:1 |
 
+### Section backgrounds (bands)
+An all-white page makes it hard to see where one section ends and the next begins. Sections therefore sit on **bands** of colour, in this order of use:
+
+| Band | Colour | Use | Cards on it |
+|---|---|---|---|
+| White | `#FFFFFF` | Default, and the hero | Blue Tint or bordered white cards |
+| Sky | `#E8F0FA` | Every other section | White cards with a border |
+| Green | `#EAF5EC` | Prevention, physiotherapy, free camps, community | White cards with a border |
+| Navy | `#14234A` | Final call-to-action band and the footer only | White text, green buttons |
+
+- **Never put two bands of the same colour next to each other.** A typical home page runs White → Sky → White → Green → Sky → Navy.
+- Each band spans the full screen width; content stays in the 1200 px container.
+- Where two light bands meet, the change of colour is the divider. A 6 px spine-green line separates the last band from the navy footer.
+- Inside a band, cards are white with a 1 px border, so they stand out from the band colour.
+
 ### Colour rules
 - Never put text on photos without a solid or 70%+ navy overlay behind it.
 - Never use colour alone to carry meaning. Always add text or an icon (e.g. "Open now" plus a dot).
 - The website has **one light theme** only. This is a deliberate choice: one consistent, high-contrast look for every visitor, matching the printed materials.
+
+## 3a. Why these fonts and colours
+
+### Why these fonts suit a healing brand
+**Atkinson Hyperlegible Next (English)**
+- **Made for people with weak eyesight.** The Braille Institute of America, a charity that serves people with low vision, commissioned it. Most of our patients are older, so this is the closest match to the people who will read the site.
+- **Every letter is unmistakable.** I, l and 1, O and 0, b and d are drawn differently. In healthcare this matters: a misread phone number, timing or medicine name is a real problem. Clear letters are a form of patient safety.
+- **Warm, not clinical.** Its rounded, open shapes feel friendly and calm rather than cold or technical. That suits a clinic whose first promise is to relieve pain and put the patient at ease.
+- **Easy on tired eyes.** Wide letters and generous spacing let a reader in pain, or reading on a small phone, take in words with less effort.
+
+**Noto Sans Tamil (Tamil)**
+- **Familiar.** It is the standard Tamil font on most Android phones, which is what most of our readers use. Familiar letters are faster and less tiring to read, especially for older readers.
+- **Complete and correct.** It covers every Tamil letter, conjunct and vowel sign, so words never break into boxes or wrong shapes. Health information must be read exactly as written.
+- **Calm and even.** Plain, even strokes with no decoration keep long Tamil words clear at body size, and match the steady tone of the English face.
+
+Together the two faces give one voice in two scripts: **clear, calm and kind**, which is how the clinic wants patients to feel.
+
+### Why these colours suit a healing brand
+| Colour | Where it comes from | What it says to a patient |
+|---|---|---|
+| **Rani Navy and Blue** | The blue "R" in the logo | Blue is the colour people most often link with medicine, cleanliness, calm and trust. Navy adds steadiness and expertise, like a doctor's quiet confidence. It lowers anxiety rather than raising it. |
+| **Green** | The spine inside the "R" | Green is the colour of growth, recovery and healing, and of "go". It stands for movement returning, the clinic's mission. That's why green is kept for one job: the next step towards recovery (Call, Book, Open now). |
+| **White with soft sky and green bands** | The clinic's printed materials | White reads as clean and hygienic, and the soft bands give every section its own calm space, so the page feels organised and unhurried. |
+| **No red, except for errors** | Deliberate | Red signals alarm, pain and emergency. The clinic's message is relief, so red appears only on form errors. The red "pain glow" images on the old covers are not used. |
+
+The palette tells the care journey in colour: **calm blue** (you're in safe hands) → **green** (movement and recovery).
 
 ## 4. Typography
 
@@ -84,19 +126,19 @@ Sizes in px. **Mobile** is under 640 px wide, **tablet** 640 to 1023 px, **deskt
 
 | Style | Mobile | Tablet | Desktop | Weight | Line height (EN / TA) | Use |
 |---|---|---|---|---|---|---|
-| Display | 34 | 44 | 56 | 800 | 1.15 / 1.4 | Home page headline only |
-| H1 | 30 | 38 | 46 | 700 | 1.2 / 1.45 | Page title, one per page |
-| H2 | 26 | 30 | 36 | 700 | 1.25 / 1.5 | Section titles |
-| H3 | 22 | 24 | 28 | 700 | 1.3 / 1.5 | Card and sub-section titles |
-| H4 | 20 | 21 | 22 | 700 | 1.35 / 1.55 | Small groups, FAQ questions |
-| Lead | 20 | 21 | 22 | 400 | 1.55 / 1.75 | Intro paragraph under H1 or H2 |
+| Display | 30 | 38 | 44 | 800 | 1.2 / 1.4 | Home page headline only. Tamil one step smaller (27 / 32 / 36), weight 700, because Tamil words are longer |
+| H1 | 28 | 34 | 40 | 700 | 1.25 / 1.45 | Page title, one per page |
+| H2 | 24 | 28 | 32 | 700 | 1.3 / 1.5 | Section titles |
+| H3 | 21 | 23 | 26 | 700 | 1.3 / 1.5 | Card and sub-section titles |
+| H4 | 19 | 20 | 22 | 700 | 1.35 / 1.55 | Small groups, FAQ questions |
+| Lead | 19 | 20 | 21 | 400 | 1.55 / 1.75 | Intro paragraph under H1 or H2 |
 | Body | 18 | 18 | 20 | 400 | 1.65 / 1.85 | All running text |
 | Small | 16 | 16 | 17 | 400 | 1.5 / 1.7 | Captions, footnotes, meta. **Minimum size anywhere** |
 | Label | 16 | 16 | 16 | 700 | 1.3 / 1.5 | Eyebrows above headings, form labels |
 | Button | 18 | 18 | 19 | 700 | 1.2 / 1.4 | All buttons |
 | Nav | 18 | 18 | 18 | 700 | 1.2 / 1.4 | Menu links |
 
-Each step down the heading scale is clearly smaller **and** separated by space, so H1, H2, H3 and H4 are easy to tell apart even for a reader who can't see weight differences well.
+Headings are kept **moderate**: big enough to scan, but not so big that a phone screen shows only a headline. Each step down is clearly smaller, uses navy and bold weight, and has space above it, so H1, H2, H3 and H4 are easy to tell apart even for a reader who can't see weight differences well. Body text stays large (18 to 20 px), so the gap between headings and text comes from weight and colour, not only size.
 
 ### Tamil-specific rules
 - Tamil uses the **same sizes**, with taller line heights (table above). Tamil letters have tall vowel signs above and below, so tight lines make them collide.

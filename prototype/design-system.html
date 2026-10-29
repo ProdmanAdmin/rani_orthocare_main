@@ -25,7 +25,8 @@
       --body: #25304A;
       --muted: #46526B;
       --white: #FFFFFF;
-      --mist: #F5F8FC;
+      --band-sky: #E8F0FA;
+      --band-green: #EAF5EC;
       --blue-tint: #EEF3FB;
       --green-tint: #E8F6EA;
       --line: #D5DDEA;
@@ -39,17 +40,17 @@
       --font-ta: "Noto Sans Tamil", "Atkinson Hyperlegible Next", "Latha", "Nirmala UI", sans-serif;
 
       /* Mobile type scale (tablet and desktop below) */
-      --fs-display: 34px; --fs-h1: 30px; --fs-h2: 26px; --fs-h3: 22px; --fs-h4: 20px;
-      --fs-lead: 20px; --fs-body: 18px; --fs-small: 16px; --fs-btn: 18px;
+      --fs-display: 30px; --fs-h1: 28px; --fs-h2: 24px; --fs-h3: 21px; --fs-h4: 19px;
+      --fs-lead: 19px; --fs-body: 18px; --fs-small: 16px; --fs-btn: 18px;
       --gutter: 16px; --section: 56px; --gap: 16px; --pad: 20px;
     }
     @media (min-width: 400px) { :root { --gutter: 20px; } }
     @media (min-width: 640px) {
-      :root { --fs-display: 44px; --fs-h1: 38px; --fs-h2: 30px; --fs-h3: 24px; --fs-h4: 21px; --fs-lead: 21px; --fs-body: 18px; --fs-small: 16px; --fs-btn: 18px;
+      :root { --fs-display: 38px; --fs-h1: 34px; --fs-h2: 28px; --fs-h3: 23px; --fs-h4: 20px; --fs-lead: 20px; --fs-body: 18px; --fs-small: 16px; --fs-btn: 18px;
               --gutter: 32px; --section: 72px; --gap: 24px; --pad: 24px; }
     }
     @media (min-width: 1024px) {
-      :root { --fs-display: 56px; --fs-h1: 46px; --fs-h2: 36px; --fs-h3: 28px; --fs-h4: 22px; --fs-lead: 22px; --fs-body: 20px; --fs-small: 17px; --fs-btn: 19px;
+      :root { --fs-display: 44px; --fs-h1: 40px; --fs-h2: 32px; --fs-h3: 26px; --fs-h4: 22px; --fs-lead: 21px; --fs-body: 20px; --fs-small: 17px; --fs-btn: 19px;
               --gutter: 40px; --section: 96px; --gap: 24px; --pad: 32px; }
     }
 
@@ -82,7 +83,9 @@
     .card { background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: var(--pad); }
     .card.tint { background: var(--blue-tint); border-color: var(--blue-tint); }
     .band { padding-block: var(--section); }
-    .band.mist { background: var(--mist); }
+    .band.sky { background: var(--band-sky); }
+    .band.green { background: var(--band-green); }
+    .band.sky .card.tint, .band.green .card.tint { background: var(--white); border-color: var(--line); }
     .band-head { display: grid; gap: 12px; margin-bottom: calc(var(--gap) + 8px); }
     .band-head .lead { color: var(--muted); }
     .ico { width: 32px; height: 32px; stroke-width: 2; color: var(--blue); flex-shrink: 0; }
@@ -103,7 +106,7 @@
     nav.proto a { min-height: 48px; display: inline-flex; align-items: center; padding: 0 14px; border-radius: 12px; font-weight: 700; font-size: 17px; color: var(--body); text-decoration: none; }
     nav.proto a:hover { background: var(--blue-tint); color: var(--blue-deep); }
     nav.proto a[aria-current="page"] { background: var(--navy); color: var(--white); }
-    @media (max-width: 1023px) { nav.proto { order: 3; width: 100%; margin-left: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); } nav.proto a { justify-content: center; text-align: center; padding: 6px; font-size: 15px; line-height: 1.25; } }
+    @media (max-width: 1023px) { nav.proto { order: 3; width: 100%; margin-left: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); } nav.proto a { justify-content: center; text-align: center; padding: 6px; font-size: 15px; line-height: 1.25; } }
 
     /* Cover */
     .cover { background: linear-gradient(180deg, var(--blue-tint), var(--white)); padding-block: var(--section); border-bottom: 1px solid var(--line); }
@@ -136,15 +139,19 @@
     /* 60/30/10 */
     .ratio { display: flex; height: 72px; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); font-weight: 700; }
     .ratio div { display: flex; align-items: center; padding: 0 16px; font-size: 16px; }
-    .ratio .r60 { flex: 60; background: var(--white); color: var(--ink); background-image: linear-gradient(90deg, var(--white) 0 50%, var(--mist) 50% 100%); }
+    .ratio .r60 { flex: 60; background: var(--white); color: var(--ink); background-image: linear-gradient(90deg, var(--white) 0 50%, var(--band-sky) 50% 100%); }
     .ratio .r30 { flex: 30; background: var(--navy); color: var(--white); }
     .ratio .r10 { flex: 10; background: var(--green); color: var(--white); justify-content: center; padding: 0 6px; }
     .role-card { border-top: 6px solid var(--line); }
+    .bands-demo { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: grid; max-width: 560px; }
+    .bands-demo div { padding: 12px 16px; font-weight: 700; font-size: 16px; color: var(--ink); border-bottom: 1px solid rgba(20, 35, 74, .06); }
+    .why-sw { height: 48px; border-radius: 12px; display: block; }
+    footer.page { border-top: 6px solid var(--spine); }
     .role-card.c30 { border-top-color: var(--navy); }
     .role-card.c10 { border-top-color: var(--green); }
     .role-card .pct { font-size: var(--fs-h2); font-weight: 800; color: var(--ink); line-height: 1; }
     .hexes { display: flex; gap: 8px; flex-wrap: wrap; }
-    .hex { display: inline-flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; color: var(--ink); background: var(--mist); border-radius: 999px; padding: 4px 12px 4px 6px; }
+    .hex { display: inline-flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; color: var(--ink); background: var(--band-sky); border-radius: 999px; padding: 4px 12px 4px 6px; }
     .hex i { width: 22px; height: 22px; border-radius: 50%; border: 1px solid rgba(20, 35, 74, .15); display: inline-block; }
 
     /* Swatches */
@@ -170,7 +177,7 @@
     .face .glyphs { font-size: 22px; line-height: 1.6; color: var(--body); word-break: break-word; }
     .face .why { color: var(--muted); }
     .legible { display: flex; gap: 12px; flex-wrap: wrap; }
-    .legible span { font-size: 36px; font-weight: 700; color: var(--ink); background: var(--mist); border-radius: 12px; padding: 4px 16px; letter-spacing: .08em; }
+    .legible span { font-size: 36px; font-weight: 700; color: var(--ink); background: var(--band-sky); border-radius: 12px; padding: 4px 16px; letter-spacing: .08em; }
     .devices { display: inline-flex; border: 2px solid var(--navy); border-radius: 14px; overflow: hidden; }
     .devices button { min-height: 48px; padding: 0 18px; border: 0; background: var(--white); color: var(--navy); font: 700 17px var(--font-en); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
     .devices button + button { border-left: 2px solid var(--navy); }
@@ -183,7 +190,7 @@
     table.scale { width: 100%; border-collapse: collapse; min-width: 900px; }
     table.scale td.sample { min-width: 420px; width: 50%; }
     table.scale th, table.scale td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: middle; }
-    table.scale thead th { background: var(--mist); font-size: 16px; color: var(--muted); }
+    table.scale thead th { background: var(--band-sky); font-size: 16px; color: var(--muted); }
     table.scale td.num { font-size: 16px; font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; color: var(--muted); }
     table.scale td.num.on { color: var(--white); background: var(--navy); }
     table.scale tbody tr:last-child td { border-bottom: 0; }
@@ -206,7 +213,7 @@
     .scroll-x { overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; }
     table.simple { width: 100%; border-collapse: collapse; min-width: 560px; }
     table.simple th, table.simple td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); font-size: 17px; }
-    table.simple thead th { background: var(--mist); color: var(--muted); font-size: 16px; }
+    table.simple thead th { background: var(--band-sky); color: var(--muted); font-size: 16px; }
     table.simple tbody tr:last-child td { border-bottom: 0; }
 
     /* Components */
@@ -342,6 +349,7 @@
         <a href="index.html#business">2 · Business core</a>
         <a href="index.html#assets">3 · Assets</a>
         <a href="design-system.html" aria-current="page">4 · Design system</a>
+        <a href="home-sample.html">5 · Sample home</a>
       </nav>
     </div>
   </header>
@@ -358,7 +366,7 @@
           <dl class="meta">
             <div><dt>Client</dt><dd>Rani Ortho Care</dd></div>
             <div><dt>Phase</dt><dd>2 · Design system</dd></div>
-            <div><dt>Version</dt><dd>1.0 draft</dd></div>
+            <div><dt>Version</dt><dd>1.1 draft</dd></div>
             <div><dt>Date</dt><dd class="tnum">29 Oct 2026</dd></div>
           </dl>
         </div>
@@ -388,7 +396,7 @@
     </section>
 
     <!-- 03 Principles -->
-    <section class="band mist" aria-labelledby="t-principles">
+    <section class="band sky" aria-labelledby="t-principles">
       <div class="wrap">
         <div class="band-head">
           <p class="eyebrow"><b>03</b>Principles</p>
@@ -415,11 +423,26 @@
           <p class="lead">Calm white reading surfaces, a steady Rani blue structure, and one green that always means "go". Both colours come straight from the logo.</p>
         </div>
         <div class="stack-lg">
-          <div class="ratio" role="img" aria-label="60 percent white and mist, 30 percent navy and blue, 10 percent green"><div class="r60">60% · White &amp; Mist</div><div class="r30">30% · Rani Navy &amp; Blue</div><div class="r10">10%</div></div>
+          <div class="ratio" role="img" aria-label="60 percent white and mist, 30 percent navy and blue, 10 percent green"><div class="r60">60% · White &amp; soft bands</div><div class="r30">30% · Rani Navy &amp; Blue</div><div class="r10">10%</div></div>
           <div class="grid g3">
-            <div class="card role-card stack"><p class="pct">60%</p><h3>Reading surfaces</h3><p>Pages, cards and text. Lots of white space so large text and photos can breathe.</p><div class="hexes"><span class="hex"><i style="background:#FFFFFF"></i>#FFFFFF</span><span class="hex"><i style="background:#F5F8FC"></i>#F5F8FC</span><span class="hex"><i style="background:#EEF3FB"></i>#EEF3FB</span></div></div>
+            <div class="card role-card stack"><p class="pct">60%</p><h3>Reading surfaces</h3><p>White pages and cards, with soft sky and green bands so each section stands apart.</p><div class="hexes"><span class="hex"><i style="background:#FFFFFF"></i>#FFFFFF</span><span class="hex"><i style="background:#E8F0FA"></i>#E8F0FA</span><span class="hex"><i style="background:#EAF5EC"></i>#EAF5EC</span><span class="hex"><i style="background:#EEF3FB"></i>#EEF3FB</span></div></div>
             <div class="card role-card c30 stack"><p class="pct">30%</p><h3>Structure and trust</h3><p>Header bar, headings, icons, links and footer. The blue of the "R" makes the site feel like the clinic's own print.</p><div class="hexes"><span class="hex"><i style="background:#14234A"></i>#14234A</span><span class="hex"><i style="background:#3C59A8"></i>#3C59A8</span><span class="hex"><i style="background:#2A4590"></i>#2A4590</span></div></div>
             <div class="card role-card c10 stack"><p class="pct">10%</p><h3>Action and movement</h3><p>Only the main button ("Call now"), "Open now" and the final step of care. Green means "go", like the spine in the logo.</p><div class="hexes"><span class="hex"><i style="background:#1B7030"></i>#1B7030</span><span class="hex"><i style="background:#3DB54A"></i>#3DB54A</span></div></div>
+          </div>
+          <div class="card stack">
+            <h3>Section bands: telling sections apart</h3>
+            <p>An all-white page makes sections run together. Each section sits on its own band, and two bands of the same colour never touch.</p>
+            <div class="bands-demo" aria-label="Example home page band order">
+              <div style="background:#FFFFFF">Hero · White</div>
+              <div style="background:#E8F0FA">Care journey · Sky</div>
+              <div style="background:#FFFFFF">What we treat · White</div>
+              <div style="background:#EAF5EC">Prevention and camps · Green</div>
+              <div style="background:#E8F0FA">Doctor and timings · Sky</div>
+              <div style="background:#14234A;color:#FFFFFF">Call-to-action · Navy</div>
+              <div style="background:#3DB54A;min-height:8px;padding:0" aria-hidden="true"></div>
+              <div style="background:#14234A;color:#C9D6F2">Footer · Navy</div>
+            </div>
+            <p class="small">Cards inside a coloured band are white with a border, so they stand out.</p>
           </div>
           <p class="notice"><i data-lucide="info" class="ico-sm"></i><span>The logo green <b>#3DB54A</b> is too light for text on white (2.7:1). Buttons and text use the darker Action Green <b>#1B7030</b>; the logo green is kept for decoration and for use on navy.</span></p>
         </div>
@@ -427,7 +450,7 @@
     </section>
 
     <!-- 05 Tokens -->
-    <section class="band mist" aria-labelledby="t-tokens">
+    <section class="band sky" aria-labelledby="t-tokens">
       <div class="wrap">
         <div class="band-head">
           <p class="eyebrow"><b>05</b>Full palette</p>
@@ -438,11 +461,49 @@
       </div>
     </section>
 
-    <!-- 06 Typography -->
+    <!-- 06 Why -->
+    <section class="band green" aria-labelledby="t-why">
+      <div class="wrap">
+        <div class="band-head">
+          <p class="eyebrow"><b>06</b>Why these choices</p>
+          <h2 id="t-why">Fonts and colours that feel like healing</h2>
+          <p class="lead">Every choice comes from the patients and from the clinic's own logo. The aim: clear, calm and kind, in both languages.</p>
+        </div>
+        <div class="grid g2">
+          <div class="card stack">
+            <p class="demo-label">ENGLISH FONT</p>
+            <h3>Atkinson Hyperlegible Next</h3>
+            <ul class="rules">
+              <li><b>Made for weak eyesight.</b> Commissioned by the Braille Institute of America, a charity for people with low vision. Most of our readers are older.</li>
+              <li><b>Every letter is unmistakable.</b> A misread phone number, timing or medicine name is a real problem in healthcare. Clear letters are part of patient safety.</li>
+              <li><b>Warm, not clinical.</b> Rounded, open shapes feel friendly and calm, right for a clinic that promises relief first.</li>
+            </ul>
+          </div>
+          <div class="card stack">
+            <p class="demo-label">TAMIL FONT</p>
+            <h3>Noto Sans Tamil</h3>
+            <ul class="rules">
+              <li><b>Familiar.</b> The standard Tamil font on most Android phones, which most of our readers use. Familiar letters are less tiring to read.</li>
+              <li><b>Complete and correct.</b> Every letter, conjunct and vowel sign is covered, so health words are read exactly as written.</li>
+              <li><b>Calm and even.</b> Plain strokes keep long Tamil words clear, and match the steady tone of the English face.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid g4" style="margin-top:var(--gap)">
+          <div class="card stack"><span class="why-sw" style="background:#14234A"></span><h4>Navy and blue</h4><p class="small">From the blue "R". The colour people most link with medicine, cleanliness and trust. Navy adds quiet expertise. It calms rather than alarms.</p></div>
+          <div class="card stack"><span class="why-sw" style="background:#1B7030"></span><h4>Green</h4><p class="small">From the spine in the "R". Growth, recovery, healing and "go". Kept for one job: the next step towards recovery.</p></div>
+          <div class="card stack"><span class="why-sw" style="background:linear-gradient(90deg,#FFFFFF 0 34%,#E8F0FA 34% 67%,#EAF5EC 67%);border:1px solid #D5DDEA"></span><h4>White with soft bands</h4><p class="small">Clean and hygienic, with soft sky and green bands so every section has its own calm space.</p></div>
+          <div class="card stack"><span class="why-sw" style="background:#B42318"></span><h4>Red only for errors</h4><p class="small">Red means alarm and pain. The clinic's message is relief, so red appears only on form errors.</p></div>
+        </div>
+        <p class="lead" style="margin-top:var(--gap);color:var(--ink);font-weight:700">The palette tells the care journey in colour: calm blue (you are in safe hands), then green (movement and recovery).</p>
+      </div>
+    </section>
+
+    <!-- 07 Typography -->
     <section class="band" aria-labelledby="t-type">
       <div class="wrap">
         <div class="band-head">
-          <p class="eyebrow"><b>06</b>Typography</p>
+          <p class="eyebrow"><b>07</b>Typography</p>
           <h2 id="t-type">Two clear faces, one for each script</h2>
           <p class="lead">An English face built for readers with low vision, and a Tamil face with open, even letters. Both are free Google Fonts.</p>
         </div>
@@ -502,10 +563,10 @@
     </section>
 
     <!-- 07 Layout -->
-    <section class="band mist" aria-labelledby="t-layout">
+    <section class="band sky" aria-labelledby="t-layout">
       <div class="wrap">
         <div class="band-head">
-          <p class="eyebrow"><b>07</b>Layout</p>
+          <p class="eyebrow"><b>08</b>Layout</p>
           <h2 id="t-layout">Three screen sizes, one grid</h2>
           <p class="lead">Four columns on phones, eight on tablets, twelve on desktop. Generous side margins and space between sections, so nothing feels crowded.</p>
         </div>
@@ -556,7 +617,7 @@
     <section class="band" aria-labelledby="t-comp">
       <div class="wrap">
         <div class="band-head">
-          <p class="eyebrow"><b>08</b>Components</p>
+          <p class="eyebrow"><b>09</b>Components</p>
           <h2 id="t-comp">The building blocks</h2>
           <p class="lead">Each one is shown as it will look on the website, in English and Tamil.</p>
         </div>
@@ -706,10 +767,10 @@
     </section>
 
     <!-- 09 Icons and imagery -->
-    <section class="band mist" aria-labelledby="t-icons">
+    <section class="band green" aria-labelledby="t-icons">
       <div class="wrap">
         <div class="band-head">
-          <p class="eyebrow"><b>09</b>Icons and pictures</p>
+          <p class="eyebrow"><b>10</b>Icons and pictures</p>
           <h2 id="t-icons">Pictures that explain, always with words</h2>
           <p class="lead">Simple line icons, 2 px stroke, in Rani Blue. Every icon has a label next to it.</p>
         </div>
@@ -732,10 +793,10 @@
     </section>
 
     <!-- 10 Accessibility -->
-    <section class="band" aria-labelledby="t-a11y">
+    <section class="band sky" aria-labelledby="t-a11y">
       <div class="wrap">
         <div class="band-head">
-          <p class="eyebrow"><b>10</b>Checklist</p>
+          <p class="eyebrow"><b>11</b>Checklist</p>
           <h2 id="t-a11y">Before any page goes live</h2>
           <p class="lead">Checked at 375 px, 768 px and 1280 px wide, in English and in Tamil.</p>
         </div>
@@ -757,7 +818,7 @@
 
   <footer class="page">
     <div class="wrap">
-      <span><b>Rani Ortho Care</b> · Design system v1.0 draft</span>
+      <span><b>Rani Ortho Care</b> · Design system v1.1 draft</span>
       <span>Full specification: DESIGN.md in the project</span>
     </div>
   </footer>
@@ -777,7 +838,8 @@
       ]},
       { title: "Surfaces and borders", items: [
         { n: "White", t: "white", h: "#FFFFFF", u: "Main page surface" },
-        { n: "Mist", t: "mist", h: "#F5F8FC", u: "Alternate section bands" },
+        { n: "Sky Band", t: "band-sky", h: "#E8F0FA", u: "Every other section", c: "Body 11.4:1" },
+        { n: "Green Band", t: "band-green", h: "#EAF5EC", u: "Prevention, physio, camps", c: "Body 11.7:1" },
         { n: "Blue Tint", t: "blue-tint", h: "#EEF3FB", u: "Cards, icon circles, highlights" },
         { n: "Green Tint", t: "green-tint", h: "#E8F6EA", u: "Open now, success" },
         { n: "Line", t: "line", h: "#D5DDEA", u: "Card borders, dividers" },
@@ -825,12 +887,12 @@
 
     // Type scale (keep in step with DESIGN.md section 4).
     var scale = [
-      { s: "Display", m: 34, t: 44, d: 56, w: 800, lh: "1.15 / 1.4", en: "Walk again with less pain", ta: "வலி குறைந்து மீண்டும் நடக்க" },
-      { s: "H1", m: 30, t: 38, d: 46, w: 700, lh: "1.2 / 1.45", en: "Knee pain treatment", ta: "முழங்கால் வலி சிகிச்சை" },
-      { s: "H2", m: 26, t: 30, d: 36, w: 700, lh: "1.25 / 1.5", en: "How we treat knee pain", ta: "முழங்கால் வலிக்கு எங்கள் சிகிச்சை" },
-      { s: "H3", m: 22, t: 24, d: 28, w: 700, lh: "1.3 / 1.5", en: "Physiotherapy", ta: "பிசியோதெரபி" },
-      { s: "H4", m: 20, t: 21, d: 22, w: 700, lh: "1.35 / 1.55", en: "When should I see a doctor?", ta: "எப்போது மருத்துவரைப் பார்க்க வேண்டும்?" },
-      { s: "Lead", m: 20, t: 21, d: 22, w: 400, lh: "1.55 / 1.75", en: "We relieve your pain first, then treat the cause.", ta: "முதலில் வலியைக் குறைத்து, பிறகு காரணத்திற்குச் சிகிச்சை." },
+      { s: "Display", m: 30, t: 38, d: 44, w: 800, lh: "1.2 / 1.4", en: "Walk again with less pain", ta: "வலி குறைந்து மீண்டும் நடக்க" },
+      { s: "H1", m: 28, t: 34, d: 40, w: 700, lh: "1.25 / 1.45", en: "Knee pain treatment", ta: "முழங்கால் வலி சிகிச்சை" },
+      { s: "H2", m: 24, t: 28, d: 32, w: 700, lh: "1.3 / 1.5", en: "How we treat knee pain", ta: "முழங்கால் வலிக்கு எங்கள் சிகிச்சை" },
+      { s: "H3", m: 21, t: 23, d: 26, w: 700, lh: "1.3 / 1.5", en: "Physiotherapy", ta: "பிசியோதெரபி" },
+      { s: "H4", m: 19, t: 20, d: 22, w: 700, lh: "1.35 / 1.55", en: "When should I see a doctor?", ta: "எப்போது மருத்துவரைப் பார்க்க வேண்டும்?" },
+      { s: "Lead", m: 19, t: 20, d: 21, w: 400, lh: "1.55 / 1.75", en: "We relieve your pain first, then treat the cause.", ta: "முதலில் வலியைக் குறைத்து, பிறகு காரணத்திற்குச் சிகிச்சை." },
       { s: "Body", m: 18, t: 18, d: 20, w: 400, lh: "1.65 / 1.85", en: "Most knee pain improves with the right care and exercise.", ta: "சரியான சிகிச்சையும் பயிற்சியும் இருந்தால் பெரும்பாலான முழங்கால் வலி குறையும்." },
       { s: "Small", m: 16, t: 16, d: 17, w: 400, lh: "1.5 / 1.7", en: "Last updated 29 October 2026", ta: "கடைசியாகப் புதுப்பித்தது 29 அக்டோபர் 2026" },
       { s: "Button", m: 18, t: 18, d: 19, w: 700, lh: "1.2 / 1.4", en: "Call now", ta: "இப்போதே அழைக்கவும்" }

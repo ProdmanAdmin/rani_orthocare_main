@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Rani Ortho Care Sample Home</title>
+  <meta name="claude:viewport-fit-sides" content="cover">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="img/mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700;800&family=Noto+Sans+Tamil:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Sample home page built with the Rani Ortho Care design system v1.1 (DESIGN.md).
+       Layout: header, white hero band, sky "What we treat" band, navy footer; phone action bar at the bottom on small screens. */
+    :root {
+      color-scheme: light;
+      --navy: #14234A; --blue: #3C59A8; --blue-deep: #2A4590; --green: #1B7030; --green-hover: #155A26; --spine: #3DB54A;
+      --ink: #14234A; --body: #25304A; --muted: #46526B; --white: #FFFFFF;
+      --band-sky: #E8F0FA; --band-green: #EAF5EC; --blue-tint: #EEF3FB; --green-tint: #E8F6EA;
+      --line: #D5DDEA; --on-navy: #C9D6F2;
+      --font: "Atkinson Hyperlegible Next", "Noto Sans Tamil", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --fs-display: 30px; --fs-h2: 24px; --fs-h3: 21px; --fs-lead: 19px; --fs-body: 18px; --fs-small: 16px; --fs-btn: 18px;
+      --gutter: 16px; --section: 56px; --gap: 16px; --pad: 20px; --lh: 1.65; --lh-h: 1.2;
+    }
+    :root[lang="ta"] { --font: "Noto Sans Tamil", "Atkinson Hyperlegible Next", "Latha", "Nirmala UI", sans-serif; --lh: 1.85; --lh-h: 1.45; }
+    @media (min-width: 400px) { :root { --gutter: 20px; } }
+    @media (min-width: 640px) { :root { --fs-display: 38px; --fs-h2: 28px; --fs-h3: 23px; --fs-lead: 20px; --gutter: 32px; --section: 72px; --gap: 24px; --pad: 24px; } }
+    @media (min-width: 1024px) { :root { --fs-display: 44px; --fs-h2: 32px; --fs-h3: 26px; --fs-lead: 21px; --fs-body: 20px; --fs-small: 17px; --fs-btn: 19px; --gutter: 40px; --section: 96px; --pad: 32px; } }
+    :root[lang="ta"] { --fs-display: 27px; }
+    @media (min-width: 640px) { :root[lang="ta"] { --fs-display: 32px; } }
+    @media (min-width: 1024px) { :root[lang="ta"] { --fs-display: 36px; } }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+    body { margin: 0; background: var(--white); color: var(--body); font-family: var(--font); font-size: var(--fs-body); line-height: var(--lh); -webkit-font-smoothing: antialiased; }
+    body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--navy); }
+    img, svg { max-width: 100%; }
+    a { color: var(--blue-deep); text-underline-offset: 3px; }
+    :focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; box-shadow: 0 0 0 2px var(--white); border-radius: 6px; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
+    h1, h2, h3 { color: var(--ink); margin: 0; font-weight: 700; text-wrap: balance; }
+    p { margin: 0; }
+    .ico { width: 24px; height: 24px; stroke-width: 2; flex-shrink: 0; }
+    .tnum { font-variant-numeric: tabular-nums; }
+    .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+    /* Prototype strip (not part of the website) */
+    .proto { background: #0B1430; color: var(--on-navy); font-size: 15px; }
+    .proto .wrap { display: flex; gap: 8px 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; padding-block: 6px; }
+    .proto a { color: var(--white); font-weight: 700; display: inline-flex; gap: 6px; align-items: center; min-height: 36px; }
+    .proto .ico { width: 18px; height: 18px; }
+
+    /* Utility bar */
+    .util { background: var(--navy); color: var(--on-navy); font-size: 16px; }
+    .util .wrap { display: flex; gap: 6px 20px; align-items: center; flex-wrap: wrap; padding-block: 8px; }
+    .util span { display: inline-flex; gap: 8px; align-items: center; }
+    .util .ico { width: 20px; height: 20px; color: var(--spine); }
+    .status { font-weight: 700; color: var(--white); }
+    .status::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--spine); display: inline-block; }
+    .status.closed::before { background: var(--on-navy); }
+    .util .lang { margin-left: auto; border-color: var(--white); }
+    .util .lang button { min-height: 40px; }
+    .util .lang button + button { border-left-color: var(--white); }
+    @media (min-width: 1024px) { .util .lang { display: none; } }
+    @media (max-width: 1023px) { header.site .lang { display: none; } .menu-btn { margin-left: auto; } }
+    .util .phone { margin-left: auto; font-weight: 700; color: var(--white); text-decoration: none; }
+    @media (max-width: 639px) { .util .phone, .util .hrs { display: none; } }
+
+    /* Header */
+    header.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: var(--white); border-bottom: 1px solid var(--line); box-shadow: 0 2px 10px rgba(20, 35, 74, .06); }
+    header.site .wrap { display: flex; align-items: center; gap: 12px; min-height: 72px; padding-block: 8px; }
+    @media (min-width: 1024px) { header.site .wrap { min-height: 84px; gap: 24px; } }
+    .logo { flex-shrink: 1; min-width: 0; }
+    .logo img { display: block; height: 38px; width: auto; max-width: 100%; }
+    .hero-grid > * { min-width: 0; }
+    @media (min-width: 1024px) { .logo img { height: 46px; } }
+    nav.main { display: none; margin-left: auto; gap: 4px; }
+    nav.main a { min-height: 48px; display: inline-flex; align-items: center; padding: 0 12px; font-weight: 700; font-size: 18px; color: var(--ink); text-decoration: none; border-radius: 10px; }
+    nav.main a:hover { background: var(--blue-tint); color: var(--blue-deep); }
+    nav.main a[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 10px; text-decoration-color: var(--spine); }
+    .lang { display: flex; border: 2px solid var(--navy); border-radius: 12px; overflow: hidden; flex-shrink: 0; margin-left: auto; }
+    .lang button { min-height: 44px; min-width: 52px; padding: 0 10px; border: 0; background: var(--white); color: var(--navy); font: 700 17px var(--font); cursor: pointer; }
+    .lang button + button { border-left: 2px solid var(--navy); font-family: "Noto Sans Tamil", var(--font); }
+    .lang button[aria-pressed="true"] { background: var(--navy); color: var(--white); }
+    .menu-btn { min-height: 48px; display: inline-flex; gap: 8px; align-items: center; padding: 0 14px; border: 2px solid var(--navy); border-radius: 12px; background: var(--white); color: var(--navy); font: 700 17px var(--font); cursor: pointer; }
+    .head-call { display: none; }
+    @media (min-width: 1024px) {
+      nav.main { display: flex; }
+      .lang { margin-left: 0; }
+      .menu-btn { display: none; }
+      .head-call { display: inline-flex; }
+    }
+    .mobile-menu { border-top: 1px solid var(--line); background: var(--white); }
+    .mobile-menu a { display: flex; align-items: center; justify-content: space-between; min-height: 60px; padding: 0 max(var(--gutter), env(safe-area-inset-left, 0px)); border-bottom: 1px solid var(--line); font-weight: 700; font-size: 20px; color: var(--ink); text-decoration: none; }
+    @media (min-width: 1024px) { .mobile-menu { display: none !important; } }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 10px 24px; border-radius: 12px; font-size: var(--fs-btn); font-weight: 700; line-height: 1.25; text-decoration: none; border: 2px solid transparent; text-align: center; }
+    .btn-primary { background: var(--green); color: var(--white); }
+    .btn-primary:hover { background: var(--green-hover); }
+    .btn-secondary { background: var(--white); color: var(--blue-deep); border-color: var(--blue-deep); }
+    .btn-secondary:hover { background: var(--blue-tint); }
+    .head-call.btn { display: none; min-height: 52px; padding: 8px 18px; }
+    @media (min-width: 1024px) { .head-call.btn { display: inline-flex; } }
+
+    /* Section 1: hero (white band) */
+    .hero { background: var(--white); padding-block: calc(var(--section) - 16px) var(--section); }
+    .hero-grid { display: grid; gap: 32px; align-items: center; }
+    @media (min-width: 1024px) { .hero-grid { grid-template-columns: 1.4fr 1fr; gap: 40px; } }
+    .eyebrow { display: inline-flex; gap: 10px; align-items: center; font-weight: 700; font-size: 16px; color: var(--blue-deep); }
+    .eyebrow::before { content: ""; width: 24px; height: 4px; border-radius: 2px; background: var(--spine); }
+    .hero h1 { font-size: var(--fs-display); line-height: var(--lh-h); font-weight: 800; margin-top: 12px; }
+    :root[lang="ta"] .hero h1 { font-weight: 700; }
+    .hero h1 em { font-style: normal; color: var(--green); }
+    .hero .lead { font-size: var(--fs-lead); line-height: 1.6; margin-top: 16px; max-width: 60ch; }
+    .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    @media (max-width: 639px) { .cta .btn { width: 100%; } }
+    .facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; padding: 0; list-style: none; }
+    .facts li { display: inline-flex; gap: 8px; align-items: center; background: var(--blue-tint); color: var(--ink); border-radius: 999px; padding: 8px 14px; font-weight: 700; font-size: 16px; }
+    .facts .ico { width: 20px; height: 20px; color: var(--blue); }
+    .doc-card { background: var(--band-sky); border-radius: 20px; padding: 20px; display: grid; gap: 16px; }
+    .doc-card > * { min-width: 0; }
+    @media (min-width: 640px) and (max-width: 1023px) { .doc-card { grid-template-columns: 1fr 1fr; align-items: center; } .doc-card .today { grid-column: 1 / -1; } }
+    .photo { width: 100%; aspect-ratio: 16 / 10; max-width: 100%; border-radius: 16px; background: linear-gradient(160deg, var(--white), var(--blue-tint)); border: 2px dashed var(--blue); display: grid; place-items: center; text-align: center; color: var(--blue-deep); font-weight: 700; font-size: 16px; padding: 16px; }
+    .photo img { width: 72px; margin: 0 auto 10px; display: block; }
+    .doc-name { font-size: var(--fs-h3); line-height: 1.3; }
+    .doc-q { color: var(--blue-deep); font-weight: 700; }
+    .today { background: var(--white); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; display: flex; gap: 12px; align-items: center; }
+    .today .ico { color: var(--green); width: 28px; height: 28px; }
+    .today b { color: var(--ink); display: block; }
+
+    /* Section 2: what we treat (sky band) */
+    .treat { background: var(--band-sky); padding-block: var(--section); }
+    .sec-head { display: grid; gap: 10px; margin-bottom: calc(var(--gap) + 8px); max-width: 68ch; }
+    .sec-head h2 { font-size: var(--fs-h2); line-height: var(--lh-h); }
+    .sec-head p { font-size: var(--fs-lead); line-height: 1.6; }
+    .tiles { display: grid; gap: var(--gap); }
+    @media (min-width: 640px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .tile { background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: var(--pad); display: grid; gap: 12px; align-content: start; text-decoration: none; color: inherit; min-width: 0; }
+    .tile:hover { border-color: var(--blue); box-shadow: 0 6px 18px rgba(20, 35, 74, .08); }
+    .tile .ic { width: 60px; height: 60px; border-radius: 50%; background: var(--blue-tint); display: grid; place-items: center; }
+    .tile .ic .ico { width: 30px; height: 30px; color: var(--blue); }
+    .tile h3 { font-size: var(--fs-h3); line-height: 1.3; }
+    .tile .more { display: inline-flex; gap: 6px; align-items: center; color: var(--blue-deep); font-weight: 700; text-decoration: underline; margin-top: 4px; }
+    .help { margin-top: var(--gap); background: var(--white); border: 1px solid var(--line); border-left: 6px solid var(--spine); border-radius: 16px; padding: var(--pad); display: grid; gap: 16px; align-items: center; }
+    @media (min-width: 1024px) { .help { grid-template-columns: 1fr auto; } }
+    .help h3 { font-size: var(--fs-h3); line-height: 1.3; }
+    .help .btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    @media (max-width: 639px) { .help .btn { width: 100%; } }
+    .all { margin-top: 20px; display: inline-flex; gap: 6px; align-items: center; font-weight: 700; font-size: var(--fs-btn); min-height: 48px; }
+
+    /* Footer */
+    footer.site { background: var(--navy); color: var(--on-navy); border-top: 6px solid var(--spine); }
+    footer.site .wrap { padding-block: var(--section) 32px; display: grid; gap: 32px; }
+    .f-grid { display: grid; gap: 28px; }
+    @media (min-width: 640px) { .f-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1024px) { .f-grid { grid-template-columns: 1.3fr 1fr 1fr 1fr; } }
+    .f-logo { background: var(--white); border-radius: 12px; padding: 10px 14px; display: inline-block; }
+    .f-logo img { height: 40px; width: auto; display: block; }
+    footer.site h2 { color: var(--white); font-size: 19px; margin-bottom: 10px; }
+    footer.site a { color: var(--white); }
+    footer.site ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+    footer.site ul a { display: inline-flex; min-height: 40px; align-items: center; }
+    .f-bottom { border-top: 1px solid rgba(201, 214, 242, .25); padding-top: 20px; display: flex; gap: 8px 24px; justify-content: space-between; flex-wrap: wrap; font-size: 16px; }
+
+    /* Phone action bar */
+    .action-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 55; display: grid; grid-template-columns: repeat(3, 1fr); background: var(--white); border-top: 1px solid var(--line); box-shadow: 0 -4px 16px rgba(20, 35, 74, .1); padding-bottom: env(safe-area-inset-bottom, 0px); padding-left: env(safe-area-inset-left, 0px); padding-right: env(safe-area-inset-right, 0px); }
+    .action-bar a { min-height: 64px; display: grid; justify-items: center; align-content: center; gap: 2px; font-weight: 700; font-size: 15px; color: var(--navy); text-decoration: none; }
+    .action-bar a:first-child { background: var(--green); color: var(--white); }
+    @media (max-width: 1023px) { body { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); } }
+    @media (min-width: 1024px) { .action-bar { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="proto"><div class="wrap">
+    <a href="design-system.html"><i data-lucide="arrow-left" class="ico"></i>Back to the design system</a>
+    <span>Prototype section 5 · Sample home page · Photos and wording are placeholders</span>
+  </div></div>
+
+  <div class="util" id="top"><div class="wrap">
+    <span class="status" id="status">Open now</span>
+    <span class="hrs"><i data-lucide="clock" class="ico"></i><span data-k="hours_short">Mon–Sat 9 AM–10 PM · Sun 10 AM–12 PM</span></span>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ta" aria-pressed="false">தமிழ்</button>
+    </div>
+    <a class="phone tnum" href="tel:+919444553070"><i data-lucide="phone" class="ico" style="color:var(--spine)"></i>&nbsp;+91 94445 53070</a>
+  </div></div>
+
+  <header class="site">
+    <div class="wrap">
+      <a class="logo" href="#top"><img id="logo" src="img/logo-horizontal-en.svg" alt="Rani Ortho Care, home" width="905" height="188"></a>
+      <nav class="main" aria-label="Main">
+        <a href="#top" aria-current="page" data-k="nav_home">Home</a>
+        <a href="#services" data-k="nav_services">Services</a>
+        <a href="index.html#about" data-k="nav_doctor">Doctor</a>
+        <a href="#contact" data-k="nav_contact">Contact</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="ta" aria-pressed="false">தமிழ்</button>
+      </div>
+      <a class="btn btn-primary head-call" href="tel:+919444553070"><i data-lucide="phone" class="ico"></i><span data-k="call_short">Call now</span></a>
+      <button type="button" class="menu-btn" aria-expanded="false" aria-controls="mobile-menu"><i data-lucide="menu" class="ico"></i><span data-k="menu">Menu</span></button>
+    </div>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Main" hidden>
+      <a href="#top"><span data-k="nav_home">Home</span><i data-lucide="chevron-right" class="ico"></i></a>
+      <a href="#services"><span data-k="nav_services">Services</span><i data-lucide="chevron-right" class="ico"></i></a>
+      <a href="index.html#about"><span data-k="nav_doctor">Doctor</span><i data-lucide="chevron-right" class="ico"></i></a>
+      <a href="#contact"><span data-k="nav_contact">Contact</span><i data-lucide="chevron-right" class="ico"></i></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Section 1: hero -->
+    <section class="hero" aria-labelledby="h1">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow" data-k="eyebrow">Orthopaedic and physiotherapy clinic</p>
+          <h1 id="h1" data-k="h1" data-html>Relief from bone and joint pain, <em>so you can move again</em></h1>
+          <p class="lead" data-k="lead">Rani Ortho Care in Karaikudi relieves your pain first, then finds and treats the cause. Care is led by orthopaedic surgeon Dr. N. Manikandan.</p>
+          <div class="cta">
+            <a class="btn btn-primary" href="tel:+919444553070"><i data-lucide="phone" class="ico"></i><span data-k="call_full">Call +91 94445 53070</span></a>
+            <a class="btn btn-secondary" href="https://wa.me/919444553070" target="_blank" rel="noopener"><i data-lucide="message-circle" class="ico"></i><span data-k="whatsapp">WhatsApp us</span></a>
+          </div>
+          <ul class="facts">
+            <li><i data-lucide="scan-line" class="ico"></i><span data-k="fact_xray">Digital X-ray</span></li>
+            <li><i data-lucide="dumbbell" class="ico"></i><span data-k="fact_physio">Physiotherapy</span></li>
+            <li><i data-lucide="baby" class="ico"></i><span data-k="fact_child">Children's bone care</span></li>
+          </ul>
+        </div>
+        <aside class="doc-card" aria-label="Doctor and timings">
+          <div class="photo"><div><img src="img/mark.svg" alt="" width="222" height="245"><span data-k="photo">Photo of Dr. N. Manikandan with a patient</span></div></div>
+          <div>
+            <p class="doc-name" data-k="doc_name">Dr. N. Manikandan</p>
+            <p class="doc-q">M.B.B.S., M.S. (Ortho)</p>
+            <p data-k="doc_role">Consultant Orthopaedic Surgeon</p>
+          </div>
+          <div class="today"><i data-lucide="clock" class="ico"></i><div><b data-k="today_l">Today's timings</b><span class="tnum" id="today-hours">9 AM – 10 PM</span></div></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Section 2: what we treat -->
+    <section class="treat" id="services" aria-labelledby="h-treat">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow" data-k="treat_eyebrow">What we treat</p>
+          <h2 id="h-treat" data-k="treat_h">Help for bones, joints and spine</h2>
+          <p data-k="treat_lead">Find your problem below. Every visit starts with relief from pain, then we look for the cause.</p>
+        </div>
+        <div class="tiles" id="tiles"></div>
+        <div class="help">
+          <div>
+            <h3 data-k="help_h">Not sure what you need?</h3>
+            <p data-k="help_p">Call or WhatsApp us and tell us where it hurts. We will guide you.</p>
+          </div>
+          <div class="btns">
+            <a class="btn btn-primary" href="tel:+919444553070"><i data-lucide="phone" class="ico"></i><span data-k="call_short">Call now</span></a>
+            <a class="btn btn-secondary" href="https://wa.me/919444553070" target="_blank" rel="noopener"><i data-lucide="message-circle" class="ico"></i><span data-k="whatsapp">WhatsApp us</span></a>
+          </div>
+        </div>
+        <a class="all" href="index.html#about"><span data-k="all">See all 13 services</span><i data-lucide="chevron-right" class="ico"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site" id="contact">
+    <div class="wrap">
+      <div class="f-grid">
+        <div style="display:grid;gap:14px;align-content:start">
+          <span class="f-logo"><img id="flogo" src="img/logo-horizontal-en.svg" alt="Rani Ortho Care" width="905" height="188"></span>
+          <p data-k="tagline">Your Mobility, Our Mission</p>
+        </div>
+        <div>
+          <h2 data-k="f_visit">Visit us</h2>
+          <p data-k="address">No. 2, M.M. Complex, 1st Beat, Koviloor Road, near Indian Bank, Karaikudi, Tamil Nadu 630001</p>
+          <a class="all" style="margin-top:6px" href="https://www.google.com/maps/search/?api=1&amp;query=Rani%20Ortho%20Care%2C%20Koviloor%20Road%2C%20Karaikudi" target="_blank" rel="noopener"><span data-k="directions">Get directions</span><i data-lucide="chevron-right" class="ico"></i></a>
+        </div>
+        <div>
+          <h2 data-k="f_call">Call or WhatsApp</h2>
+          <p class="tnum"><a href="tel:+919444553070">+91 94445 53070</a><br><span data-k="landline">Landline</span>: <a href="tel:04565233070">04565 233070</a></p>
+        </div>
+        <div>
+          <h2 data-k="f_hours">Timings</h2>
+          <p data-k="f_hours_text">Monday to Saturday: 9 AM – 10 PM<br>Sunday: 10 AM – 12 PM</p>
+          <ul style="margin-top:12px"><li><a href="https://www.instagram.com/rani_ortho_care/" target="_blank" rel="noopener"><i data-lucide="instagram" class="ico" style="margin-right:8px"></i>Instagram</a></li></ul>
+        </div>
+      </div>
+      <div class="f-bottom">
+        <span>© 2026 Rani Ortho Care</span>
+        <span data-k="f_note">Sample page for review. Not the live website.</span>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="action-bar" aria-label="Quick contact">
+    <a href="tel:+919444553070"><i data-lucide="phone" class="ico"></i><span data-k="ab_call">Call</span></a>
+    <a href="https://wa.me/919444553070" target="_blank" rel="noopener"><i data-lucide="message-circle" class="ico"></i><span>WhatsApp</span></a>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=Rani%20Ortho%20Care%2C%20Koviloor%20Road%2C%20Karaikudi" target="_blank" rel="noopener"><i data-lucide="map-pin" class="ico"></i><span data-k="ab_dir">Directions</span></a>
+  </nav>
+
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script>
+  (function () {
+    var T = {
+      en: {
+        hours_short: "Mon–Sat 9 AM–10 PM · Sun 10 AM–12 PM", nav_home: "Home", nav_services: "Services", nav_doctor: "Doctor", nav_contact: "Contact", menu: "Menu",
+        call_short: "Call now", call_full: "Call +91 94445 53070", whatsapp: "WhatsApp us",
+        eyebrow: "Orthopaedic and physiotherapy clinic",
+        h1: 'Relief from bone and joint pain, <em>so you can move again</em>',
+        lead: "Rani Ortho Care in Karaikudi relieves your pain first, then finds and treats the cause. Care is led by orthopaedic surgeon Dr. N. Manikandan.",
+        fact_xray: "Digital X-ray", fact_physio: "Physiotherapy", fact_child: "Children's bone care",
+        photo: "Photo of Dr. N. Manikandan with a patient", doc_name: "Dr. N. Manikandan", doc_role: "Consultant Orthopaedic Surgeon", today_l: "Today's timings",
+        treat_eyebrow: "What we treat", treat_h: "Help for bones, joints and spine",
+        treat_lead: "Find your problem below. Every visit starts with relief from pain, then we look for the cause.",
+        help_h: "Not sure what you need?", help_p: "Call or WhatsApp us and tell us where it hurts. We will guide you.", all: "See all 13 services",
+        tagline: "Your Mobility, Our Mission", f_visit: "Visit us", address: "No. 2, M.M. Complex, 1st Beat, Koviloor Road, near Indian Bank, Karaikudi, Tamil Nadu 630001",
+        directions: "Get directions", f_call: "Call or WhatsApp", landline: "Landline", f_hours: "Timings", f_hours_text: "Monday to Saturday: 9 AM – 10 PM<br>Sunday: 10 AM – 12 PM",
+        f_note: "Sample page for review. Not the live website.", ab_call: "Call", ab_dir: "Directions",
+        open: "Open now", closed: "Closed now", closedToday: "Closed", learn: "Learn more"
+      },
+      ta: {
+        hours_short: "திங்கள்–சனி காலை 9 – இரவு 10 · ஞாயிறு காலை 10 – மதியம் 12", nav_home: "முகப்பு", nav_services: "சேவைகள்", nav_doctor: "மருத்துவர்", nav_contact: "தொடர்பு", menu: "மெனு",
+        call_short: "இப்போதே அழைக்கவும்", call_full: "அழைக்க +91 94445 53070", whatsapp: "வாட்ஸ்அப் செய்யவும்",
+        eyebrow: "எலும்பியல் மற்றும் பிசியோதெரபி மையம்",
+        h1: 'எலும்பு, மூட்டு வலியிலிருந்து நிவாரணம், <em>மீண்டும் இயல்பாக நடமாட</em>',
+        lead: "காரைக்குடி ராணி ஆர்த்தோ கேர், முதலில் உங்கள் வலியைக் குறைத்து, பிறகு அதன் காரணத்தைக் கண்டறிந்து சிகிச்சை அளிக்கிறது. எலும்பியல் அறுவை சிகிச்சை நிபுணர் Dr. நா. மணிகண்டன் தலைமையில் சிகிச்சை.",
+        fact_xray: "டிஜிட்டல் எக்ஸ்ரே", fact_physio: "பிசியோதெரபி", fact_child: "குழந்தைகள் எலும்பு சிகிச்சை",
+        photo: "நோயாளியுடன் Dr. நா. மணிகண்டன் புகைப்படம்", doc_name: "Dr. நா. மணிகண்டன்", doc_role: "எலும்புமுறிவு மற்றும் முடநீக்கியல் அறுவைசிகிச்சை நிபுணர்", today_l: "இன்றைய நேரம்",
+        treat_eyebrow: "நாங்கள் சிகிச்சை அளிப்பவை", treat_h: "எலும்பு, மூட்டு, முதுகுத் தண்டுக்கு உதவி",
+        treat_lead: "உங்கள் பிரச்சனையைக் கீழே தேர்ந்தெடுங்கள். ஒவ்வொரு சிகிச்சையும் வலி நிவாரணத்தில் தொடங்கி, பிறகு காரணத்தைக் கண்டறிகிறது.",
+        help_h: "எந்த சிகிச்சை தேவை என்று தெரியவில்லையா?", help_p: "அழைத்தோ வாட்ஸ்அப்பிலோ எங்கே வலிக்கிறது என்று சொல்லுங்கள். நாங்கள் வழிகாட்டுவோம்.", all: "13 சேவைகளையும் பார்க்க",
+        tagline: "உங்கள் இயக்கம், எங்கள் நோக்கம்", f_visit: "முகவரி", address: "எண் 2, எம்.எம். காம்ப்ளக்ஸ், 1வது பீட், கோவிலூர் சாலை, இந்தியன் வங்கி அருகில், காரைக்குடி, தமிழ்நாடு 630001",
+        directions: "வழி காட்டு", f_call: "அழைக்க அல்லது வாட்ஸ்அப்", landline: "லேண்ட்லைன்", f_hours: "நேரம்", f_hours_text: "திங்கள் முதல் சனி: காலை 9 – இரவு 10<br>ஞாயிறு: காலை 10 – மதியம் 12",
+        f_note: "பார்வைக்கான மாதிரிப் பக்கம். இது நேரடி இணையதளம் அல்ல.", ab_call: "அழைக்க", ab_dir: "வழி",
+        open: "இப்போது திறந்துள்ளது", closed: "இப்போது மூடப்பட்டுள்ளது", closedToday: "மூடப்பட்டுள்ளது", learn: "மேலும் அறிய"
+      }
+    };
+    var tiles = [
+      { i: "bone", en: ["Knee and joint pain", "Relief for knee, shoulder and joint pain, and care for arthritis."], ta: ["முழங்கால் மற்றும் மூட்டு வலி", "முழங்கால், தோள்பட்டை, மூட்டு வலி நிவாரணம் மற்றும் மூட்டு வீக்க சிகிச்சை."] },
+      { i: "person-standing", en: ["Back and neck pain", "Treatment for back and neck pain, disc problems and nerve compression."], ta: ["முதுகு மற்றும் கழுத்து வலி", "முதுகு வலி, கழுத்து வலி, டிஸ்க் பிரச்சனை, நரம்பு அழுத்தத்திற்கு சிகிச்சை."] },
+      { i: "bandage", en: ["Fractures and injuries", "Care for broken bones, sprains, sports injuries and accident injuries."], ta: ["எலும்பு முறிவு மற்றும் காயங்கள்", "எலும்பு முறிவு, சுளுக்கு, விளையாட்டு காயம், விபத்து காயங்களுக்கு சிகிச்சை."] },
+      { i: "footprints", en: ["Knee and hip replacement", "Joint replacement surgery when other treatments are not enough."], ta: ["முழங்கால், இடுப்பு மூட்டு மாற்று", "மற்ற சிகிச்சைகள் போதாதபோது மூட்டு மாற்று அறுவை சிகிச்சை."] },
+      { i: "dumbbell", en: ["Physiotherapy and rehab", "Exercises and therapy to rebuild strength after injury, surgery or stroke."], ta: ["பிசியோதெரபி மற்றும் மறுவாழ்வு", "காயம், அறுவை சிகிச்சை, பக்கவாதத்திற்குப் பின் வலிமையை மீட்கப் பயிற்சி."] },
+      { i: "baby", en: ["Children's bone care", "Treatment for clubfoot and other bone and leg problems in children."], ta: ["குழந்தைகள் எலும்பு சிகிச்சை", "குழந்தைகளுக்கான கிளப் பாதம் மற்றும் கால், எலும்பு பிரச்சனைகளுக்கு சிகிச்சை."] }
+    ];
+    var lang = "en";
+    try { lang = localStorage.getItem("roc-home-lang") || "en"; } catch (e) {}
+
+    // Hours from the Google Business Profile. Days: 0 Sunday … 6 Saturday. Times in IST.
+    var HOURS = { 0: [10, 12], 1: [9, 22], 2: [9, 22], 3: [9, 22], 4: [9, 22], 5: [9, 22], 6: [9, 22] };
+    function fmt(h) { var am = h < 12; var x = h % 12 || 12; return x + (am ? " AM" : " PM"); }
+    function fmtTa(h) { var x = h % 12 || 12; return (h < 12 ? "காலை " : h < 16 ? "மதியம் " : h < 19 ? "மாலை " : "இரவு ") + x; }
+    function nowIST() { var d = new Date(); var utc = d.getTime() + d.getTimezoneOffset() * 60000; return new Date(utc + 5.5 * 3600000); }
+
+    function render() {
+      var t = T[lang];
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-k]").forEach(function (el) {
+        var v = t[el.dataset.k]; if (v == null) return;
+        if (el.hasAttribute("data-html") || /<br>|<em>/.test(v)) el.innerHTML = v; else el.textContent = v;
+      });
+      document.querySelectorAll(".lang button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
+      var logo = lang === "ta" ? "img/logo-horizontal-ta.svg" : "img/logo-horizontal-en.svg";
+      document.getElementById("logo").src = logo; document.getElementById("flogo").src = logo;
+      document.getElementById("tiles").innerHTML = tiles.map(function (x) {
+        var c = x[lang];
+        return '<a class="tile" href="index.html#about"><span class="ic"><i data-lucide="' + x.i + '" class="ico"></i></span><h3>' + c[0] + '</h3><p>' + c[1] + '</p><span class="more">' + t.learn + '<i data-lucide="chevron-right" class="ico"></i></span></a>';
+      }).join("");
+      var n = nowIST(), h = HOURS[n.getDay()], hr = n.getHours() + n.getMinutes() / 60, open = hr >= h[0] && hr < h[1];
+      var st = document.getElementById("status");
+      st.textContent = open ? t.open : t.closed; st.classList.toggle("closed", !open);
+      document.getElementById("today-hours").textContent = lang === "ta" ? fmtTa(h[0]) + " – " + fmtTa(h[1]) : fmt(h[0]) + " – " + fmt(h[1]);
+      document.title = lang === "ta" ? "ராணி ஆர்த்தோ கேர் · மாதிரி முகப்பு" : "Rani Ortho Care Sample Home";
+      if (window.lucide) window.lucide.createIcons({ attrs: { "stroke-width": 2, "aria-hidden": "true" } });
+    }
+    document.querySelectorAll(".lang button").forEach(function (b) {
+      b.addEventListener("click", function () { lang = b.dataset.lang; try { localStorage.setItem("roc-home-lang", lang); } catch (e) {} render(); });
+    });
+    var mb = document.querySelector(".menu-btn"), mm = document.getElementById("mobile-menu");
+    mb.addEventListener("click", function () { var o = mm.hidden; mm.hidden = !o; mb.setAttribute("aria-expanded", String(o)); });
+    mm.addEventListener("click", function (e) { if (e.target.closest("a")) { mm.hidden = true; mb.setAttribute("aria-expanded", "false"); } });
+    render();
+  })();
+  </script>
+</body>
+</html>

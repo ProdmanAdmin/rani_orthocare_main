@@ -36,6 +36,7 @@ for folder in ("img", "previews"):
             files[f"{folder}/{f.name}"] = str(f.relative_to(ROOT))
 files["content.js"] = "prototype/content.js"
 files["design-system.html"] = "prototype/design-system.html"
+files["home-sample.html"] = "prototype/home-sample.html"
 for f in sorted((ROOT / "brand-assets").rglob("*")):
     if f.is_file() and f.name != ".DS_Store":
         files[str(f.relative_to(ROOT))] = str(f.relative_to(ROOT))
