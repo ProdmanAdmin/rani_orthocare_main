@@ -39,6 +39,7 @@ files["design-system.html"] = "prototype/design-system.html"
 files["home-sample.html"] = "prototype/home-sample.html"
 files["storybrand.html"] = "prototype/storybrand.html"
 files["storybrand.pdf"] = "prototype/storybrand.pdf"
+files["home-page-content.pdf"] = "prototype/home-page-content.pdf"
 for f in sorted((ROOT / "brand-assets").rglob("*")):
     if f.is_file() and f.name != ".DS_Store":
         files[str(f.relative_to(ROOT))] = str(f.relative_to(ROOT))

@@ -25,6 +25,7 @@ for name in ("index.html", "design-system.html", "home-sample.html", "storybrand
 for folder in ("img", "previews"):
     shutil.copytree(HERE / folder, OUT / folder)
 shutil.copy2(HERE / "storybrand.pdf", OUT / "storybrand.pdf")
+shutil.copy2(HERE / "home-page-content.pdf", OUT / "home-page-content.pdf")
 shutil.copytree(ROOT / "brand-assets", OUT / "brand-assets", ignore=shutil.ignore_patterns(".DS_Store"))
 
 # Keep the prototype out of search engines, and add basic security headers.

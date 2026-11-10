@@ -46,6 +46,7 @@ To update the link after changing the prototype:
 - `content.js`: all content for sections 1 to 3 (English and Tamil)
 - `design-system.html`: section 4, the design system mood board (a standalone page)
 - `home-sample.html`: section 5, the sample home page (a standalone page)
+- `home-page-content.pdf`: the full home page content for review, built from `docs/home-page-content.md` by `build-home-content.py` (also saved as `docs/home-page-content.pdf`); linked from sections 5 and 6
 - `storybrand.html`: section 6, generated from `docs/storybrand.md` by `build-storybrand.py`; `storybrand.pdf` is a copy of `docs/storybrand.pdf` for its download button
 - `img/`: logo copies cropped to their artwork for display (the originals are in `brand-assets/logo/`)
 - `previews/`: JPEG previews of the print PDFs

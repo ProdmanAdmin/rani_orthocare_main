@@ -334,7 +334,8 @@ page = f"""<!doctype html>
           <p class="ta-line" lang="ta">{html.escape(title_ta)}</p>
           <div class="intro">{intro_html}</div>
           <div class="btn-row">
-            <a class="btn btn-primary" href="storybrand.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>Download the PDF</a>
+            <a class="btn btn-primary" href="storybrand.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>Framework PDF</a>
+            <a class="btn btn-secondary" href="home-page-content.pdf" download>Home page content PDF</a>
             <a class="btn btn-secondary" href="#contents">See the contents</a>
           </div>
         </div>
