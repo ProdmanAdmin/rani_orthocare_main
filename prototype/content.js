@@ -4,7 +4,7 @@
 // Sources: docs/business-context.md and docs/business-model.md. Keep these in step with those files.
 
 window.CONTENT = {
-  updated: "2026-10-29",
+  updated: "2026-11-10",
 
   clinic: {
     name: { en: "Rani Ortho Care", ta: "ராணி ஆர்த்தோ கேர்" },
@@ -12,8 +12,8 @@ window.CONTENT = {
     philosophy: { en: "Life is movement, movement is life", ta: "வாழ்க்கையே இயக்கம், இயக்கமே வாழ்க்கை" },
     type: { en: "Orthopaedic clinic in Karaikudi, Tamil Nadu", ta: "காரைக்குடியில் உள்ள எலும்பு, மூட்டு சிகிச்சை கிளினிக்" },
     intro: {
-      en: "Rani Ortho Care treats bone, joint and spine problems for people of all ages in Karaikudi and the surrounding region. Care starts with relieving pain, then finding and treating the root cause, so patients can move again. The clinic also runs free medical camps for the community.",
-      ta: "காரைக்குடி மற்றும் சுற்றியுள்ள ஊர்களில், எல்லா வயதினருக்கும் எலும்பு, மூட்டு, முதுகெலும்பு பிரச்சனைகளுக்கு ராணி ஆர்த்தோ கேர் சிகிச்சை தருகிறது. முதலில் வலியைக் குறைத்து, பிறகு வலிக்கான உண்மையான காரணத்தைக் கண்டுபிடித்து சிகிச்சை தருகிறோம். நோக்கம்: நோயாளிகள் மீண்டும் நன்றாக நடக்க வேண்டும். நம் ஊர் மக்களுக்காக இலவச மருத்துவ முகாம்களும் நடத்துகிறோம்.",
+      en: "Rani Ortho Care treats bone, joint and spine problems for people of all ages in Karaikudi and the surrounding region, with patients coming from about 70 to 80 km away. Care starts with relieving pain, then finding and treating the root cause, so patients can move again. The clinic also runs free medical camps for the community.",
+      ta: "காரைக்குடி மற்றும் சுற்றியுள்ள சுமார் 70–80 கி.மீ. தூரத்தில் உள்ள ஊர்களிலிருந்து வரும் எல்லா வயதினருக்கும் எலும்பு, மூட்டு, முதுகெலும்பு பிரச்சனைகளுக்கு ராணி ஆர்த்தோ கேர் சிகிச்சை தருகிறது. முதலில் வலியைக் குறைத்து, பிறகு வலிக்கான உண்மையான காரணத்தைக் கண்டுபிடித்து சிகிச்சை தருகிறோம். நோக்கம்: நோயாளிகள் மீண்டும் நன்றாக நடக்க வேண்டும். நம் ஊர் மக்களுக்காக இலவச மருத்துவ முகாம்களும் நடத்துகிறோம்.",
     },
   },
 
@@ -21,16 +21,26 @@ window.CONTENT = {
     name: { en: "Dr. N. Manikandan", ta: "டாக்டர் நா. மணிகண்டன்" },
     qualifications: "M.B.B.S., M.S. (Ortho)",
     roles: [
-      { en: "Government Doctor", ta: "அரசு மருத்துவர்" },
       { en: "Consultant Orthopaedic Surgeon", ta: "எலும்புமுறிவு மற்றும் முடநீக்கியல் அறுவைசிகிச்சை நிபுணர்" },
+      { en: "Assistant Surgeon, Government Hospital", ta: "அரசு மருத்துவமனையில் உதவி அறுவை சிகிச்சை நிபுணர்" },
+      { en: "10 years of experience", ta: "10 ஆண்டு அனுபவம்" },
     ],
     note: {
       en: "Runs Rani Ortho Care and leads all patient care. Approves all website content and medical wording.",
       ta: "ராணி ஆர்த்தோ கேர் கிளினிக்கை நடத்துகிறார், எல்லா நோயாளிகளின் சிகிச்சையையும் அவரே பார்த்துக்கொள்கிறார். இணையதளத்தில் வரும் எல்லா விஷயங்களும், மருத்துவ வார்த்தைகளும் அவர் சரிபார்த்த பிறகே வெளியாகும்.",
     },
+    // From the doctor's answers, docs/business-context.md section 1a (2026-11-10).
+    background: {
+      en: "Born in Karaikudi and schooled at SMSV Higher Secondary School, Karaikudi. MBBS from Tirunelveli Medical College; MS (Ortho) from Government Rajaji Medical College, Madurai.",
+      ta: "காரைக்குடியில் பிறந்தவர், காரைக்குடி SMSV மேல்நிலைப் பள்ளியில் படித்தவர். MBBS: திருநெல்வேலி அரசு மருத்துவக் கல்லூரி. MS (Ortho): அரசு ராஜாஜி மருத்துவக் கல்லூரி, மதுரை.",
+    },
+    care: {
+      en: "Emergency care is available 24/7. Minor surgery is done in the clinic's own Mini OT, and major surgery at tie-up hospitals. Physiotherapy is given at a separate, dedicated centre.",
+      ta: "அவசர சிகிச்சை 24 மணி நேரமும், வாரத்தின் 7 நாட்களும் கிடைக்கும். சிறிய ஆபரேஷன்கள் கிளினிக்கின் சொந்த Mini OT-யில், பெரிய ஆபரேஷன்கள் இணைந்த மருத்துவமனைகளில். பிசியோதெரபி தனியாக உள்ள ஒரு பிசியோதெரபி மையத்தில் தரப்படுகிறது.",
+    },
     community: {
-      en: "Runs free medical camps. When a camp patient needs surgery or physiotherapy, the clinic takes care of it.",
-      ta: "இலவச மருத்துவ முகாம்கள் நடத்துகிறார். முகாமுக்கு வருபவர்களுக்கு ஆபரேஷன் அல்லது பிசியோதெரபி தேவைப்பட்டால், அதையும் கிளினிக்கே பார்த்துக்கொள்கிறது.",
+      en: "Runs a free bone density (BMD) screening camp every 3 months, and several small camps every month. When a camp patient needs surgery or physiotherapy, the clinic takes care of it.",
+      ta: "3 மாதங்களுக்கு ஒருமுறை இலவச எலும்பு அடர்த்தி (BMD) பரிசோதனை முகாமும், ஒவ்வொரு மாதமும் பல சிறிய முகாம்களும் நடத்துகிறார். முகாமுக்கு வருபவர்களுக்கு ஆபரேஷன் அல்லது பிசியோதெரபி தேவைப்பட்டால், அதையும் கிளினிக்கே பார்த்துக்கொள்கிறது.",
     },
   },
 
@@ -67,8 +77,8 @@ window.CONTENT = {
     { en: "Joint replacement surgery (knee, hip)", ta: "மூட்டு மாற்று ஆபரேஷன் (முட்டி, இடுப்பு)" },
     { en: "Clubfoot treatment for children", ta: "குழந்தைகளின் பாத வளைவுக்கு (கிளப் ஃபுட்) சிகிச்சை" },
     { en: "Digital X-ray facility", ta: "டிஜிட்டல் எக்ஸ்ரே வசதி" },
-    { en: "Physiotherapy for pain relief and recovery", ta: "வலி குறையவும், சீக்கிரம் குணமாகவும் பிசியோதெரபி" },
-    { en: "Plaster, dressing and minor ortho procedures", ta: "பிளாஸ்டர், கட்டு (டிரஸ்ஸிங்), சிறு சிகிச்சைகள்" },
+    { en: "Physiotherapy for pain relief and recovery (at a separate, dedicated centre)", ta: "வலி குறையவும், சீக்கிரம் குணமாகவும் பிசியோதெரபி (தனியாக உள்ள பிசியோதெரபி மையத்தில்)" },
+    { en: "Plaster, dressing and minor ortho procedures (in the clinic's own Mini OT)", ta: "பிளாஸ்டர், கட்டு (டிரஸ்ஸிங்), சிறு சிகிச்சைகள் (கிளினிக்கின் சொந்த Mini OT-யில்)" },
     { en: "Specialist consultation", ta: "சிறப்பு டாக்டர் ஆலோசனை" },
   ],
 
@@ -106,22 +116,22 @@ window.CONTENT = {
     {
       no: "04", title: { en: "Routine & advanced orthopaedics", ta: "சாதாரண மற்றும் பெரிய எலும்பு சிகிச்சைகள்" },
       points: [
-        { en: "Fractures, arthritis, knee replacement (TKR), hip replacement (THR), spine surgery.", ta: "எலும்பு முறிவு, மூட்டு வீக்கம், முட்டி மற்றும் இடுப்பு மூட்டு மாற்று ஆபரேஷன், முதுகெலும்பு ஆபரேஷன்." },
+        { en: "Fractures, arthritis, knee replacement (TKR), hip replacement (THR), spine surgery. Minor surgery in the clinic's Mini OT; major surgery at tie-up hospitals.", ta: "எலும்பு முறிவு, மூட்டு வீக்கம், முட்டி மற்றும் இடுப்பு மூட்டு மாற்று ஆபரேஷன், முதுகெலும்பு ஆபரேஷன். சிறிய ஆபரேஷன்கள் கிளினிக்கின் Mini OT-யில், பெரிய ஆபரேஷன்கள் இணைந்த மருத்துவமனைகளில்." },
         { en: "Children's orthopaedics: clubfoot, leg deformities from bone nutrient deficiency.", ta: "குழந்தைகள் எலும்பு சிகிச்சை: பாத வளைவு (கிளப் ஃபுட்), எலும்புச் சத்துக் குறைவால் கால் வளைவு." },
-        { en: "Acute trauma and accident care.", ta: "விபத்து மற்றும் அவசரக் காயங்களுக்கு சிகிச்சை." },
+        { en: "Acute trauma and accident care. Emergency care is available 24/7.", ta: "விபத்து மற்றும் அவசரக் காயங்களுக்கு சிகிச்சை. அவசர சிகிச்சை 24 மணி நேரமும் கிடைக்கும்." },
       ],
     },
     {
       no: "05", title: { en: "Physiotherapy & rehabilitation", ta: "பிசியோதெரபி, மீண்டும் பலம் பெற பயிற்சி" },
       points: [
-        { en: "Physiotherapy alongside treatment to strengthen muscles and speed recovery.", ta: "தசைகளுக்குப் பலம் கொடுத்து சீக்கிரம் குணமாக, சிகிச்சையுடன் பிசியோதெரபி." },
+        { en: "Physiotherapy alongside treatment to strengthen muscles and speed recovery, given at a separate, dedicated centre.", ta: "தசைகளுக்குப் பலம் கொடுத்து சீக்கிரம் குணமாக, சிகிச்சையுடன் பிசியோதெரபி. இது தனியாக உள்ள பிசியோதெரபி மையத்தில் தரப்படுகிறது." },
         { en: "After surgery, after a stroke (CVA), and coordination support for children with cerebral palsy.", ta: "ஆபரேஷனுக்குப் பிறகு, பக்கவாதத்துக்குப் பிறகு, CP (மூளை முடக்குவாதம்) உள்ள குழந்தைகள் கை கால்களை ஒழுங்காக அசைக்கப் பயிற்சி." },
       ],
     },
     {
       no: "06", title: { en: "Regenerative therapies", ta: "PRP போன்ற ஊசி சிகிச்சைகள்" },
       points: [
-        { en: "PRP, GFC, BMAC and molecular therapeutics for chronic pain and rheumatoid arthritis.", ta: "நீண்ட நாள் வலி, முடக்கு வாதத்துக்கு PRP, GFC, BMAC மற்றும் மாலிகுலர் தெரபியூடிக்ஸ்." },
+        { en: "PRP, GFC, BMAC (Bone Marrow Aspirate Concentrate) and molecular therapeutics for chronic pain and rheumatoid arthritis. Bone marrow aspiration cytology is also offered as a test.", ta: "நீண்ட நாள் வலி, முடக்கு வாதத்துக்கு PRP, GFC, BMAC (எலும்பு மஜ்ஜை செறிவு சிகிச்சை) மற்றும் மாலிகுலர் தெரபியூடிக்ஸ். எலும்பு மஜ்ஜை செல் பரிசோதனையும் (Bone Marrow Aspiration Cytology) செய்யப்படுகிறது." },
         { en: "Cartilage regeneration as an option before joint replacement, after individual assessment.", ta: "மூட்டு மாற்று ஆபரேஷனுக்கு முன், மூட்டுக்குள் உள்ள ஜவ்வை (கார்ட்டிலேஜ்) மீண்டும் வளர வைக்கும் சிகிச்சை, பரிசோதனைக்குப் பிறகு பொருந்துபவர்களுக்கு." },
       ],
     },
@@ -172,8 +182,10 @@ window.CONTENT = {
   ],
 
   needed: [
-    { en: "Photos of Dr. N. Manikandan, the clinic and the team (to discuss later)", ta: "டாக்டர், கிளினிக், டீம் புகைப்படங்கள் (பிறகு பேசலாம்)" },
+    { en: "Dr. N. Manikandan's profile photo (he will share one); clinic and team photos to discuss later", ta: "டாக்டரின் புரொஃபைல் புகைப்படம் (அவர் அனுப்புவார்); கிளினிக், டீம் புகைப்படங்கள் பிறகு பேசலாம்" },
     { en: "Free medical camp details: dates, places, photos", ta: "இலவச மருத்துவ முகாம் விவரங்கள்: தேதிகள், இடங்கள், புகைப்படங்கள்" },
+    { en: "List of 10 to 20 nearby places with district names, and the unclear place names confirmed", ta: "அருகில் உள்ள 10–20 ஊர்களின் பட்டியல் (மாவட்டத்துடன்), சந்தேகமான ஊர்ப் பெயர்கள் உறுதி செய்வது" },
+    { en: "Names of the tie-up hospitals, and how 24/7 emergency calls work at night", ta: "இணைந்த மருத்துவமனைகளின் பெயர்கள், இரவில் அவசர அழைப்புகள் எப்படி என்ற விவரம்" },
     { en: "Google Business Profile link and owner access", ta: "Google பிசினஸ் பக்க லிங்க் மற்றும் அக்சஸ்" },
     { en: "Doctor's approval of the website wording for medical claims", ta: "மருத்துவ வார்த்தைகளுக்கு டாக்டரின் ஒப்புதல்" },
     { en: "Approval of the design system (section 4) by Dr. N. Manikandan", ta: "டிசைன் சிஸ்டத்துக்கு (பகுதி 4) டாக்டரின் ஒப்புதல்" },

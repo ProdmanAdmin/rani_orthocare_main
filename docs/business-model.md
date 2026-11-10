@@ -57,6 +57,9 @@ Status: **the client's own statement of the business.** Every design, page struc
 
 ### 5. Supportive Care & Rehabilitation (Physiotherapy)
 - **Physiotherapy Integration:** Alongside medical treatment, targeted physiotherapy strengthens muscles and accelerates recovery.
+
+> **Note (2026-11-10):** physiotherapy is given at a separate, dedicated centre, not at the clinic itself (doctor's answer, `docs/business-context.md` section 1a).
+
 - **Specialized Rehab Applications:**
   - Post-operative Rehabilitation
   - CVA (Cerebrovascular Accident / Stroke) Rehabilitation
@@ -208,7 +211,7 @@ This document records the doctor's own words. Website copy must still follow `CL
 | "near-curative outcomes" (rheumatoid arthritis, autoimmune) | "long-term control of chronic pain and rheumatoid arthritis" | Cure claims for chronic conditions are not allowed |
 | "cartilage regeneration" instead of replacement | "cartilage regeneration therapy may be an option for some patients, after assessment" | Depends on the patient; say so |
 | "delaying surgery safely for 5 years" | "options to safely manage your condition if you want to postpone surgery" | No fixed durations |
-| "Acute Trauma & Emergency Accident Care" | Only describe emergency care within the hours on Google | The clinic is not open 24 hours |
+| "Acute Trauma & Emergency Accident Care" | Emergency care is available 24/7 (doctor, 2026-11-10). Show the clinic hours from Google, and describe the 24/7 emergency arrangement separately once it is confirmed how night calls work | Clinic hours and emergency availability are different things; keep both accurate |
 | "evidence-based care" | Can be used | |
 
 The final public wording is approved by Dr. N. Manikandan.
@@ -251,12 +254,12 @@ This is a starting list for the keyword library. Tamil-in-English spellings are 
 ---
 
 ## 8. Open questions for the doctor {#questions}
-1. **"Bone Marrow Aspiration Cytology / BMAC".** The usual name for BMAC is *Bone Marrow Aspirate Concentrate*. Which name should the website use?
+1. **"Bone Marrow Aspiration Cytology / BMAC".** **Answered 2026-11-10:** these are two separate services. Bone Marrow Aspiration Cytology is a test. BMAC is the treatment, named "Bone Marrow Aspirate Concentrate (BMAC)" on the website. See `docs/business-context.md` section 1a.
 2. **"Molecular Therapeutics".** Which treatments does this cover? A short plain description is needed before it can have a page.
-3. **Emergency and trauma care.** Is it available only within clinic hours, or is there an on-call arrangement? Is it handled at the clinic or at a hospital?
-4. **Where surgeries are done:** at the clinic, or at a partner hospital? This affects how TKR, THR and spine pages are written.
+3. **Emergency and trauma care.** **Answered 2026-11-10:** emergency care is available 24/7. Still to ask before writing the copy: is the phone answered at night, and are night emergencies seen at the clinic or at a tie-up hospital?
+4. **Where surgeries are done.** **Answered 2026-11-10:** minor surgeries are done at the clinic in its own Mini OT; major surgeries (such as TKR, THR and spine) are done at tie-up hospitals. Still to ask: which hospitals, and may they be named?
 5. **Corporate coaching.** Answered 2026-10-29: offered now, so the site invites company enquiries. Still to ask: has it been done for any companies yet, and can they be named?
-6. **Is physiotherapy in-house?** Is there a named physiotherapist for the Team page?
+6. **Is physiotherapy in-house?** **Answered 2026-11-10:** no. Physiotherapy is given at a separate, dedicated centre (Rani Rehab and Wellness), not at the clinic. Decision needed: may the website mention, name and link that centre? (Its assets were kept out of this project's scope.)
 7. **Approval of the website wording** in section 6.
 
 ---

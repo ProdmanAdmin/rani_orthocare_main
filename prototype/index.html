@@ -344,6 +344,8 @@
             <p class="quals">${esc(d.qualifications)}</p>
             <ul class="tags">${d.roles.map((r) => `<li>${T(r)}</li>`).join("")}</ul>
             <p>${T(d.note)}</p>
+            ${d.background ? `<p>${T(d.background)}</p>` : ""}
+            ${d.care ? `<p>${T(d.care)}</p>` : ""}
             <p class="callout">${T(d.community)}</p>
             <div class="actions">
               <a class="btn btn-primary" href="tel:${ph.tel}">${icon.phone}${u("call")} ${esc(ph.display)}</a>

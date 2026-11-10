@@ -13,13 +13,14 @@ The full business model, in English and Tamil, is in **`docs/business-model.md`*
   2. mobility and function
   3. preventive orthopaedics: posture and workplace care for IT workers, drivers and manual workers, including corporate coaching
   4. routine and advanced orthopaedics: fractures, arthritis, TKR and THR, spine, children's orthopaedics, trauma
-  5. physiotherapy and rehabilitation: after surgery, stroke (CVA), cerebral palsy
+  5. physiotherapy and rehabilitation: after surgery, stroke (CVA), cerebral palsy (given at a separate dedicated centre, **not at the clinic**: never write "physiotherapy clinic")
   6. regenerative therapies: PRP, GFC, BMAC, cartilage regeneration
   7. non-surgical management, for people avoiding or postponing surgery
   8. patient safety first
-- **Area and audience:** about 15 to 20 km around the clinic. Mainly older patients with walking difficulty, people needing physiotherapy or orthopaedic surgery, and their families, many reading Tamil and English. Design for clarity over style: see `DESIGN.md`.
+- **Area and audience:** brand area about 15 to 20 km around the clinic; patients come from about 70 to 80 km (doctor, 2026-11-10). Mainly older patients with walking difficulty, people needing physiotherapy or orthopaedic surgery, and their families, many reading Tamil and English. Design for clarity over style: see `DESIGN.md`.
 - **Positioning:** options before surgery, prevention for working people, and free medical camps as the community story. The site leads with relief and movement, not with surgery.
 - **Claims:** the business model records the doctor's own words. Public copy uses the safe wording in `docs/business-model.md` section 6. Never write "permanent", "cure" or "near-curative", or give fixed timeframes such as "delay surgery for 5 years". Final medical wording is approved by the doctor.
+- **Doctor's confirmed answers** (education, home town Karaikudi, 10 years' experience, camps, 24/7 emergency care, minor surgery in the clinic's Mini OT, major surgery at tie-up hospitals, physiotherapy at a separate centre) are in `docs/business-context.md` section 1a. Use them exactly as recorded.
 - **Brand facts and assets:** `docs/business-context.md` (facts, hours, open questions) and `brand-assets/` (logo, print materials). Opening hours always follow the Google Business Profile. Justdial is not used as a source.
 
 ## Languages: English and Tamil

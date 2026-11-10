@@ -18,7 +18,7 @@ All six sections use the website design system (fonts, colours, section bands).
 - **All content is in `content.js`.** Each text has `en` and `ta`. Change it there; there's no need to touch `index.html`.
 - Keep `content.js` consistent with `docs/business-context.md` and `docs/business-model.md`.
 - Change `updated` in `content.js` whenever the content changes.
-- **Section 6 is generated.** Edit `docs/storybrand.md` (and re-make `docs/storybrand.pdf`), then run `python3 -I prototype/build-storybrand.py`. Never edit `storybrand.html` by hand.
+- **Section 6 is generated.** Edit `docs/storybrand.md`, then run `python3 -I prototype/build-storybrand.py`. It writes `storybrand.html` and also prints it to `docs/storybrand.pdf` with headless Chrome. Never edit `storybrand.html` by hand.
 
 ## Opening it
 It reads files from `../brand-assets/`, so serve it from the repository root:

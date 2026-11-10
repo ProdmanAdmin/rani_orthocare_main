@@ -117,7 +117,7 @@
     td { padding: 12px 16px; border-top: 1px solid var(--line); vertical-align: top; }
     tbody tr:nth-child(even) td { background: #F7F9FD; }
     td:first-child { font-weight: 700; color: var(--ink); }
-    @media (max-width: 767px) {
+    @media screen and (max-width: 767px) {
       .tbl { border: 0; background: none; box-shadow: none; border-radius: 0; overflow: visible; }
       table, tbody, tr, td { display: block; width: 100%; }
       thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
@@ -128,6 +128,29 @@
       td[data-label=""]::before { display: none; }
     }
 
+    /* Print (also used to make docs/storybrand.pdf): A4, no site chrome, smaller type. */
+    @media print {
+      @page { size: A4; margin: 14mm 12mm 16mm; }
+      :root { --fs-display: 24pt; --fs-h2: 15pt; --fs-h3: 12pt; --fs-lead: 11pt; --fs-body: 10.5pt; --fs-small: 9.5pt; --section: 7mm; --gap: 4mm; --pad: 5mm; --gutter: 0px; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; line-height: 1.5; }
+      body::before, .util, header.site, .btn-row, .top-link, .skip, footer a { display: none !important; }
+      .cover { padding-block: 8mm; }
+      .cover-grid { grid-template-columns: 7fr 5fr; gap: 8mm; }
+      .approach { box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; padding: 5mm; }
+      .steps li { grid-template-columns: 9mm 1fr; } .steps li b { width: 9mm; height: 9mm; font-size: 12pt; }
+      .toc { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2mm; }
+      #contents { break-inside: avoid; }
+      .cover .intro { font-size: 10pt; gap: 2mm; }
+      .cover h1 { font-size: 22pt; }
+      .toc a { min-height: 0; padding: 2mm 3mm; box-shadow: none; } .toc b { width: 7mm; height: 7mm; }
+      .band { break-inside: auto; }
+      .band-head, h2, h3 { break-after: avoid; }
+      .tbl { box-shadow: none; overflow: visible; }
+      tr { break-inside: avoid; }
+      th, td { padding: 2mm 2.5mm; }
+      .eyebrow b { min-width: 7mm; height: 7mm; font-size: 9pt; }
+      footer { background: none !important; color: var(--muted); padding-block: 4mm; border-top: 1px solid var(--line); }
+    }
     footer { background: linear-gradient(180deg, #14234A, #1E3263); color: var(--on-navy); padding-block: 40px; font-size: var(--fs-small); }
     footer .wrap { display: grid; gap: 8px; }
     footer a { color: var(--white); }
@@ -162,7 +185,7 @@
           <p class="eyebrow"><b>06</b>Message framework · English and Tamil</p>
           <h1 id="t-cover">StoryBrand Message Framework</h1>
           <p class="ta-line" lang="ta">StoryBrand செய்திக் கட்டமைப்பு</p>
-          <div class="intro"><p>Version 0.3, 2026-10-29. <strong>Draft for Dr. N. Manikandan's approval.</strong> v0.3 rewrites all the Tamil in simple written Tamil (Style A, see the Tamil style guide), following the approved home page review. The Tamil will also go through a native-speaker check (UAT) before it goes live.</p>
+          <div class="intro"><p>Version 0.4, 2026-11-10. <strong>Draft for Dr. N. Manikandan's approval.</strong> v0.4 adds the doctor's own answers (education, home town, experience, camps, emergency care, where surgery and physiotherapy happen) and corrects the copy that they change. v0.3 rewrote all the Tamil in simple written Tamil (Style A, see the Tamil style guide). The Tamil will also go through a native-speaker check (UAT) before it goes live.</p>
 <p>Built from the clinic's business model (the doctor's own words) and the confirmed business facts. Medical wording follows the safe-wording rules agreed for the site: no cure or permanent-result claims, no promises, no "best", no invented facts.</p>
 <p><strong>How to use this document.</strong> It is the source for the words on the website. The patient is the hero of the story; Rani Ortho Care and Dr. Manikandan are the guide who helps. Every page should answer three questions within a few seconds: <em>What is my problem? How can you help? What do I do next?</em> When a page is written, its copy is taken from here. Change the wording here first, then on the site.</p>
 <p><strong>Tamil style.</strong> All Tamil here is Style A: everyday written Tamil, with the English words people actually say written in Tamil letters (அப்பாயின்ட்மென்ட், டாக்டர், ஆபரேஷன், எக்ஸ்ரே). The rules and word list are in the Tamil style guide.</p></div>
@@ -186,7 +209,7 @@
 
     <section class="band" id="contents" aria-labelledby="t-contents">
       <div class="wrap">
-        <div class="band-head"><p class="eyebrow">Version 0.3 draft</p><h2 id="t-contents">Contents</h2></div>
+        <div class="band-head"><p class="eyebrow">Version 0.4 draft</p><h2 id="t-contents">Contents</h2></div>
         <ol class="toc">
 <li><a href="#one-page"><b>1</b><span>The story in one page</span></a></li>
 <li><a href="#hero"><b>2</b><span>The hero: who our patients are</span></a></li>
@@ -405,15 +428,39 @@
 </tr>
 <tr>
 <td data-label="Proof">Role</td>
-<td data-label="English (display text)">Government Doctor and Consultant Orthopaedic Surgeon</td>
-<td data-label="Tamil (display text)" lang="ta">அரசு மருத்துவர், எலும்புமுறிவு மற்றும் முடநீக்கியல் அறுவைசிகிச்சை நிபுணர் (எலும்பு, மூட்டு சிறப்பு டாக்டர்)</td>
-<td data-label="Where it appears">Doctor section, About page. The official title stays as on his card</td>
+<td data-label="English (display text)">Consultant Orthopaedic Surgeon; Assistant Surgeon at a Government Hospital</td>
+<td data-label="Tamil (display text)" lang="ta">எலும்புமுறிவு மற்றும் முடநீக்கியல் அறுவைசிகிச்சை நிபுணர் (எலும்பு, மூட்டு சிறப்பு டாக்டர்); அரசு மருத்துவமனையில் உதவி அறுவை சிகிச்சை நிபுணர்</td>
+<td data-label="Where it appears">Doctor section, About page. The official title stays as on his card; the hospital is not named until he confirms it</td>
 </tr>
 <tr>
-<td data-label="Proof">Care under one roof</td>
-<td data-label="English (display text)">Consultation, digital X-ray, physiotherapy, and plaster and dressing, all at the clinic</td>
-<td data-label="Tamil (display text)" lang="ta">டாக்டர் ஆலோசனை, டிஜிட்டல் எக்ஸ்ரே, பிசியோதெரபி, பிளாஸ்டர், கட்டு, எல்லாமே ஒரே கிளினிக்கில்</td>
-<td data-label="Where it appears">Hero fact chips, plan step 2</td>
+<td data-label="Proof">Training</td>
+<td data-label="English (display text)">MBBS, Tirunelveli Medical College; MS (Ortho), Government Rajaji Medical College, Madurai</td>
+<td data-label="Tamil (display text)" lang="ta">MBBS, திருநெல்வேலி அரசு மருத்துவக் கல்லூரி; MS (Ortho), அரசு ராஜாஜி மருத்துவக் கல்லூரி, மதுரை</td>
+<td data-label="Where it appears">Doctor section, About page, Person details for Google</td>
+</tr>
+<tr>
+<td data-label="Proof">Experience</td>
+<td data-label="English (display text)">10 years of experience</td>
+<td data-label="Tamil (display text)" lang="ta">10 ஆண்டு அனுபவம்</td>
+<td data-label="Where it appears">Hero fact chip, doctor section. Exactly "10 years", never rounded up</td>
+</tr>
+<tr>
+<td data-label="Proof">One of us</td>
+<td data-label="English (display text)">Born in Karaikudi, and went to school at SMSV Higher Secondary School, Karaikudi</td>
+<td data-label="Tamil (display text)" lang="ta">காரைக்குடியில் பிறந்தவர், காரைக்குடி SMSV மேல்நிலைப் பள்ளியில் படித்தவர்</td>
+<td data-label="Where it appears">Doctor section, About page. A strong local trust point</td>
+</tr>
+<tr>
+<td data-label="Proof">Care at the clinic</td>
+<td data-label="English (display text)">Consultation, digital X-ray, plaster and dressing, and minor procedures in the clinic's own minor operation theatre (Mini OT)</td>
+<td data-label="Tamil (display text)" lang="ta">டாக்டர் ஆலோசனை, டிஜிட்டல் எக்ஸ்ரே, பிளாஸ்டர், கட்டு, கிளினிக்கின் சொந்த Mini OT-யில் சிறிய ஆபரேஷன்கள்</td>
+<td data-label="Where it appears">Hero fact chips, plan step 2. Physiotherapy is <strong>not</strong> at the clinic, so it is not listed here</td>
+</tr>
+<tr>
+<td data-label="Proof">Surgery when it is needed</td>
+<td data-label="English (display text)">Major operations, such as joint replacement and spine surgery, are done at our tie-up hospitals</td>
+<td data-label="Tamil (display text)" lang="ta">மூட்டு மாற்று, முதுகெலும்பு ஆபரேஷன் போன்ற பெரிய ஆபரேஷன்கள் எங்களுடன் இணைந்த மருத்துவமனைகளில் செய்யப்படும்</td>
+<td data-label="Where it appears">Options before surgery, replacement and spine pages. Hospitals named only when confirmed</td>
 </tr>
 <tr>
 <td data-label="Proof">Range of care</td>
@@ -441,8 +488,8 @@
 </tr>
 <tr>
 <td data-label="Proof">Community care</td>
-<td data-label="English (display text)">Free medical camps for the community</td>
-<td data-label="Tamil (display text)" lang="ta">நம் ஊர் மக்களுக்காக இலவச மருத்துவ முகாம்கள்</td>
+<td data-label="English (display text)">A free bone density (BMD) screening camp every 3 months, and several small camps every month</td>
+<td data-label="Tamil (display text)" lang="ta">3 மாதங்களுக்கு ஒருமுறை இலவச எலும்பு அடர்த்தி (BMD) பரிசோதனை முகாம், ஒவ்வொரு மாதமும் பல சிறிய முகாம்கள்</td>
 <td data-label="Where it appears">Free camps section</td>
 </tr>
 <tr>
@@ -453,9 +500,15 @@
 </tr>
 <tr>
 <td data-label="Proof">Easy to reach</td>
-<td data-label="English (display text)">Open 6 days a week, with Sunday morning hours (hours from Google)</td>
-<td data-label="Tamil (display text)" lang="ta">வாரத்தில் 6 நாள், ஞாயிறு காலையிலும் கிளினிக் திறந்திருக்கும் (நேரம் Google-ல் உள்ளபடி)</td>
+<td data-label="English (display text)">Open every day: Monday to Saturday, and Sunday mornings (hours from Google)</td>
+<td data-label="Tamil (display text)" lang="ta">தினமும் திறந்திருக்கும்: திங்கள் முதல் சனி வரை, ஞாயிறு காலையிலும் (நேரம் Google-ல் உள்ளபடி)</td>
 <td data-label="Where it appears">Hero timings card, footer</td>
+</tr>
+<tr>
+<td data-label="Proof">Emergency care</td>
+<td data-label="English (display text)">Emergency care is available 24/7</td>
+<td data-label="Tamil (display text)" lang="ta">அவசர சிகிச்சை 24 மணி நேரமும், வாரத்தின் 7 நாட்களும் கிடைக்கும்</td>
+<td data-label="Where it appears"><strong>Not shown yet.</strong> Confirmed by the doctor, but first confirm how night calls work and where patients are seen</td>
 </tr>
 </tbody></table></div>
 <h3>Credibility: what would make it stronger (needs the doctor's input)</h3>
@@ -468,7 +521,7 @@
 <tr>
 <td data-label="Item">A real photo of Dr. Manikandan, and of the clinic and X-ray room</td>
 <td data-label="Why it helps">People trust a face and a real place more than any words</td>
-<td data-label="Status">Photos to be discussed</td>
+<td data-label="Status">Doctor's profile photo: he will share one. Clinic photos: to be discussed</td>
 </tr>
 <tr>
 <td data-label="Item">Medical council registration number</td>
@@ -476,9 +529,9 @@
 <td data-label="Status">To ask</td>
 </tr>
 <tr>
-<td data-label="Item">Years of experience, or the year the clinic opened</td>
+<td data-label="Item">The year the clinic opened</td>
 <td data-label="Why it helps">A simple, factual trust signal</td>
-<td data-label="Status">Only if he wants it stated, exactly as he gives it</td>
+<td data-label="Status">Only if he wants it stated. (Experience is now confirmed: 10 years)</td>
 </tr>
 <tr>
 <td data-label="Item">Professional memberships (for example orthopaedic associations)</td>
@@ -488,7 +541,7 @@
 <tr>
 <td data-label="Item">Free camp details: places, dates, photos</td>
 <td data-label="Why it helps">Turns "we care for the community" into proof</td>
-<td data-label="Status">To collect</td>
+<td data-label="Status">Camp pattern known (BMD camp every 3 months, small camps monthly); places, dates and photos still to collect</td>
 </tr>
 <tr>
 <td data-label="Item">Names or number of companies already coached on workplace posture</td>
@@ -516,8 +569,8 @@
 </tr>
 <tr>
 <td data-label="Step">3. Move again</td>
-<td data-label="English"><strong>Follow a clear plan.</strong> Treatment, physiotherapy and simple exercises for home, with surgery only when it is the right choice for you.</td>
-<td data-label="Tamil" lang="ta"><strong>தெளிவான சிகிச்சைத் திட்டம்.</strong> சிகிச்சை, பிசியோதெரபி, வீட்டில் செய்ய எளிய பயிற்சிகள். ஆபரேஷன் உங்களுக்கு உண்மையில் தேவைப்பட்டால் மட்டுமே.</td>
+<td data-label="English"><strong>Follow a clear plan.</strong> Treatment, physiotherapy and simple exercises for home, with surgery only when it is the right choice for you. Minor procedures are done in the clinic's own Mini OT; major operations at our tie-up hospitals.</td>
+<td data-label="Tamil" lang="ta"><strong>தெளிவான சிகிச்சைத் திட்டம்.</strong> சிகிச்சை, பிசியோதெரபி, வீட்டில் செய்ய எளிய பயிற்சிகள். ஆபரேஷன் உங்களுக்கு உண்மையில் தேவைப்பட்டால் மட்டுமே. சிறிய ஆபரேஷன்கள் கிளினிக்கின் சொந்த Mini OT-யில், பெரிய ஆபரேஷன்கள் எங்களுடன் இணைந்த மருத்துவமனைகளில்.</td>
 </tr>
 </tbody></table></div>
 <p><strong>Short version for the 3-step graphic:</strong> Relieve the pain → Find the cause → Move again <strong>தமிழில்:</strong> வலியைக் குறைப்பது → காரணத்தைக் கண்டுபிடிப்பது → மீண்டும் நடப்பது</p>
@@ -722,12 +775,12 @@
 <section class="band" id="home" aria-labelledby="h-home"><div class="wrap"><div class="band-head"><p class="eyebrow"><b>10</b>StoryBrand</p><h2 id="h-home">Home page copy, in story order</h2></div><div class="prose"><p>This follows the home page message order agreed in the business model, arranged as a story. Headings marked H1 or H2 follow the heading rules; card titles are not headings. The H1 and page title are confirmed against the keyword map before building. The place name appears once in the body copy (in the hero). The Tamil was approved in the home page review (draft 1, 29 October 2026).</p>
 <h3>1. Hero (the hero's want, the guide, the direct action)</h3>
 <ul>
-<li><span><strong>Small label:</strong> Orthopaedic and physiotherapy clinic</span><span class="alt" lang="ta">எலும்பு, மூட்டு மற்றும் பிசியோதெரபி கிளினிக்</span></li>
+<li><span><strong>Small label:</strong> Bone, joint and spine clinic</span><span class="alt" lang="ta">எலும்பு, மூட்டு, முதுகெலும்பு சிகிச்சை கிளினிக்</span><span class="alt">(Changed 2026-11-10: physiotherapy is not at the clinic, so the label no longer says "physiotherapy clinic".)</span></li>
 <li><span><strong>H1:</strong> Relief from bone and joint pain, so you can move again</span><span class="alt" lang="ta">எலும்பு, மூட்டு வலி குறைய, மீண்டும் நன்றாக நடக்க உதவுகிறோம்</span></li>
 <li><span><strong>Intro:</strong> Rani Ortho Care in Karaikudi relieves your pain first, then finds and treats the cause. Your doctor is orthopaedic surgeon Dr. N. Manikandan, M.B.B.S., M.S. (Ortho).</span><span class="alt" lang="ta">காரைக்குடி ராணி ஆர்த்தோ கேரில், முதலில் உங்கள் வலியைக் குறைக்கிறோம். பிறகு வலிக்கான உண்மையான காரணத்தைக் கண்டுபிடித்து சிகிச்சை தருகிறோம். உங்களைப் பார்ப்பவர்: எலும்பு, மூட்டு சிறப்பு டாக்டர் நா. மணிகண்டன், M.B.B.S., M.S. (Ortho).</span></li>
 <li><span><strong>Buttons:</strong> Book an appointment · WhatsApp us</span><span class="alt" lang="ta">அப்பாயின்ட்மென்ட் புக் செய்ய · வாட்ஸ்அப் செய்ய</span></li>
 <li><span><strong>Under the buttons:</strong> Tell us where it hurts. We will give you an appointment time.</span><span class="alt" lang="ta">எங்கே வலி இருக்கிறது என்று சொல்லுங்கள். டாக்டரைப் பார்க்க அப்பாயின்ட்மென்ட் நேரம் தருகிறோம்.</span></li>
-<li><span><strong>Fact chips:</strong> Digital X-ray · Physiotherapy · Children's bone care · Open 6 days · 4.9 on Google</span><span class="alt" lang="ta">டிஜிட்டல் எக்ஸ்ரே · பிசியோதெரபி · குழந்தைகள் எலும்பு சிகிச்சை · வாரத்தில் 6 நாள் · Google-ல் 4.9</span></li>
+<li><span><strong>Fact chips:</strong> 10 years' experience · Digital X-ray · Mini OT for minor procedures · Children's bone care · Open every day · 4.9 on Google</span><span class="alt" lang="ta">10 ஆண்டு அனுபவம் · டிஜிட்டல் எக்ஸ்ரே · சிறிய ஆபரேஷனுக்கு Mini OT · குழந்தைகள் எலும்பு சிகிச்சை · தினமும் திறந்திருக்கும் · Google-ல் 4.9</span></li>
 </ul>
 <h3>2. "Does this sound like you?" (the problem, in their words)</h3>
 <ul>
@@ -758,7 +811,7 @@
 <h3>5. Options before surgery (answers the biggest internal problem)</h3>
 <ul>
 <li><span><strong>H2:</strong> Options before surgery</span><span class="alt" lang="ta">ஆபரேஷன் மட்டும்தான் ஒரே வழியா?</span></li>
-<li><span><strong>Text:</strong> Surgery is not always the first answer. Depending on your condition, we may suggest non-surgical treatment, physiotherapy or injection treatments such as PRP. If you want to postpone surgery, we can talk about options to manage your condition safely. When surgery is the right choice, such as knee or hip replacement, we explain why and what to expect.</span><span class="alt" lang="ta">எப்போதும் ஆபரேஷன் தான் முதல் வழி இல்லை. உங்கள் பிரச்சனையைப் பொறுத்து, ஆபரேஷன் இல்லாத சிகிச்சை, பிசியோதெரபி, அல்லது PRP போன்ற ஊசி சிகிச்சைகளைப் பரிந்துரைக்கலாம். ஆபரேஷனைத் தள்ளிப்போட விரும்பினால், அதுவரை பாதுகாப்பாகக் கவனித்துக்கொள்ளும் வழிகளைப் பற்றிப் பேசலாம். முட்டி அல்லது இடுப்பு மூட்டு மாற்று போன்ற ஆபரேஷன் தான் சரியான வழி என்றால், ஏன் என்பதையும் என்ன எதிர்பார்க்கலாம் என்பதையும் தெளிவாகச் சொல்கிறோம்.</span></li>
+<li><span><strong>Text:</strong> Surgery is not always the first answer. Depending on your condition, we may suggest non-surgical treatment, physiotherapy or injection treatments such as PRP. If you want to postpone surgery, we can talk about options to manage your condition safely. When surgery is the right choice, such as knee or hip replacement, we explain why and what to expect. Minor procedures are done in the clinic's own minor operation theatre (Mini OT); major operations are done at our tie-up hospitals.</span><span class="alt" lang="ta">எப்போதும் ஆபரேஷன் தான் முதல் வழி இல்லை. உங்கள் பிரச்சனையைப் பொறுத்து, ஆபரேஷன் இல்லாத சிகிச்சை, பிசியோதெரபி, அல்லது PRP போன்ற ஊசி சிகிச்சைகளைப் பரிந்துரைக்கலாம். ஆபரேஷனைத் தள்ளிப்போட விரும்பினால், அதுவரை பாதுகாப்பாகக் கவனித்துக்கொள்ளும் வழிகளைப் பற்றிப் பேசலாம். முட்டி அல்லது இடுப்பு மூட்டு மாற்று போன்ற ஆபரேஷன் தான் சரியான வழி என்றால், ஏன் என்பதையும் என்ன எதிர்பார்க்கலாம் என்பதையும் தெளிவாகச் சொல்கிறோம். சிறிய ஆபரேஷன்கள் கிளினிக்கின் சொந்த Mini OT-யில் செய்யப்படும். பெரிய ஆபரேஷன்கள் எங்களுடன் இணைந்த மருத்துவமனைகளில் செய்யப்படும்.</span></li>
 <li><span><strong>Link:</strong> Ask about your options</span><span class="alt" lang="ta">உங்களுக்கு என்ன வழிகள் இருக்கின்றன என்று கேளுங்கள்</span></li>
 </ul>
 <h3>6. Prevention at work (a separate audience)</h3>
@@ -769,13 +822,15 @@
 </ul>
 <h3>7. Recovery and rehabilitation, and children's bone care</h3>
 <ul>
+<li><span><strong>Note (2026-11-10):</strong> physiotherapy is given at a separate, dedicated centre, not at the clinic. Whether the site names and links that centre is still to decide; until then the copy says "a separate, dedicated physiotherapy centre".</span></li>
 <li><span><strong>H2:</strong> Help to move again after surgery, a stroke or an injury</span><span class="alt" lang="ta">ஆபரேஷன், பக்கவாதம் அல்லது காயத்துக்குப் பிறகு மீண்டும் நடக்க உதவி</span></li>
-<li><span><strong>Text:</strong> Physiotherapy rebuilds strength step by step: after surgery, after a stroke, and for children with cerebral palsy who need help with movement and coordination. For babies and children, we also treat clubfoot and other leg and bone problems.</span><span class="alt" lang="ta">பிசியோதெரபி மூலம் கொஞ்சம் கொஞ்சமாக பலம் திரும்ப உதவுகிறோம்: ஆபரேஷனுக்குப் பிறகு, பக்கவாதத்துக்குப் பிறகு, மேலும் கை கால்களை ஒழுங்காக அசைக்கச் சிரமப்படும் CP (மூளை முடக்குவாதம்) உள்ள குழந்தைகளுக்கு. சிறு குழந்தைகளின் பாத வளைவு (கிளப் ஃபுட்), கால் வளைவு மற்றும் பிற எலும்பு பிரச்சனைகளுக்கும் சிகிச்சை தருகிறோம்.</span></li>
+<li><span><strong>Text:</strong> Physiotherapy rebuilds strength step by step: after surgery, after a stroke, and for children with cerebral palsy who need help with movement and coordination. It is given at a separate, dedicated physiotherapy centre. For babies and children, we also treat clubfoot and other leg and bone problems.</span><span class="alt" lang="ta">பிசியோதெரபி மூலம் கொஞ்சம் கொஞ்சமாக பலம் திரும்ப உதவுகிறோம்: ஆபரேஷனுக்குப் பிறகு, பக்கவாதத்துக்குப் பிறகு, மேலும் கை கால்களை ஒழுங்காக அசைக்கச் சிரமப்படும் CP (மூளை முடக்குவாதம்) உள்ள குழந்தைகளுக்கு. பிசியோதெரபி தனியாக உள்ள ஒரு பிசியோதெரபி மையத்தில் தரப்படுகிறது. சிறு குழந்தைகளின் பாத வளைவு (கிளப் ஃபுட்), கால் வளைவு மற்றும் பிற எலும்பு பிரச்சனைகளுக்கும் சிகிச்சை தருகிறோம்.</span></li>
 </ul>
 <h3>8. Meet your doctor (the guide: empathy plus authority)</h3>
 <ul>
 <li><span><strong>H2:</strong> Meet Dr. N. Manikandan</span><span class="alt" lang="ta">டாக்டர் நா. மணிகண்டன் பற்றி</span></li>
-<li><span><strong>Credentials line:</strong> M.B.B.S., M.S. (Ortho) · Government Doctor · Consultant Orthopaedic Surgeon</span><span class="alt" lang="ta">M.B.B.S., M.S. (Ortho) · அரசு மருத்துவர் · எலும்புமுறிவு மற்றும் முடநீக்கியல் அறுவைசிகிச்சை நிபுணர் (எலும்பு, மூட்டு சிறப்பு டாக்டர்)</span></li>
+<li><span><strong>Credentials line:</strong> M.B.B.S., M.S. (Ortho) · Consultant Orthopaedic Surgeon · Assistant Surgeon, Government Hospital · 10 years of experience</span><span class="alt" lang="ta">M.B.B.S., M.S. (Ortho) · எலும்புமுறிவு மற்றும் முடநீக்கியல் அறுவைசிகிச்சை நிபுணர் (எலும்பு, மூட்டு சிறப்பு டாக்டர்) · அரசு மருத்துவமனையில் உதவி அறுவை சிகிச்சை நிபுணர் · 10 ஆண்டு அனுபவம்</span></li>
+<li><span><strong>Background:</strong> Born in Karaikudi, Dr. Manikandan went to school at SMSV Higher Secondary School here. He studied medicine (MBBS) at Tirunelveli Medical College and orthopaedics (MS Ortho) at Government Rajaji Medical College, Madurai. Today he also serves as Assistant Surgeon at a Government Hospital.</span><span class="alt" lang="ta">காரைக்குடியில் பிறந்த டாக்டர் மணிகண்டன், இங்குள்ள SMSV மேல்நிலைப் பள்ளியில் படித்தவர். MBBS படிப்பை திருநெல்வேலி அரசு மருத்துவக் கல்லூரியிலும், எலும்பு சிகிச்சைக்கான MS (Ortho) படிப்பை மதுரை அரசு ராஜாஜி மருத்துவக் கல்லூரியிலும் முடித்தார். இப்போது அரசு மருத்துவமனையில் உதவி அறுவை சிகிச்சை நிபுணராகவும் பணியாற்றுகிறார்.</span><span class="alt">(The place name: the hero already names Karaikudi once; on the home page this line says "Born here" / "இந்த ஊரில் பிறந்த" instead, to keep the place name to one mention per page. The About page can use the full sentence.)</span></li>
 <li><span><strong>Text:</strong> Dr. Manikandan believes that life is movement, and movement is life. His aim for every patient is simple: ease the pain, treat the cause, and help them move again, safely. He takes time to explain your condition and your options, in Tamil or English.</span><span class="alt" lang="ta">"வாழ்க்கையே இயக்கம், இயக்கமே வாழ்க்கை" என்பது டாக்டர் மணிகண்டனின் நம்பிக்கை. ஒவ்வொரு நோயாளிக்கும் அவர் நோக்கம் எளிது: வலியைக் குறைப்பது, காரணத்துக்கு சிகிச்சை தருவது, பாதுகாப்பாக மீண்டும் நடக்க உதவுவது. உங்கள் பிரச்சனையையும், என்னென்ன வழிகள் இருக்கின்றன என்பதையும் தமிழிலோ ஆங்கிலத்திலோ நேரம் எடுத்து விளக்குகிறார்.</span></li>
 <li><span><strong>Promises:</strong> the four lines of the agreement plan (section 5).</span></li>
 </ul>
@@ -791,7 +846,7 @@
 <h3>10. Free medical camps (community, a trust story)</h3>
 <ul>
 <li><span><strong>H2:</strong> Care for our community</span><span class="alt" lang="ta">நம் ஊர் மக்களுக்கான இலவச மருத்துவ முகாம்கள்</span></li>
-<li><span><strong>Text:</strong> We hold free medical camps so that more people can get their bone and joint problems checked, close to home. Follow us on Instagram to know about the next camp.</span><span class="alt" lang="ta">வீட்டுக்கு அருகிலேயே அதிகம் பேர் தங்கள் எலும்பு, மூட்டு பிரச்சனைகளைப் பரிசோதித்துக்கொள்ள, இலவச மருத்துவ முகாம்கள் நடத்துகிறோம். அடுத்த முகாம் எப்போது, எங்கே என்று தெரிந்துகொள்ள Instagram-ல் எங்களை ஃபாலோ செய்யுங்கள்.</span></li>
+<li><span><strong>Text:</strong> We hold free medical camps so that more people can get their bone and joint problems checked, close to home: a free bone density (BMD) screening camp once every 3 months, and several small camps every month. Follow us on Instagram to know about the next camp.</span><span class="alt" lang="ta">வீட்டுக்கு அருகிலேயே அதிகம் பேர் தங்கள் எலும்பு, மூட்டு பிரச்சனைகளைப் பரிசோதித்துக்கொள்ள, இலவச மருத்துவ முகாம்கள் நடத்துகிறோம்: 3 மாதங்களுக்கு ஒருமுறை இலவச எலும்பு அடர்த்தி (BMD) பரிசோதனை முகாம், ஒவ்வொரு மாதமும் பல சிறிய முகாம்கள். அடுத்த முகாம் எப்போது, எங்கே என்று தெரிந்துகொள்ள Instagram-ல் எங்களை ஃபாலோ செய்யுங்கள்.</span></li>
 <li><span>Add places, dates and photos when they are confirmed.</span></li>
 </ul>
 <h3>11. Stakes and success, then the final call to action</h3>
@@ -911,8 +966,8 @@
 <tr>
 <td data-label="#">1</td>
 <td data-label="Question">Where are surgeries done (clinic or partner hospital)?</td>
-<td data-label="Answer"><strong>Open:</strong> being checked</td>
-<td data-label="Effect on the copy">"Options before surgery" and the joint replacement and spine pages wait for this</td>
+<td data-label="Answer"><strong>Answered 2026-11-10:</strong> minor surgery in the clinic's own Mini OT; major surgery at tie-up hospitals</td>
+<td data-label="Effect on the copy">Added to the plan, "Options before surgery" and the credibility table</td>
 </tr>
 <tr>
 <td data-label="#">2</td>
@@ -944,16 +999,44 @@
 <td data-label="Answer"><strong>Style A:</strong> simple written Tamil</td>
 <td data-label="Effect on the copy">All Tamil rewritten in v0.3; home page approved after the review PDF</td>
 </tr>
+<tr>
+<td data-label="#">7</td>
+<td data-label="Question">Is physiotherapy in-house?</td>
+<td data-label="Answer"><strong>Answered 2026-11-10:</strong> no, it is given at a separate, dedicated centre</td>
+<td data-label="Effect on the copy">"Physiotherapy clinic" label and the physiotherapy fact chip removed; rehab section says where it is given</td>
+</tr>
+<tr>
+<td data-label="#">8</td>
+<td data-label="Question">Is emergency care only within clinic hours?</td>
+<td data-label="Answer"><strong>Answered 2026-11-10:</strong> emergency care is available 24/7</td>
+<td data-label="Effect on the copy">Recorded in the credibility table; not shown on the site until the night arrangement is confirmed</td>
+</tr>
+<tr>
+<td data-label="#">9</td>
+<td data-label="Question">BMAC name?</td>
+<td data-label="Answer"><strong>Answered 2026-11-10:</strong> aspiration cytology (a test) and BMAC (a treatment) are separate services</td>
+<td data-label="Effect on the copy">Use "Bone Marrow Aspirate Concentrate (BMAC)" for the treatment</td>
+</tr>
+<tr>
+<td data-label="#">10</td>
+<td data-label="Question">Education, home town, experience</td>
+<td data-label="Answer"><strong>Answered 2026-11-10:</strong> see the credibility table</td>
+<td data-label="Effect on the copy">Added to the credibility table and the doctor section</td>
+</tr>
 </tbody></table></div>
 <p><strong>About question 5.</strong> The "success" part of StoryBrand paints a picture of the patient's life after treatment. The first draft said "time with your grandchildren". Option B, "time with your family", was chosen because it includes older patients, working people and parents alike.</p>
 <h3>Still to confirm with Dr. Manikandan</h3>
 <ol>
-<li><span>Where surgeries are done (question 1).</span></li>
+<li><span>Which tie-up hospitals do major surgery, and may they be named?</span></li>
+<li><span>How 24/7 emergency care works: is the mobile answered at night, and where are night patients seen?</span></li>
+<li><span>May the site name and link the physiotherapy centre?</span></li>
+<li><span>Which government hospital he serves at, if he wants it named.</span></li>
 <li><span>"PRP போன்ற ஊசி சிகிச்சைகள்" (injection treatments such as PRP) in place of "regenerative therapies": is it accurate for PRP, GFC and BMAC?</span></li>
 <li><span>The hero says patients are seen by him ("உங்களைப் பார்ப்பவர்"). Is that right?</span></li>
-<li><span>His registration number, years of experience, and any memberships he wants shown.</span></li>
+<li><span>His registration number and any memberships he wants shown.</span></li>
 <li><span>Names or number of companies already coached, if they agree to be named.</span></li>
-<li><span>Free camp details: places, dates, photos.</span></li>
+<li><span>Free camp places, dates and photos; his profile photo.</span></li>
+<li><span>The list of 10 to 20 nearby locations with district names, and the unclear place names (Kovilpatti, Namakkal, Devipattinam, Ponnamaravathi / Thirumayam).</span></li>
 <li><span>Approval of the whole framework, and of the Tamil text after the native-speaker check (UAT).</span></li>
 </ol></div><p class="top-link"><a href="#contents">Back to contents</a></p></div></section>
   </main>

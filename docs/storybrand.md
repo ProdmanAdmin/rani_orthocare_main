@@ -1,7 +1,7 @@
 # Rani Ortho Care: StoryBrand Message Framework
 # ராணி ஆர்த்தோ கேர்: StoryBrand செய்திக் கட்டமைப்பு
 
-Version 0.3, 2026-10-29. **Draft for Dr. N. Manikandan's approval.** v0.3 rewrites all the Tamil in simple written Tamil (Style A, see the Tamil style guide), following the approved home page review. The Tamil will also go through a native-speaker check (UAT) before it goes live.
+Version 0.4, 2026-11-10. **Draft for Dr. N. Manikandan's approval.** v0.4 adds the doctor's own answers (education, home town, experience, camps, emergency care, where surgery and physiotherapy happen) and corrects the copy that they change. v0.3 rewrote all the Tamil in simple written Tamil (Style A, see the Tamil style guide). The Tamil will also go through a native-speaker check (UAT) before it goes live.
 
 Built from the clinic's business model (the doctor's own words) and the confirmed business facts. Medical wording follows the safe-wording rules agreed for the site: no cure or permanent-result claims, no promises, no "best", no invented facts.
 
@@ -102,25 +102,30 @@ A guide needs two things: **empathy** (we understand) and **authority** (we can 
 | Proof | English (display text) | Tamil (display text) | Where it appears |
 |---|---|---|---|
 | Qualified specialist | Dr. N. Manikandan, M.B.B.S., M.S. (Ortho) | டாக்டர் நா. மணிகண்டன், M.B.B.S., M.S. (Ortho) | Hero, doctor section, every service page ("Reviewed by") |
-| Role | Government Doctor and Consultant Orthopaedic Surgeon | அரசு மருத்துவர், எலும்புமுறிவு மற்றும் முடநீக்கியல் அறுவைசிகிச்சை நிபுணர் (எலும்பு, மூட்டு சிறப்பு டாக்டர்) | Doctor section, About page. The official title stays as on his card |
-| Care under one roof | Consultation, digital X-ray, physiotherapy, and plaster and dressing, all at the clinic | டாக்டர் ஆலோசனை, டிஜிட்டல் எக்ஸ்ரே, பிசியோதெரபி, பிளாஸ்டர், கட்டு, எல்லாமே ஒரே கிளினிக்கில் | Hero fact chips, plan step 2 |
+| Role | Consultant Orthopaedic Surgeon; Assistant Surgeon at a Government Hospital | எலும்புமுறிவு மற்றும் முடநீக்கியல் அறுவைசிகிச்சை நிபுணர் (எலும்பு, மூட்டு சிறப்பு டாக்டர்); அரசு மருத்துவமனையில் உதவி அறுவை சிகிச்சை நிபுணர் | Doctor section, About page. The official title stays as on his card; the hospital is not named until he confirms it |
+| Training | MBBS, Tirunelveli Medical College; MS (Ortho), Government Rajaji Medical College, Madurai | MBBS, திருநெல்வேலி அரசு மருத்துவக் கல்லூரி; MS (Ortho), அரசு ராஜாஜி மருத்துவக் கல்லூரி, மதுரை | Doctor section, About page, Person details for Google |
+| Experience | 10 years of experience | 10 ஆண்டு அனுபவம் | Hero fact chip, doctor section. Exactly "10 years", never rounded up |
+| One of us | Born in Karaikudi, and went to school at SMSV Higher Secondary School, Karaikudi | காரைக்குடியில் பிறந்தவர், காரைக்குடி SMSV மேல்நிலைப் பள்ளியில் படித்தவர் | Doctor section, About page. A strong local trust point |
+| Care at the clinic | Consultation, digital X-ray, plaster and dressing, and minor procedures in the clinic's own minor operation theatre (Mini OT) | டாக்டர் ஆலோசனை, டிஜிட்டல் எக்ஸ்ரே, பிளாஸ்டர், கட்டு, கிளினிக்கின் சொந்த Mini OT-யில் சிறிய ஆபரேஷன்கள் | Hero fact chips, plan step 2. Physiotherapy is **not** at the clinic, so it is not listed here |
+| Surgery when it is needed | Major operations, such as joint replacement and spine surgery, are done at our tie-up hospitals | மூட்டு மாற்று, முதுகெலும்பு ஆபரேஷன் போன்ற பெரிய ஆபரேஷன்கள் எங்களுடன் இணைந்த மருத்துவமனைகளில் செய்யப்படும் | Options before surgery, replacement and spine pages. Hospitals named only when confirmed |
 | Range of care | 13 services for bones, joints and spine, from fractures to joint replacement and children's bone care | எலும்பு முறிவு முதல் மூட்டு மாற்று ஆபரேஷன், குழந்தைகள் எலும்பு சிகிச்சை வரை, எலும்பு, மூட்டு, முதுகெலும்புக்கு 13 சேவைகள் | What we treat |
 | A clear approach | Relief first, then the root cause, then movement. Safety first in every treatment. | முதலில் வலி குறைப்பு, பிறகு உண்மையான காரணம், பிறகு மீண்டும் நடமாட்டம். எந்த சிகிச்சையிலும் பாதுகாப்பு முதலில். | Plan section, About page |
 | Explained in your language | Dr. Manikandan explains your condition and options in Tamil or English | உங்கள் பிரச்சனையையும் வழிகளையும் டாக்டர் மணிகண்டன் தமிழிலோ ஆங்கிலத்திலோ விளக்குகிறார் | Doctor section, plan step 2 |
 | Evidence-based care | Treatment based on medical evidence, chosen for your condition | மருத்துவ ஆதாரங்களின் அடிப்படையில், உங்கள் பிரச்சனைக்கு ஏற்ற சிகிச்சை | About page, safety section |
-| Community care | Free medical camps for the community | நம் ஊர் மக்களுக்காக இலவச மருத்துவ முகாம்கள் | Free camps section |
+| Community care | A free bone density (BMD) screening camp every 3 months, and several small camps every month | 3 மாதங்களுக்கு ஒருமுறை இலவச எலும்பு அடர்த்தி (BMD) பரிசோதனை முகாம், ஒவ்வொரு மாதமும் பல சிறிய முகாம்கள் | Free camps section |
 | Patients' rating on Google | Rated 4.9 out of 5 on Google, from 59 reviews (as of 28 October 2026) | Google-ல் 5-க்கு 4.9 ரேட்டிங் (59 ரிவ்யூக்கள், 28 அக்டோபர் 2026 நிலவரப்படி) | Google rating section, hero fact chip. Approved for display; rules in section 10, part 9 (home page) |
-| Easy to reach | Open 6 days a week, with Sunday morning hours (hours from Google) | வாரத்தில் 6 நாள், ஞாயிறு காலையிலும் கிளினிக் திறந்திருக்கும் (நேரம் Google-ல் உள்ளபடி) | Hero timings card, footer |
+| Easy to reach | Open every day: Monday to Saturday, and Sunday mornings (hours from Google) | தினமும் திறந்திருக்கும்: திங்கள் முதல் சனி வரை, ஞாயிறு காலையிலும் (நேரம் Google-ல் உள்ளபடி) | Hero timings card, footer |
+| Emergency care | Emergency care is available 24/7 | அவசர சிகிச்சை 24 மணி நேரமும், வாரத்தின் 7 நாட்களும் கிடைக்கும் | **Not shown yet.** Confirmed by the doctor, but first confirm how night calls work and where patients are seen |
 
 ### Credibility: what would make it stronger (needs the doctor's input)
 
 | Item | Why it helps | Status |
 |---|---|---|
-| A real photo of Dr. Manikandan, and of the clinic and X-ray room | People trust a face and a real place more than any words | Photos to be discussed |
+| A real photo of Dr. Manikandan, and of the clinic and X-ray room | People trust a face and a real place more than any words | Doctor's profile photo: he will share one. Clinic photos: to be discussed |
 | Medical council registration number | Expected on Indian medical websites; quick to verify | To ask |
-| Years of experience, or the year the clinic opened | A simple, factual trust signal | Only if he wants it stated, exactly as he gives it |
+| The year the clinic opened | A simple, factual trust signal | Only if he wants it stated. (Experience is now confirmed: 10 years) |
 | Professional memberships (for example orthopaedic associations) | Independent proof of standing | To ask; only if real |
-| Free camp details: places, dates, photos | Turns "we care for the community" into proof | To collect |
+| Free camp details: places, dates, photos | Turns "we care for the community" into proof | Camp pattern known (BMD camp every 3 months, small camps monthly); places, dates and photos still to collect |
 | Names or number of companies already coached on workplace posture | Proof for the prevention story (the service itself is confirmed and can be offered now) | To ask; only if they agree to be named |
 
 Never use: quoted reviews on our own site (link to Google instead), patient counts, success rates, "best", "leading", "No. 1", before/after photos, or patient testimonials without approval.
@@ -135,7 +140,7 @@ Never use: quoted reviews on our own site (link to Google instead), patient coun
 |---|---|---|
 | 1. Book | **Call or WhatsApp us.** Tell us where it hurts, and we will give you an appointment time. | **போன் அல்லது வாட்ஸ்அப் செய்யுங்கள்.** எங்கே வலி இருக்கிறது என்று சொல்லுங்கள், டாக்டரைப் பார்க்க அப்பாயின்ட்மென்ட் நேரம் தருகிறோம். |
 | 2. Relief and a diagnosis | **Meet Dr. Manikandan.** He eases your pain first, then examines you and, if needed, takes a digital X-ray at the clinic to find the root cause. | **டாக்டர் மணிகண்டனைப் பாருங்கள்.** முதலில் வலியைக் குறைக்கிறார். பிறகு உங்களைப் பரிசோதித்து, தேவைப்பட்டால் கிளினிக்கிலேயே எக்ஸ்ரே எடுத்து, வலிக்கான உண்மையான காரணத்தைக் கண்டுபிடிக்கிறார். |
-| 3. Move again | **Follow a clear plan.** Treatment, physiotherapy and simple exercises for home, with surgery only when it is the right choice for you. | **தெளிவான சிகிச்சைத் திட்டம்.** சிகிச்சை, பிசியோதெரபி, வீட்டில் செய்ய எளிய பயிற்சிகள். ஆபரேஷன் உங்களுக்கு உண்மையில் தேவைப்பட்டால் மட்டுமே. |
+| 3. Move again | **Follow a clear plan.** Treatment, physiotherapy and simple exercises for home, with surgery only when it is the right choice for you. Minor procedures are done in the clinic's own Mini OT; major operations at our tie-up hospitals. | **தெளிவான சிகிச்சைத் திட்டம்.** சிகிச்சை, பிசியோதெரபி, வீட்டில் செய்ய எளிய பயிற்சிகள். ஆபரேஷன் உங்களுக்கு உண்மையில் தேவைப்பட்டால் மட்டுமே. சிறிய ஆபரேஷன்கள் கிளினிக்கின் சொந்த Mini OT-யில், பெரிய ஆபரேஷன்கள் எங்களுடன் இணைந்த மருத்துவமனைகளில். |
 
 **Short version for the 3-step graphic:** Relieve the pain → Find the cause → Move again
 **தமிழில்:** வலியைக் குறைப்பது → காரணத்தைக் கண்டுபிடிப்பது → மீண்டும் நடப்பது
@@ -232,8 +237,9 @@ The spoken version uses spoken Tamil on purpose: it is only for things said alou
 This follows the home page message order agreed in the business model, arranged as a story. Headings marked H1 or H2 follow the heading rules; card titles are not headings. The H1 and page title are confirmed against the keyword map before building. The place name appears once in the body copy (in the hero). The Tamil was approved in the home page review (draft 1, 29 October 2026).
 
 ### 1. Hero (the hero's want, the guide, the direct action)
-- **Small label:** Orthopaedic and physiotherapy clinic
-  எலும்பு, மூட்டு மற்றும் பிசியோதெரபி கிளினிக்
+- **Small label:** Bone, joint and spine clinic
+  எலும்பு, மூட்டு, முதுகெலும்பு சிகிச்சை கிளினிக்
+  (Changed 2026-11-10: physiotherapy is not at the clinic, so the label no longer says "physiotherapy clinic".)
 - **H1:** Relief from bone and joint pain, so you can move again
   எலும்பு, மூட்டு வலி குறைய, மீண்டும் நன்றாக நடக்க உதவுகிறோம்
 - **Intro:** Rani Ortho Care in Karaikudi relieves your pain first, then finds and treats the cause. Your doctor is orthopaedic surgeon Dr. N. Manikandan, M.B.B.S., M.S. (Ortho).
@@ -242,8 +248,8 @@ This follows the home page message order agreed in the business model, arranged 
   அப்பாயின்ட்மென்ட் புக் செய்ய · வாட்ஸ்அப் செய்ய
 - **Under the buttons:** Tell us where it hurts. We will give you an appointment time.
   எங்கே வலி இருக்கிறது என்று சொல்லுங்கள். டாக்டரைப் பார்க்க அப்பாயின்ட்மென்ட் நேரம் தருகிறோம்.
-- **Fact chips:** Digital X-ray · Physiotherapy · Children's bone care · Open 6 days · 4.9 on Google
-  டிஜிட்டல் எக்ஸ்ரே · பிசியோதெரபி · குழந்தைகள் எலும்பு சிகிச்சை · வாரத்தில் 6 நாள் · Google-ல் 4.9
+- **Fact chips:** 10 years' experience · Digital X-ray · Mini OT for minor procedures · Children's bone care · Open every day · 4.9 on Google
+  10 ஆண்டு அனுபவம் · டிஜிட்டல் எக்ஸ்ரே · சிறிய ஆபரேஷனுக்கு Mini OT · குழந்தைகள் எலும்பு சிகிச்சை · தினமும் திறந்திருக்கும் · Google-ல் 4.9
 
 ### 2. "Does this sound like you?" (the problem, in their words)
 - **H2:** Does this sound like you?
@@ -286,8 +292,8 @@ This follows the home page message order agreed in the business model, arranged 
 ### 5. Options before surgery (answers the biggest internal problem)
 - **H2:** Options before surgery
   ஆபரேஷன் மட்டும்தான் ஒரே வழியா?
-- **Text:** Surgery is not always the first answer. Depending on your condition, we may suggest non-surgical treatment, physiotherapy or injection treatments such as PRP. If you want to postpone surgery, we can talk about options to manage your condition safely. When surgery is the right choice, such as knee or hip replacement, we explain why and what to expect.
-  எப்போதும் ஆபரேஷன் தான் முதல் வழி இல்லை. உங்கள் பிரச்சனையைப் பொறுத்து, ஆபரேஷன் இல்லாத சிகிச்சை, பிசியோதெரபி, அல்லது PRP போன்ற ஊசி சிகிச்சைகளைப் பரிந்துரைக்கலாம். ஆபரேஷனைத் தள்ளிப்போட விரும்பினால், அதுவரை பாதுகாப்பாகக் கவனித்துக்கொள்ளும் வழிகளைப் பற்றிப் பேசலாம். முட்டி அல்லது இடுப்பு மூட்டு மாற்று போன்ற ஆபரேஷன் தான் சரியான வழி என்றால், ஏன் என்பதையும் என்ன எதிர்பார்க்கலாம் என்பதையும் தெளிவாகச் சொல்கிறோம்.
+- **Text:** Surgery is not always the first answer. Depending on your condition, we may suggest non-surgical treatment, physiotherapy or injection treatments such as PRP. If you want to postpone surgery, we can talk about options to manage your condition safely. When surgery is the right choice, such as knee or hip replacement, we explain why and what to expect. Minor procedures are done in the clinic's own minor operation theatre (Mini OT); major operations are done at our tie-up hospitals.
+  எப்போதும் ஆபரேஷன் தான் முதல் வழி இல்லை. உங்கள் பிரச்சனையைப் பொறுத்து, ஆபரேஷன் இல்லாத சிகிச்சை, பிசியோதெரபி, அல்லது PRP போன்ற ஊசி சிகிச்சைகளைப் பரிந்துரைக்கலாம். ஆபரேஷனைத் தள்ளிப்போட விரும்பினால், அதுவரை பாதுகாப்பாகக் கவனித்துக்கொள்ளும் வழிகளைப் பற்றிப் பேசலாம். முட்டி அல்லது இடுப்பு மூட்டு மாற்று போன்ற ஆபரேஷன் தான் சரியான வழி என்றால், ஏன் என்பதையும் என்ன எதிர்பார்க்கலாம் என்பதையும் தெளிவாகச் சொல்கிறோம். சிறிய ஆபரேஷன்கள் கிளினிக்கின் சொந்த Mini OT-யில் செய்யப்படும். பெரிய ஆபரேஷன்கள் எங்களுடன் இணைந்த மருத்துவமனைகளில் செய்யப்படும்.
 - **Link:** Ask about your options
   உங்களுக்கு என்ன வழிகள் இருக்கின்றன என்று கேளுங்கள்
 
@@ -300,16 +306,20 @@ This follows the home page message order agreed in the business model, arranged 
   சரியாக உட்கார சில டிப்ஸ் · உங்கள் கம்பெனிக்காகக் கேட்க
 
 ### 7. Recovery and rehabilitation, and children's bone care
+- **Note (2026-11-10):** physiotherapy is given at a separate, dedicated centre, not at the clinic. Whether the site names and links that centre is still to decide; until then the copy says "a separate, dedicated physiotherapy centre".
 - **H2:** Help to move again after surgery, a stroke or an injury
   ஆபரேஷன், பக்கவாதம் அல்லது காயத்துக்குப் பிறகு மீண்டும் நடக்க உதவி
-- **Text:** Physiotherapy rebuilds strength step by step: after surgery, after a stroke, and for children with cerebral palsy who need help with movement and coordination. For babies and children, we also treat clubfoot and other leg and bone problems.
-  பிசியோதெரபி மூலம் கொஞ்சம் கொஞ்சமாக பலம் திரும்ப உதவுகிறோம்: ஆபரேஷனுக்குப் பிறகு, பக்கவாதத்துக்குப் பிறகு, மேலும் கை கால்களை ஒழுங்காக அசைக்கச் சிரமப்படும் CP (மூளை முடக்குவாதம்) உள்ள குழந்தைகளுக்கு. சிறு குழந்தைகளின் பாத வளைவு (கிளப் ஃபுட்), கால் வளைவு மற்றும் பிற எலும்பு பிரச்சனைகளுக்கும் சிகிச்சை தருகிறோம்.
+- **Text:** Physiotherapy rebuilds strength step by step: after surgery, after a stroke, and for children with cerebral palsy who need help with movement and coordination. It is given at a separate, dedicated physiotherapy centre. For babies and children, we also treat clubfoot and other leg and bone problems.
+  பிசியோதெரபி மூலம் கொஞ்சம் கொஞ்சமாக பலம் திரும்ப உதவுகிறோம்: ஆபரேஷனுக்குப் பிறகு, பக்கவாதத்துக்குப் பிறகு, மேலும் கை கால்களை ஒழுங்காக அசைக்கச் சிரமப்படும் CP (மூளை முடக்குவாதம்) உள்ள குழந்தைகளுக்கு. பிசியோதெரபி தனியாக உள்ள ஒரு பிசியோதெரபி மையத்தில் தரப்படுகிறது. சிறு குழந்தைகளின் பாத வளைவு (கிளப் ஃபுட்), கால் வளைவு மற்றும் பிற எலும்பு பிரச்சனைகளுக்கும் சிகிச்சை தருகிறோம்.
 
 ### 8. Meet your doctor (the guide: empathy plus authority)
 - **H2:** Meet Dr. N. Manikandan
   டாக்டர் நா. மணிகண்டன் பற்றி
-- **Credentials line:** M.B.B.S., M.S. (Ortho) · Government Doctor · Consultant Orthopaedic Surgeon
-  M.B.B.S., M.S. (Ortho) · அரசு மருத்துவர் · எலும்புமுறிவு மற்றும் முடநீக்கியல் அறுவைசிகிச்சை நிபுணர் (எலும்பு, மூட்டு சிறப்பு டாக்டர்)
+- **Credentials line:** M.B.B.S., M.S. (Ortho) · Consultant Orthopaedic Surgeon · Assistant Surgeon, Government Hospital · 10 years of experience
+  M.B.B.S., M.S. (Ortho) · எலும்புமுறிவு மற்றும் முடநீக்கியல் அறுவைசிகிச்சை நிபுணர் (எலும்பு, மூட்டு சிறப்பு டாக்டர்) · அரசு மருத்துவமனையில் உதவி அறுவை சிகிச்சை நிபுணர் · 10 ஆண்டு அனுபவம்
+- **Background:** Born in Karaikudi, Dr. Manikandan went to school at SMSV Higher Secondary School here. He studied medicine (MBBS) at Tirunelveli Medical College and orthopaedics (MS Ortho) at Government Rajaji Medical College, Madurai. Today he also serves as Assistant Surgeon at a Government Hospital.
+  காரைக்குடியில் பிறந்த டாக்டர் மணிகண்டன், இங்குள்ள SMSV மேல்நிலைப் பள்ளியில் படித்தவர். MBBS படிப்பை திருநெல்வேலி அரசு மருத்துவக் கல்லூரியிலும், எலும்பு சிகிச்சைக்கான MS (Ortho) படிப்பை மதுரை அரசு ராஜாஜி மருத்துவக் கல்லூரியிலும் முடித்தார். இப்போது அரசு மருத்துவமனையில் உதவி அறுவை சிகிச்சை நிபுணராகவும் பணியாற்றுகிறார்.
+  (The place name: the hero already names Karaikudi once; on the home page this line says "Born here" / "இந்த ஊரில் பிறந்த" instead, to keep the place name to one mention per page. The About page can use the full sentence.)
 - **Text:** Dr. Manikandan believes that life is movement, and movement is life. His aim for every patient is simple: ease the pain, treat the cause, and help them move again, safely. He takes time to explain your condition and your options, in Tamil or English.
   "வாழ்க்கையே இயக்கம், இயக்கமே வாழ்க்கை" என்பது டாக்டர் மணிகண்டனின் நம்பிக்கை. ஒவ்வொரு நோயாளிக்கும் அவர் நோக்கம் எளிது: வலியைக் குறைப்பது, காரணத்துக்கு சிகிச்சை தருவது, பாதுகாப்பாக மீண்டும் நடக்க உதவுவது. உங்கள் பிரச்சனையையும், என்னென்ன வழிகள் இருக்கின்றன என்பதையும் தமிழிலோ ஆங்கிலத்திலோ நேரம் எடுத்து விளக்குகிறார்.
 - **Promises:** the four lines of the agreement plan (section 5).
@@ -336,8 +346,8 @@ This follows the home page message order agreed in the business model, arranged 
 ### 10. Free medical camps (community, a trust story)
 - **H2:** Care for our community
   நம் ஊர் மக்களுக்கான இலவச மருத்துவ முகாம்கள்
-- **Text:** We hold free medical camps so that more people can get their bone and joint problems checked, close to home. Follow us on Instagram to know about the next camp.
-  வீட்டுக்கு அருகிலேயே அதிகம் பேர் தங்கள் எலும்பு, மூட்டு பிரச்சனைகளைப் பரிசோதித்துக்கொள்ள, இலவச மருத்துவ முகாம்கள் நடத்துகிறோம். அடுத்த முகாம் எப்போது, எங்கே என்று தெரிந்துகொள்ள Instagram-ல் எங்களை ஃபாலோ செய்யுங்கள்.
+- **Text:** We hold free medical camps so that more people can get their bone and joint problems checked, close to home: a free bone density (BMD) screening camp once every 3 months, and several small camps every month. Follow us on Instagram to know about the next camp.
+  வீட்டுக்கு அருகிலேயே அதிகம் பேர் தங்கள் எலும்பு, மூட்டு பிரச்சனைகளைப் பரிசோதித்துக்கொள்ள, இலவச மருத்துவ முகாம்கள் நடத்துகிறோம்: 3 மாதங்களுக்கு ஒருமுறை இலவச எலும்பு அடர்த்தி (BMD) பரிசோதனை முகாம், ஒவ்வொரு மாதமும் பல சிறிய முகாம்கள். அடுத்த முகாம் எப்போது, எங்கே என்று தெரிந்துகொள்ள Instagram-ல் எங்களை ஃபாலோ செய்யுங்கள்.
 - Add places, dates and photos when they are confirmed.
 
 ### 11. Stakes and success, then the final call to action
@@ -439,20 +449,28 @@ Every service page tells the same short story, so visitors always know where to 
 ### Answers so far (2026-10-29)
 | # | Question | Answer | Effect on the copy |
 |---|---|---|---|
-| 1 | Where are surgeries done (clinic or partner hospital)? | **Open:** being checked | "Options before surgery" and the joint replacement and spine pages wait for this |
+| 1 | Where are surgeries done (clinic or partner hospital)? | **Answered 2026-11-10:** minor surgery in the clinic's own Mini OT; major surgery at tie-up hospitals | Added to the plan, "Options before surgery" and the credibility table |
 | 2 | Can we say he explains "in Tamil or English"? | **Yes**, he does both | Used in the guide, the doctor section and the credibility table |
 | 3 | Can we offer posture sessions for companies now? | **Yes**, offer it now | "We also hold posture sessions at companies and worksites" stays, with an "Enquire for your company" link |
 | 4 | Should the Google rating be shown? | **Yes**, as its own section | Added as home page part 9, with the rules listed there |
 | 5 | Which success line? | **B:** "time with your family" | Used in the success section and the home page closing section |
 | 6 | Which style of Tamil? | **Style A:** simple written Tamil | All Tamil rewritten in v0.3; home page approved after the review PDF |
+| 7 | Is physiotherapy in-house? | **Answered 2026-11-10:** no, it is given at a separate, dedicated centre | "Physiotherapy clinic" label and the physiotherapy fact chip removed; rehab section says where it is given |
+| 8 | Is emergency care only within clinic hours? | **Answered 2026-11-10:** emergency care is available 24/7 | Recorded in the credibility table; not shown on the site until the night arrangement is confirmed |
+| 9 | BMAC name? | **Answered 2026-11-10:** aspiration cytology (a test) and BMAC (a treatment) are separate services | Use "Bone Marrow Aspirate Concentrate (BMAC)" for the treatment |
+| 10 | Education, home town, experience | **Answered 2026-11-10:** see the credibility table | Added to the credibility table and the doctor section |
 
 **About question 5.** The "success" part of StoryBrand paints a picture of the patient's life after treatment. The first draft said "time with your grandchildren". Option B, "time with your family", was chosen because it includes older patients, working people and parents alike.
 
 ### Still to confirm with Dr. Manikandan
-1. Where surgeries are done (question 1).
-2. "PRP போன்ற ஊசி சிகிச்சைகள்" (injection treatments such as PRP) in place of "regenerative therapies": is it accurate for PRP, GFC and BMAC?
-3. The hero says patients are seen by him ("உங்களைப் பார்ப்பவர்"). Is that right?
-4. His registration number, years of experience, and any memberships he wants shown.
-5. Names or number of companies already coached, if they agree to be named.
-6. Free camp details: places, dates, photos.
-7. Approval of the whole framework, and of the Tamil text after the native-speaker check (UAT).
+1. Which tie-up hospitals do major surgery, and may they be named?
+2. How 24/7 emergency care works: is the mobile answered at night, and where are night patients seen?
+3. May the site name and link the physiotherapy centre?
+4. Which government hospital he serves at, if he wants it named.
+5. "PRP போன்ற ஊசி சிகிச்சைகள்" (injection treatments such as PRP) in place of "regenerative therapies": is it accurate for PRP, GFC and BMAC?
+6. The hero says patients are seen by him ("உங்களைப் பார்ப்பவர்"). Is that right?
+7. His registration number and any memberships he wants shown.
+8. Names or number of companies already coached, if they agree to be named.
+9. Free camp places, dates and photos; his profile photo.
+10. The list of 10 to 20 nearby locations with district names, and the unclear place names (Kovilpatti, Namakkal, Devipattinam, Ponnamaravathi / Thirumayam).
+11. Approval of the whole framework, and of the Tamil text after the native-speaker check (UAT).

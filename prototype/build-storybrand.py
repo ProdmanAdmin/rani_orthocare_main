@@ -2,14 +2,15 @@
 """Build prototype section 6 (storybrand.html) from docs/storybrand.md.
 
 The Markdown file is the record of both languages; this page is only a view of it.
-Run after every change to docs/storybrand.md (and after re-making docs/storybrand.pdf,
-which is copied here for the download button):
+Run after every change to docs/storybrand.md. It also prints the page to docs/storybrand.pdf with
+headless Chrome (when installed) and copies that PDF here for the download button:
 
     python3 -I prototype/build-storybrand.py
 """
 import html
 import re
 import shutil
+import subprocess
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -263,7 +264,7 @@ page = f"""<!doctype html>
     td {{ padding: 12px 16px; border-top: 1px solid var(--line); vertical-align: top; }}
     tbody tr:nth-child(even) td {{ background: #F7F9FD; }}
     td:first-child {{ font-weight: 700; color: var(--ink); }}
-    @media (max-width: 767px) {{
+    @media screen and (max-width: 767px) {{
       .tbl {{ border: 0; background: none; box-shadow: none; border-radius: 0; overflow: visible; }}
       table, tbody, tr, td {{ display: block; width: 100%; }}
       thead {{ position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }}
@@ -274,6 +275,29 @@ page = f"""<!doctype html>
       td[data-label=""]::before {{ display: none; }}
     }}
 
+    /* Print (also used to make docs/storybrand.pdf): A4, no site chrome, smaller type. */
+    @media print {{
+      @page {{ size: A4; margin: 14mm 12mm 16mm; }}
+      :root {{ --fs-display: 24pt; --fs-h2: 15pt; --fs-h3: 12pt; --fs-lead: 11pt; --fs-body: 10.5pt; --fs-small: 9.5pt; --section: 7mm; --gap: 4mm; --pad: 5mm; --gutter: 0px; }}
+      body {{ -webkit-print-color-adjust: exact; print-color-adjust: exact; line-height: 1.5; }}
+      body::before, .util, header.site, .btn-row, .top-link, .skip, footer a {{ display: none !important; }}
+      .cover {{ padding-block: 8mm; }}
+      .cover-grid {{ grid-template-columns: 7fr 5fr; gap: 8mm; }}
+      .approach {{ box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; padding: 5mm; }}
+      .steps li {{ grid-template-columns: 9mm 1fr; }} .steps li b {{ width: 9mm; height: 9mm; font-size: 12pt; }}
+      .toc {{ grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2mm; }}
+      #contents {{ break-inside: avoid; }}
+      .cover .intro {{ font-size: 10pt; gap: 2mm; }}
+      .cover h1 {{ font-size: 22pt; }}
+      .toc a {{ min-height: 0; padding: 2mm 3mm; box-shadow: none; }} .toc b {{ width: 7mm; height: 7mm; }}
+      .band {{ break-inside: auto; }}
+      .band-head, h2, h3 {{ break-after: avoid; }}
+      .tbl {{ box-shadow: none; overflow: visible; }}
+      tr {{ break-inside: avoid; }}
+      th, td {{ padding: 2mm 2.5mm; }}
+      .eyebrow b {{ min-width: 7mm; height: 7mm; font-size: 9pt; }}
+      footer {{ background: none !important; color: var(--muted); padding-block: 4mm; border-top: 1px solid var(--line); }}
+    }}
     footer {{ background: linear-gradient(180deg, #14234A, #1E3263); color: var(--on-navy); padding-block: 40px; font-size: var(--fs-small); }}
     footer .wrap {{ display: grid; gap: 8px; }}
     footer a {{ color: var(--white); }}
@@ -350,8 +374,18 @@ page = f"""<!doctype html>
 </html>
 """
 OUT.write_text(page, encoding="utf-8")
-# The page offers the PDF for download, so keep a copy beside it.
+
+# Make docs/storybrand.pdf by printing this page with headless Chrome (print styles above),
+# then keep a copy beside the page for its download button.
 pdf = ROOT / "docs" / "storybrand.pdf"
+CHROME = Path("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
+if CHROME.exists():
+    subprocess.run([str(CHROME), "--headless=new", "--disable-gpu", "--no-pdf-header-footer",
+                    "--virtual-time-budget=15000", f"--print-to-pdf={pdf}", OUT.as_uri()],
+                   check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    print(f"Wrote {pdf.relative_to(ROOT)}")
+else:
+    print("Chrome not found: docs/storybrand.pdf was not re-made")
 if pdf.exists():
     shutil.copy2(pdf, HERE / "storybrand.pdf")
 print(f"Wrote {OUT.relative_to(ROOT)} from {SRC.relative_to(ROOT)} ({len(sections)} sections)")
